@@ -36,6 +36,7 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
      se lit mal (puissances, fractions, sigles, dates), ajouter `dit_question` / `dit_explication` à la question
      (ou `dit` à une info d'astuce) avec la phrase à prononcer (ex. « 2 puissance 3 fois 2 puissance 2 ? A : 10. B : 32. C : 64. D : 12. »).
 3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-HHh.mp4`, puis extraire 3-4 images avec ffmpeg
+   La 1re image de la vidéo est une couverture automatique (miniature Instagram / TikTok) : vérifie-la aussi.
    (dont une par question pour une série) et les regarder. Le script affiche « Voix off : oui/non » :
    si c'est « non » ou si Fish Audio échoue, le signaler dans le message final (la vidéo reste publiable sans voix).
 4. Commit + push sur `main` (vidéo + ajout à `historique.json`, une entrée par question pour une série).

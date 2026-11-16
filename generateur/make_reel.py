@@ -21,6 +21,9 @@ Trois formats de spec JSON :
            Vidéo d'au moins 60 s (le script refuse sinon) : 4 à 6 infos. Voix off (intro, chaque info, fin) ;
            "dit" (optionnel) par info remplace le texte lu (titre + lignes + « Exemple : ... »).
 Tous les formats ont une musique de fond originale synthétisée (libre de droits), baissée sous la voix off.
+Les 0,5 premières secondes sont une couverture (titre du format, accroche, XP) : Instagram et TikTok prennent
+la 1re image comme miniature. Elle est aussi enregistrée à côté de la vidéo (<nom>-cover.jpg).
+"cover_title" (optionnel) remplace le titre de la couverture (QUIZ / LE SAVAIS-TU ? / DÉFI DE LA LIGUE).
 Le script refuse un texte contenant un caractère absent de la police (ex. ⁵, ᵉ, →).
 """
 import json, math, os, struct, subprocess, sys, wave
@@ -417,6 +420,34 @@ def music(T_END, voice_spans):
         out[i] = loop[i % L] * sm[int(tt * 20)] * max(0, fade)
     return out
 
+# ---------------------------------------------------------------- COUVERTURE (1re image = miniature Instagram / TikTok)
+COVER = 0.5  # secondes affichées au début ; les plateformes prennent la 1re image comme miniature
+
+def cover(spec, bg):
+    defi = spec.get("badge", "").upper().startswith("DÉFI")
+    kicker = spec.get("cover_title") or ("DÉFI DE LA LIGUE" if defi else
+                                         {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ"}.get(spec["type"], "QUESTION DU JOUR"))
+    hook = spec.get("hook", "")
+    n = len(spec.get("questions") or spec.get("infos") or [1])
+    xp = spec.get("xp", 50)
+    im = bg.copy().convert("RGBA"); header(im, spec.get("badge", ""))
+    kf = fit(kicker, "Bold", 120, W - 160); hf = fit(hook, "Bold", 96, W - 220)
+    def c(dr):
+        dr.rounded_rectangle([60, 420, W - 60, 1380], 60, fill=CARD + (235,), outline=GOLD + (255,), width=6)
+        ctext(dr, 500, kicker, kf, GOLD + (255,))
+        dr.rounded_rectangle([W / 2 - 180, 660, W / 2 + 180, 668], 4, fill=CYAN + (255,))
+        bb = dr.multiline_textbbox((0, 0), hook, font=hf, spacing=12, align="center")
+        ctext(dr, 960 - (bb[3] - bb[1]) / 2 - bb[1], hook, hf, WHITE + (255,), 12)
+        pill = f"{n} {'défis' if defi else 'questions'}  •  +{xp} XP" if spec["type"] == "serie" else (
+               f"{n} infos  •  +{xp} XP" if spec["type"] == "astuce" else f"+{xp} XP")
+        pf = F("Bold", 56); pw = pf.getlength(pill) + 100
+        dr.rounded_rectangle([(W - pw) / 2, 1230, (W + pw) / 2, 1330], 50, fill=GOLD + (255,))
+        dr.text((W / 2, 1280), pill, font=pf, fill=NAVY + (255,), anchor="mm")
+        ctext(dr, 1560, "Révise comme dans un jeu", F("Bold", 64), WHITE + (255,))
+        ctext(dr, 1660, "de la 6e à la Terminale", F("Medium", 48), GREY + (255,))
+    im.alpha_composite(layer(c, 1))
+    return im.convert("RGB")
+
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
     check_glyphs(spec)
@@ -440,12 +471,13 @@ def render(spec, out):
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes(b"".join(struct.pack("<h", int(max(-1, min(1, v)) * 30000)) for v in buf))
     bg = make_bg()
+    cov = cover(spec, bg); cov.save(os.path.splitext(out)[0] + "-cover.jpg", quality=92)
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                           "-r", str(FPS), "-i", "-", "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
                           "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", out],
                          stdin=subprocess.PIPE)
     for n in range(int(T_END * FPS)):
-        p.stdin.write(frame(n / FPS, bg).tobytes())
+        p.stdin.write((cov if n / FPS < COVER else frame(n / FPS, bg)).tobytes())
     p.stdin.close(); p.wait(); os.remove(wav)
     if p.returncode: sys.exit("ffmpeg a échoué")
     print("OK", out, f"{T_END:.1f}s")
