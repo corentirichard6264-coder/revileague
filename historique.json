@@ -148,5 +148,14 @@
         "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
       }
     }
+  },
+  {
+    "date": "2026-11-16T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "niveau": "2nde",
+    "matiere": "physique-chimie",
+    "sujet": "conversion km/h en m/s : diviser par 3,6 (90 km/h = 25 m/s)",
+    "fichier": "reels/2026-11-16-13h.mp4"
   }
 ]
