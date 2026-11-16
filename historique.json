@@ -555,5 +555,61 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-11-16T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 1,
+    "niveau": "3e",
+    "matiere": "maths",
+    "sujet": "identité remarquable : développer (x + 3)² = x² + 6x + 9",
+    "fichier": "reels/2026-11-16-20h.mp4",
+    "couverture": "reels/2026-11-16-20h-cover.jpg",
+    "duree_s": 119.4,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-16T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 2,
+    "niveau": "Terminale",
+    "matiere": "philosophie",
+    "sujet": "« Je pense, donc je suis » : Descartes (Discours de la méthode, 1637)",
+    "fichier": "reels/2026-11-16-20h.mp4",
+    "couverture": "reels/2026-11-16-20h-cover.jpg",
+    "duree_s": 119.4,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-16T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 3,
+    "niveau": "2nde",
+    "matiere": "physique-chimie",
+    "sujet": "masse molaire de l'eau H2O (18 g/mol)",
+    "fichier": "reels/2026-11-16-20h.mp4",
+    "couverture": "reels/2026-11-16-20h-cover.jpg",
+    "duree_s": 119.4,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-16T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 4,
+    "niveau": "Terminale",
+    "matiere": "SVT",
+    "sujet": "méiose : 4 cellules filles haploïdes",
+    "fichier": "reels/2026-11-16-20h.mp4",
+    "couverture": "reels/2026-11-16-20h-cover.jpg",
+    "duree_s": 119.4,
+    "voix_off": true
   }
 ]
