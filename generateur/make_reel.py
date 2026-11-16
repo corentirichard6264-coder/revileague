@@ -14,9 +14,13 @@ Trois formats de spec JSON :
            elle lit l'intro, chaque question + ses 4 réponses, la correction, le score et la fin ; le chrono
            démarre après la lecture. Par question, "dit_question" / "dit_explication" (optionnels) remplacent
            le texte lu quand l'écrit se lit mal (ex. "2³ × 2²" -> "2 puissance 3 fois 2 puissance 2").
-  astuce : {"type":"astuce","badge":"3e • FRANÇAIS","title":"Participe passé\\navec avoir",
-            "lines":["S'accorde avec le COD...","...seulement s'il est placé AVANT"],
-            "example":"Les pommes que j'ai mangées","xp":20}
+  astuce : {"type":"astuce","badge":"COLLÈGE • MIX","hook":"5 infos à connaître\\navant le contrôle","xp":100,
+            "infos":[{"badge":"3e • FRANÇAIS","title":"Participe passé\\navec avoir",
+                      "lines":["S'accorde avec le COD...","...seulement s'il est placé AVANT"],
+                      "example":"Les pommes que j'ai mangées"}, ...]}
+           Vidéo d'au moins 60 s (le script refuse sinon) : 4 à 6 infos. Voix off (intro, chaque info, fin) ;
+           "dit" (optionnel) par info remplace le texte lu (titre + lignes + « Exemple : ... »).
+Tous les formats ont une musique de fond originale synthétisée (libre de droits), baissée sous la voix off.
 Le script refuse un texte contenant un caractère absent de la police (ex. ⁵, ᵉ, →).
 """
 import json, math, os, struct, subprocess, sys, wave
@@ -283,56 +287,135 @@ def serie(spec):
     voices += [(S[k] + 0.3, v_q[k]) for k in range(n)] + [(S[k] + T_CNT[k] + cd + 0.4, v_e[k]) for k in range(n)]
     return frame, sounds, T_END, [(s, c) for s, c in voices if c]
 
-# ---------------------------------------------------------------- ASTUCE
+# ---------------------------------------------------------------- ASTUCE (plusieurs infos, voix off, >= 60 s)
+MIN_ASTUCE = 60.0
+
 def astuce(spec):
-    lines = spec["lines"]
-    T_TITLE = 1.4; T_L0 = 2.6; STEP = 1.4
-    T_EX = T_L0 + STEP * len(lines) + 0.2
-    T_XP = T_EX + 2.6; T_CTA = T_XP + 2.0; T_END = T_CTA + 2.8
-    tf = fit(spec["title"], "Bold", 92, W - 260)
-    lf = [fit(l, "Medium", 50, W - 300) for l in lines]
-    exf = fit(spec["example"], "Bold", 54, W - 260)
+    infos = spec.get("infos") or [{k: spec[k] for k in ("title", "lines", "example") if k in spec}]
+    n = len(infos)
+    hook = spec.get("hook", f"{n} infos à connaître")
+    v_intro = tts("Le savais-tu ? " + say(hook))
+    def lire(info):
+        txt = say(info["title"]); txt += "" if txt[-1:] in ".?!:" else "."
+        for l in info["lines"]:
+            l = say(l); txt += " " + l + ("" if l[-1:] in ".?!" else ".")
+        return txt + " Exemple : " + say(info["example"]) + "."
+    v_i = [tts(i.get("dit") or lire(i)) for i in infos]
+    v_end = tts(f"Tu en connaissais combien sur {n} ? Dis-le en commentaire ! Révise comme dans un jeu, rejoins la Ligue, lien en bio !")
+    print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
+
+    T_INTRO = max(2.8, 0.3 + dur(v_intro) + 0.5)
+    # par info : titre à 0,3 s, lignes réparties pendant la lecture, exemple, pause de lecture
+    SEG = [max(4.0 + 1.6 * len(i["lines"]) + 3.0, 0.4 + dur(v) + 1.4) for i, v in zip(infos, v_i)]
+    S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
+    T_XP = T_INTRO + sum(SEG); T_CTA = T_XP + 2.2
+    T_END = max(T_CTA + 3.0, T_XP + 0.2 + dur(v_end) + 0.6)
+    if T_END < MIN_ASTUCE:
+        sys.exit(f"Astuce trop courte ({T_END:.1f} s < {MIN_ASTUCE:.0f} s) : ajoute une info.")
+    hookf = fit(hook, "Bold", 84, W - 160)
+    F_T = [fit(i["title"], "Bold", 92, W - 260) for i in infos]
+    F_L = [[fit(l, "Medium", 50, W - 300) for l in i["lines"]] for i in infos]
+    F_E = [fit(i["example"], "Bold", 54, W - 260) for i in infos]
+    # instants d'apparition (relatifs au début de l'info), calés sur la voix si elle existe
+    def times(k):
+        nl = len(infos[k]["lines"]); span = (SEG[k] - 1.4) if v_i[k] else (2.0 + 1.6 * nl)
+        step = span / (nl + 1.6); return [1.0 + step * (j + 0.4) for j in range(nl)], 1.0 + step * (nl + 0.4)
+    TM = [times(k) for k in range(n)]
 
     def frame(t, bg):
-        im = bg.copy().convert("RGBA"); header(im, spec["badge"])
-        if t < T_CTA:
-            a = prog(t, 0, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
-            y = 700 - 440 * prog(t, T_TITLE, 0.5)
-            im.alpha_composite(layer(lambda dr: ctext(dr, y, "Le savais-tu ?", F("Bold", 90), CYAN + (255,)), a))
-        if T_TITLE <= t < T_CTA:
-            a = prog(t, T_TITLE, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
+        im = bg.copy().convert("RGBA")
+        k = max([0] + [j for j in range(n) if S[j] <= t])
+        header(im, infos[k].get("badge", spec["badge"]) if T_INTRO <= t < T_XP else spec["badge"])
+        if t < T_INTRO:
+            a = prog(t, 0, 0.5) * (1 - prog(t, T_INTRO - 0.4, 0.4)); dy = 40 * (1 - prog(t, 0, 0.5))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 560 + dy, "Le savais-tu ?", F("Bold", 100), CYAN + (255,)), a))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 760 + dy, hook, hookf, WHITE + (255,), 4), a))
+        elif t < T_XP:
+            u = t - S[k]; out = 1 - prog(u, SEG[k] - 0.4, 0.4)
+            a = prog(u, 0, 0.4) * out
+            def pr(dr):
+                ctext(dr, 220, f"Le savais-tu ?  {k + 1}/{n}", F("Bold", 64), CYAN + (255,))
+                x0 = (W - (n * 44 - 16)) / 2
+                for j in range(n):
+                    dr.rounded_rectangle([x0 + j * 44, 330, x0 + j * 44 + 28, 346], 8,
+                                         fill=GOLD + (255,) if j <= k else (255, 255, 255, 40))
+            im.alpha_composite(layer(pr, a))
+            info = infos[k]; tl, te = TM[k]
+            a = prog(u, 0.3, 0.5) * out
             def td(dr):
                 dr.rounded_rectangle([90, 420, W - 90, 680], 40, fill=CARD + (255,), outline=(70, 85, 130, 255), width=4)
-                bb = dr.multiline_textbbox((0, 0), spec["title"], font=tf, spacing=6, align="center")
-                ctext(dr, 550 - (bb[3] - bb[1]) / 2 - bb[1], spec["title"], tf, GOLD + (255,), 6)
+                bb = dr.multiline_textbbox((0, 0), info["title"], font=F_T[k], spacing=6, align="center")
+                ctext(dr, 550 - (bb[3] - bb[1]) / 2 - bb[1], info["title"], F_T[k], GOLD + (255,), 6)
             im.alpha_composite(layer(td, a))
-        for i, l in enumerate(lines):
-            t0 = T_L0 + i * STEP
-            if t0 <= t < T_CTA:
-                p = prog(t, t0, 0.45); a = p * (1 - prog(t, T_CTA - 0.4, 0.4))
-                y = 760 + i * 150 + 30 * (1 - p)
-                def ld(dr, l=l, y=y, f=lf[i]):
-                    dr.ellipse([110, y + 22, 150, y + 62], fill=GOLD + (255,))
-                    dr.text((130, y + 42), str(i + 1), font=F("Bold", 28), fill=NAVY + (255,), anchor="mm")
-                    dr.multiline_text((180, y + 6), l, font=f, fill=WHITE + (255,), spacing=6)
-                im.alpha_composite(layer(ld, a))
-        if T_EX <= t < T_CTA:
-            p = prog(t, T_EX, 0.45); a = p * (1 - prog(t, T_CTA - 0.4, 0.4))
-            y0 = 790 + len(lines) * 150
-            def ed(dr):
-                dr.rounded_rectangle([90, y0, W - 90, y0 + 220], 36, fill=GREEN + (60,), outline=GREEN + (255,), width=4)
-                ctext(dr, y0 + 22, "Exemple", F("Medium", 40), (180, 255, 210, 255))
-                bb = dr.multiline_textbbox((0, 0), spec["example"], font=exf, spacing=8, align="center")
-                ctext(dr, y0 + 140 - (bb[3] - bb[1]) / 2 - bb[1], spec["example"], exf, WHITE + (255,), 8)
-            im.alpha_composite(layer(ed, a))
-        if T_XP <= t < T_CTA: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 20), y=1650)
-        if t >= T_CTA: cta(im, t, T_CTA)
+            for i, l in enumerate(info["lines"]):
+                if u >= tl[i]:
+                    p = prog(u, tl[i], 0.45); y = 760 + i * 150 + 30 * (1 - p)
+                    def ld(dr, l=l, y=y, f=F_L[k][i], i=i):
+                        dr.ellipse([110, y + 22, 150, y + 62], fill=GOLD + (255,))
+                        dr.text((130, y + 42), str(i + 1), font=F("Bold", 28), fill=NAVY + (255,), anchor="mm")
+                        dr.multiline_text((180, y + 6), l, font=f, fill=WHITE + (255,), spacing=6)
+                    im.alpha_composite(layer(ld, p * out))
+            if u >= te:
+                p = prog(u, te, 0.45); y0 = 790 + len(info["lines"]) * 150
+                def ed(dr):
+                    dr.rounded_rectangle([90, y0, W - 90, y0 + 220], 36, fill=GREEN + (60,), outline=GREEN + (255,), width=4)
+                    ctext(dr, y0 + 22, "Exemple", F("Medium", 40), (180, 255, 210, 255))
+                    bb = dr.multiline_textbbox((0, 0), info["example"], font=F_E[k], spacing=8, align="center")
+                    ctext(dr, y0 + 140 - (bb[3] - bb[1]) / 2 - bb[1], info["example"], F_E[k], WHITE + (255,), 8)
+                im.alpha_composite(layer(ed, p * out))
+        elif t < T_CTA:
+            a = prog(t, T_XP, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 640, f"Tu en connaissais\ncombien sur {n} ?", F("Bold", 90), GOLD + (255,), 8), a))
+            xp_block(im, t, T_XP, T_CTA, spec.get("xp", 20 * n))
+        else:
+            cta(im, t, T_CTA)
         return im.convert("RGB")
 
-    sounds = [(T_TITLE, 0.4, 700, 0.3, 8)] + [(T_L0 + i * STEP, 0.15, 1000, 0.25, 30) for i in range(len(lines))]
-    sounds += [(T_EX, 0.6, 880, 0.3, 5), (T_EX + 0.08, 0.6, 1320, 0.25, 5)]
-    sounds += [(T_XP + j * 0.07, 0.25, fq, 0.25, 12) for j, fq in enumerate([660, 880, 1100, 1320])]
-    return frame, sounds, T_END
+    sounds = []
+    for k in range(n):
+        tl, te = TM[k]
+        sounds += [(S[k] + 0.3, 0.4, 700, 0.3, 8)] + [(S[k] + x, 0.15, 1000, 0.2, 30) for x in tl]
+        sounds += [(S[k] + te, 0.5, 880, 0.25, 6), (S[k] + te + 0.08, 0.5, 1320, 0.2, 6)]
+    sounds += xp_sounds(T_XP)
+    voices = [(0.3, v_intro), (T_XP + 0.2, v_end)] + [(S[k] + 0.3, v_i[k]) for k in range(n)]
+    return frame, sounds, T_END, [(s, c) for s, c in voices if c]
+
+# ---------------------------------------------------------------- MUSIQUE DE FOND (synthétisée, libre de droits)
+def music(T_END, voice_spans):
+    """Boucle pop/lo-fi originale à 100 BPM (Am-F-C-G), baissée automatiquement sous la voix off."""
+    import random
+    rnd = random.Random(7); beat = 0.6; bar = 4 * beat; L = int(4 * bar * SR)
+    loop = [0.0] * L
+    def add(t0, d, fn):
+        i0 = int(t0 * SR)
+        for j in range(int(d * SR)):
+            if i0 + j >= L: break
+            loop[i0 + j] += fn(j / SR)
+    hz = lambda m: 440 * 2 ** ((m - 69) / 12)
+    chords = [(57, 60, 64), (53, 57, 60), (48, 52, 55), (55, 59, 62)]  # Am F C G
+    for b, ch in enumerate(chords):
+        t0 = b * bar
+        for m in ch:  # nappe douce
+            f = hz(m); add(t0, bar, lambda x, f=f: 0.035 * min(1, x / 0.3) * min(1, (bar - x) / 0.3) * math.sin(2 * math.pi * f * x))
+        for s in (0, 2):  # basse
+            f = hz(ch[0] - 12); add(t0 + s * beat, beat * 1.8, lambda x, f=f: 0.12 * math.exp(-2.2 * x) * math.sin(2 * math.pi * f * x))
+        arp = [ch[0] + 12, ch[1] + 12, ch[2] + 12, ch[1] + 12]
+        for e in range(8):  # arpège en croches
+            f = hz(arp[e % 4]); add(t0 + e * beat / 2, 0.28, lambda x, f=f: 0.035 * math.exp(-9 * x) * math.sin(2 * math.pi * f * x))
+        for s in range(4):  # kick + charleston
+            add(t0 + s * beat, 0.25, lambda x: 0.22 * math.exp(-14 * x) * math.sin(2 * math.pi * (50 * x + 35 * (1 - math.exp(-30 * x)))))
+            add(t0 + s * beat + beat / 2, 0.05, lambda x: 0.025 * math.exp(-60 * x) * (rnd.random() * 2 - 1))
+    N = int(T_END * SR); out = [0.0] * N
+    gain = [1.0] * (int(T_END * 20) + 2)  # enveloppe à 20 Hz : 0,3 sous la voix
+    for s, d in voice_spans:
+        for g in range(max(0, int((s - 0.15) * 20)), min(len(gain), int((s + d + 0.2) * 20) + 1)): gain[g] = 0.3
+    sm = gain[:]  # lissage
+    for g in range(1, len(sm)): sm[g] = sm[g - 1] + (gain[g] - sm[g - 1]) * 0.35
+    fade = 1.0
+    for i in range(N):
+        tt = i / SR; fade = min(1, tt / 1.0, (T_END - tt) / 1.5)
+        out[i] = loop[i % L] * sm[int(tt * 20)] * max(0, fade)
+    return out
 
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
@@ -345,13 +428,13 @@ def render(spec, out):
         i0 = int(start * SR)
         for j, v in enumerate(clip[: max(0, N - i0)]):
             buf[i0 + j] += v / 32768 * 0.9
-    for start, dur, freq, vol, decay in sounds:
-        for k in range(int(dur * SR)):
+    for start, d_s, freq, vol, decay in sounds:
+        for k in range(int(d_s * SR)):
             i = int(start * SR) + k
             if i >= N: break
             tt = k / SR; buf[i] += vol * math.sin(2 * math.pi * freq * tt) * math.exp(-decay * tt)
-    for i in range(N):
-        tt = i / SR; buf[i] += 0.04 * math.sin(2 * math.pi * 110 * tt) * (0.6 + 0.4 * math.sin(math.pi * tt))
+    bed = music(T_END, [(s, dur(c)) for s, c in (voices[0] if voices else [])])
+    for i in range(N): buf[i] += bed[i]
     wav = out + ".wav"
     with wave.open(wav, "w") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)

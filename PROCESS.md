@@ -13,10 +13,14 @@ corrections détaillées, XP, récompenses, rangs, classements entre joueurs. To
 | Heure | Format | Spec `type` | Contenu |
 |---|---|---|---|
 | 8h | Question du jour | `serie` | **5 questions** rapides (6e à 3e), matières variées, countdown 5 s, xp 250, hook « 5 questions.\nTu fais combien ? » ou variante. Durée ≥ 60 s |
-| 13h | Le savais-tu ? | `astuce` | Règle / astuce / méthode à retenir : 2 à 3 lignes courtes + un exemple, xp 20 |
+| 13h | Le savais-tu ? | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, hook « 5 infos à connaître\navant le contrôle » ou variante, xp 100. Durée ≥ 60 s |
 | 20h | Défi de la Ligue | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 7 s, xp 400. Durée ≥ 60 s |
 
-Le générateur refuse une `serie` de moins de 60 s : ajouter une question dans ce cas.
+**Les 3 vidéos du jour durent plus d'une minute, avec voix off et musique de fond** (demande de l'utilisateur, 16/11/2026).
+Le générateur refuse une `serie` ou une `astuce` de moins de 60 s : ajouter une question / une info dans ce cas.
+La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
+dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche
+« Voix off : non », la vidéo ne respecte pas la consigne → le signaler dans la notification.
 Alterner les matières (maths, français, histoire-géo, SVT, physique-chimie, anglais, philo en Terminale) et les niveaux,
 y compris à l'intérieur d'une série. Ne jamais répéter une question déjà présente dans `historique.json`.
 
@@ -28,9 +32,9 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
    - textes courts : options ≤ 10 caractères si possible, lignes ≤ 30 caractères, `\n` pour couper ;
    - caractères interdits par la police : ⁴ ⁵ ᵉ → (écrire « 4e », « puissance 5 », « donc ») ; le script refuse sinon ;
    - pas d'emoji dans la vidéo ; aucun personnage, marque ou œuvre protégée.
-   - **voix off** (séries) : lue par Fish Audio si `FISH_API_KEY` est définie dans l'environnement. Quand l'écrit
+   - **voix off** (séries et astuces) : lue par Fish Audio si `FISH_API_KEY` est définie dans l'environnement. Quand l'écrit
      se lit mal (puissances, fractions, sigles, dates), ajouter `dit_question` / `dit_explication` à la question
-     avec la phrase à prononcer (ex. « 2 puissance 3 fois 2 puissance 2 ? A : 10. B : 32. C : 64. D : 12. »).
+     (ou `dit` à une info d'astuce) avec la phrase à prononcer (ex. « 2 puissance 3 fois 2 puissance 2 ? A : 10. B : 32. C : 64. D : 12. »).
 3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-HHh.mp4`, puis extraire 3-4 images avec ffmpeg
    (dont une par question pour une série) et les regarder. Le script affiche « Voix off : oui/non » :
    si c'est « non » ou si Fish Audio échoue, le signaler dans le message final (la vidéo reste publiable sans voix).
