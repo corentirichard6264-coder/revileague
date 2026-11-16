@@ -10,6 +10,10 @@ Trois formats de spec JSON :
   serie  : {"type":"serie","badge":"COLLÈGE • MIX","hook":"5 questions.\\nTu fais combien ?","countdown":5,"xp":250,
             "questions":[{"badge":"4e • MATHS","question":...,"options":[...],"answer":1,"explain":...}, ...]}
            Vidéo d'au moins 60 s (le script refuse sinon) : 5 questions avec countdown 5, 4 avec countdown 7.
+           Voix off Fish Audio si la variable d'environnement FISH_API_KEY existe (FISH_VOICE_ID = voix choisie) :
+           elle lit l'intro, chaque question + ses 4 réponses, la correction, le score et la fin ; le chrono
+           démarre après la lecture. Par question, "dit_question" / "dit_explication" (optionnels) remplacent
+           le texte lu quand l'écrit se lit mal (ex. "2³ × 2²" -> "2 puissance 3 fois 2 puissance 2").
   astuce : {"type":"astuce","badge":"3e • FRANÇAIS","title":"Participe passé\\navec avoir",
             "lines":["S'accorde avec le COD...","...seulement s'il est placé AVANT"],
             "example":"Les pommes que j'ai mangées","xp":20}
@@ -184,15 +188,60 @@ def quiz(spec):
 
     return frame, q_sounds(T_COUNT, cd) + xp_sounds(T_XP), T_END
 
+# ---------------------------------------------------------------- VOIX OFF (Fish Audio)
+SR = 44100
+
+def say(txt):
+    """Texte écrit -> texte à lire (maths lisibles, sans retours à la ligne)."""
+    for a, b in [("\n", " "), ("×", " fois "), ("÷", " divisé par "), ("²", " au carré"), ("³", " au cube"),
+                 ("=", " égale "), ("≈", " environ "), ("•", ","), ("%", " pour cent")]:
+        txt = txt.replace(a, b)
+    return " ".join(txt.split())
+
+def tts(text):
+    """Voix off Fish Audio -> échantillons mono 16 bits à 44,1 kHz. None si FISH_API_KEY est absente."""
+    key = os.environ.get("FISH_API_KEY")
+    if not key: return None
+    import array, urllib.request
+    voice = os.environ.get("FISH_VOICE_ID")
+    body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.05}}
+    if voice: body["reference_id"] = voice
+    req = urllib.request.Request("https://api.fish.audio/v1/tts", data=json.dumps(body).encode(), method="POST",
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
+                                          "model": os.environ.get("FISH_MODEL", "s2.1-pro")})
+    try:
+        mp3 = urllib.request.urlopen(req, timeout=90).read()
+    except Exception as e:
+        sys.exit(f"Voix off Fish Audio en échec : {e}")
+    pcm = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", "pipe:0", "-f", "s16le", "-ac", "1", "-ar", str(SR), "pipe:1"],
+                         input=mp3, capture_output=True, check=True).stdout
+    return array.array("h", pcm[: len(pcm) // 2 * 2])
+
+def dur(clip): return len(clip) / SR if clip else 0.0
+
 # ---------------------------------------------------------------- SÉRIE (plusieurs questions, >= 60 s)
 MIN_SERIE = 60.0
 
 def serie(spec):
     qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
-    T_INTRO = 2.4
-    # par question : apparition, réponses 0,7 s, chrono 1,4 s, correction 3,6 s, sortie 0,4 s
-    SEG = 1.4 + cd + 3.6 + 0.4
-    T_SCORE = T_INTRO + n * SEG; T_XP = T_SCORE + 3.0; T_CTA = T_XP + 2.4; T_END = T_CTA + 3.0
+    # voix off : intro, chaque question + réponses, chaque correction, score, fin
+    v_intro = tts(say(spec["hook"]))
+    def lire_q(q):
+        txt = say(q["question"]); txt += "" if txt[-1:] in ".?!" else "."
+        return txt + " " + ". ".join(f"{'ABCD'[i]} : {say(o)}" for i, o in enumerate(q["options"])) + "."
+    v_q = [tts(q.get("dit_question") or lire_q(q)) for q in qs]
+    v_e = [tts(q.get("dit_explication") or say(f"Réponse {'ABCD'[q['answer']]} : {q['options'][q['answer']]}. {q['explain']}")) for q in qs]
+    v_score = tts(f"Alors, ton score sur {n} ? Dis-le en commentaire !")
+    v_cta = tts("Révise comme dans un jeu. Rejoins la Ligue, lien en bio !")
+    print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
+
+    T_INTRO = max(2.4, 0.3 + dur(v_intro) + 0.4)
+    # par question : réponses à 0,7 s, chrono après la lecture, correction lue, sortie 0,4 s
+    T_CNT = [max(1.4, 0.3 + dur(v) + 0.3) for v in v_q]
+    SEG = [c + cd + max(3.6, 0.4 + dur(v) + 0.6) + 0.4 for c, v in zip(T_CNT, v_e)]
+    S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
+    T_SCORE = T_INTRO + sum(SEG); T_XP = T_SCORE + max(3.0, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.4
+    T_END = T_CTA + max(3.0, 0.3 + dur(v_cta) + 0.4)
     if T_END < MIN_SERIE:
         sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
     hookf = fit(spec["hook"], "Bold", 84, W - 160)
@@ -200,14 +249,14 @@ def serie(spec):
 
     def frame(t, bg):
         im = bg.copy().convert("RGBA")
-        k = min(n - 1, max(0, int((t - T_INTRO) // SEG)))
+        k = max([0] + [j for j in range(n) if S[j] <= t])
         header(im, qs[k].get("badge", spec["badge"]) if T_INTRO <= t < T_SCORE else spec["badge"])
         if t < T_INTRO:
             a = prog(t, 0, 0.5) * (1 - prog(t, T_INTRO - 0.4, 0.4))
             im.alpha_composite(layer(lambda dr: ctext(dr, 700 + 40 * (1 - prog(t, 0, 0.5)), spec["hook"], hookf, WHITE + (255,), 4), a))
         elif t < T_SCORE:
-            u = t - T_INTRO - k * SEG
-            a = prog(u, 0, 0.4) * (1 - prog(u, SEG - 0.4, 0.4))
+            u = t - S[k]
+            a = prog(u, 0, 0.4) * (1 - prog(u, SEG[k] - 0.4, 0.4))
             def pr(dr):
                 ctext(dr, 260, f"Question {k + 1}/{n}", F("Bold", 64), CYAN + (255,))
                 x0 = (W - (n * 44 - 16)) / 2
@@ -215,7 +264,7 @@ def serie(spec):
                     dr.rounded_rectangle([x0 + j * 44, 380, x0 + j * 44 + 28, 396], 8,
                                          fill=GOLD + (255,) if j <= k else (255, 255, 255, 40))
             im.alpha_composite(layer(pr, a))
-            draw_question(im, u, qs[k], fonts[k], cd, 0.0, 0.7, 1.4, 1.4 + cd + 1.2, SEG)
+            draw_question(im, u, qs[k], fonts[k], cd, 0.0, 0.7, T_CNT[k], T_CNT[k] + cd + 1.2, SEG[k])
         elif t < T_CTA:
             a = prog(t, T_SCORE, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
             im.alpha_composite(layer(lambda dr: ctext(dr, 640 + 40 * (1 - prog(t, T_SCORE, 0.5)),
@@ -228,10 +277,11 @@ def serie(spec):
 
     sounds = []
     for k in range(n):
-        s0 = T_INTRO + k * SEG
-        sounds += [(s0, 0.3, 700, 0.25, 8)] + [(s0 + st, d, f, v, dc) for st, d, f, v, dc in q_sounds(1.4, cd)]
+        sounds += [(S[k], 0.3, 700, 0.25, 8)] + [(S[k] + st, d, f, v, dc) for st, d, f, v, dc in q_sounds(T_CNT[k], cd)]
     sounds += [(T_SCORE, 0.5, 880, 0.3, 5)] + xp_sounds(T_XP)
-    return frame, sounds, T_END
+    voices = [(0.3, v_intro), (T_SCORE + 0.2, v_score), (T_CTA + 0.3, v_cta)]
+    voices += [(S[k] + 0.3, v_q[k]) for k in range(n)] + [(S[k] + T_CNT[k] + cd + 0.4, v_e[k]) for k in range(n)]
+    return frame, sounds, T_END, [(s, c) for s, c in voices if c]
 
 # ---------------------------------------------------------------- ASTUCE
 def astuce(spec):
@@ -287,8 +337,14 @@ def astuce(spec):
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
     check_glyphs(spec)
-    frame, sounds, T_END = {"quiz": quiz, "serie": serie, "astuce": astuce}[spec["type"]](spec)
-    SR = 44100; N = int(SR * T_END); buf = [0.0] * N
+    frame, sounds, T_END, *voices = {"quiz": quiz, "serie": serie, "astuce": astuce}[spec["type"]](spec)
+    N = int(SR * T_END); buf = [0.0] * N
+    duck = 0.45 if voices and voices[0] else 1.0  # bips plus discrets sous la voix
+    sounds = [(s, d, f, v * duck, dc) for s, d, f, v, dc in sounds]
+    for start, clip in (voices[0] if voices else []):
+        i0 = int(start * SR)
+        for j, v in enumerate(clip[: max(0, N - i0)]):
+            buf[i0 + j] += v / 32768 * 0.9
     for start, dur, freq, vol, decay in sounds:
         for k in range(int(dur * SR)):
             i = int(start * SR) + k
