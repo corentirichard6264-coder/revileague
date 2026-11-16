@@ -29,7 +29,8 @@ _cache = {}
 def F(style, size):
     k = (style, size)
     if k not in _cache:
-        p = FD + f"Poppins-{style}.ttf"
+        local = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", f"Poppins-{style}.ttf")
+        p = local if os.path.exists(local) else FD + f"Poppins-{style}.ttf"
         _cache[k] = ImageFont.truetype(p if os.path.exists(p) else FALLBACK, size)
     return _cache[k]
 
@@ -40,8 +41,7 @@ RED = (255, 92, 108); WHITE = (245, 247, 255); GREY = (150, 160, 190)
 def check_glyphs(spec):
     try:
         from fontTools.ttLib import TTFont
-        p = FD + "Poppins-Bold.ttf"
-        cmap = TTFont(p if os.path.exists(p) else FALLBACK).getBestCmap()
+        cmap = TTFont(F("Bold", 10).path).getBestCmap()
     except Exception:
         return
     txt = json.dumps(spec, ensure_ascii=False)
