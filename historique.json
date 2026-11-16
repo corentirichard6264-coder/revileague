@@ -156,6 +156,24 @@
     "niveau": "2nde",
     "matiere": "physique-chimie",
     "sujet": "conversion km/h en m/s : diviser par 3,6 (90 km/h = 25 m/s)",
-    "fichier": "reels/2026-11-16-13h.mp4"
+    "fichier": "reels/2026-11-16-13h.mp4",
+    "posty_post_id": "p0mwj7kbt1yjifk7hrc",
+    "posty_media_id": "med0mwj7jfhqvjz4nej98",
+    "publie_le": "2026-11-16T12:00:21Z",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DfzThTrCLfZ/",
+        "id": "18077451878487143"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7708737638949554198"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=LileqCIekLI"
+      }
+    }
   }
 ]
