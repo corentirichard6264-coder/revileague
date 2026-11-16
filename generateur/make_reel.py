@@ -2,11 +2,14 @@
 
 Usage : python3 make_reel.py spec.json sortie.mp4
 
-Deux formats de spec JSON :
+Trois formats de spec JSON :
   quiz   : {"type":"quiz","badge":"4e • MATHS","hook":"Tu peux répondre\\nen 5 secondes ?",
             "question":"2³ × 2² = ?","options":["10","32","64","12"],"answer":1,
             "explain":"On additionne les exposants :\\n3 + 2 = 5, donc 2 puissance 5 = 32",
             "xp":50,"countdown":5}
+  serie  : {"type":"serie","badge":"COLLÈGE • MIX","hook":"5 questions.\\nTu fais combien ?","countdown":5,"xp":250,
+            "questions":[{"badge":"4e • MATHS","question":...,"options":[...],"answer":1,"explain":...}, ...]}
+           Vidéo d'au moins 60 s (le script refuse sinon) : 5 questions avec countdown 5, 4 avec countdown 7.
   astuce : {"type":"astuce","badge":"3e • FRANÇAIS","title":"Participe passé\\navec avoir",
             "lines":["S'accorde avec le COD...","...seulement s'il est placé AVANT"],
             "example":"Les pommes que j'ai mangées","xp":20}
@@ -104,15 +107,69 @@ def cta(im, t, t0):
         ctext(dr, 1400, "Lien en bio", F("Medium", 48), CYAN + (255,))
     im.alpha_composite(layer(c, p))
 
-# ---------------------------------------------------------------- QUIZ
+# ---------------------------------------------------------------- QUESTION (pièces communes quiz / série)
+def q_fonts(q):
+    return (fit(q["question"], "Bold", 120, W - 260), [fit(o, "Bold", 80, 300) for o in q["options"]],
+            fit(q["explain"], "Medium", 52, W - 240))
+
+def draw_question(im, t, q, fonts, cd, T_Q, T_OPT, T_COUNT, T_DIM, T_OUT):
+    """Carte question + 4 réponses + compte à rebours + correction, entre T_Q et T_OUT."""
+    qf, of, ef = fonts
+    T_REVEAL = T_COUNT + cd
+    if T_Q <= t < T_OUT:
+        a = prog(t, T_Q, 0.5) * (1 - prog(t, T_OUT - 0.4, 0.4))
+        def qd(dr):
+            dr.rounded_rectangle([90, 560, W - 90, 820], 40, fill=CARD + (255,), outline=(70, 85, 130, 255), width=4)
+            bb = dr.multiline_textbbox((0, 0), q["question"], font=qf, align="center")
+            ctext(dr, 690 - (bb[3] - bb[1]) / 2 - bb[1], q["question"], qf, GOLD + (255,))
+        im.alpha_composite(layer(qd, a))
+    if T_OPT <= t < T_OUT:
+        for i, opt in enumerate(q["options"]):
+            good = i == q["answer"]
+            ap = prog(t, T_OPT + i * 0.12, 0.35) * (1 if good else 1 - prog(t, T_DIM - 0.3, 0.4)) * (1 - prog(t, T_OUT - 0.4, 0.4))
+            if ap <= 0: continue
+            x0 = 90 + (i % 2) * 470; y0 = 900 + (i // 2) * 230 + 30 * (1 - prog(t, T_OPT + i * 0.12, 0.35))
+            fill, outline, dim = CARD, (70, 85, 130), 1
+            if t >= T_REVEAL:
+                fill, outline, dim = (GREEN, (180, 255, 210), 1) if good else ((60, 40, 55), RED, 0.45)
+            def od(dr, x0=x0, y0=y0, fill=fill, outline=outline, opt=opt, i=i, dim=dim):
+                dr.rounded_rectangle([x0, y0, x0 + 430, y0 + 190], 36, fill=fill + (int(255 * dim),), outline=outline + (255,), width=5)
+                dr.ellipse([x0 + 28, y0 + 55, x0 + 108, y0 + 135], fill=(255, 255, 255, 40))
+                dr.text((x0 + 68, y0 + 95), "ABCD"[i], font=F("Bold", 44), fill=WHITE + (255,), anchor="mm")
+                dr.text((x0 + 270, y0 + 95), opt, font=of[i], fill=WHITE + (int(255 * max(dim, .6)),), anchor="mm")
+            im.alpha_composite(layer(od, ap))
+    if T_COUNT <= t < T_REVEAL + 0.3:
+        rem = max(0, T_REVEAL - t); frac = rem / cd
+        a = prog(t, T_COUNT, 0.3) * (1 - prog(t, T_REVEAL, 0.3))
+        def c(dr):
+            cx, cy, r = W // 2, 1490, 105
+            dr.ellipse([cx - r, cy - r, cx + r, cy + r], fill=CARD + (255,))
+            dr.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=(GOLD if rem > 2 else RED) + (255,), width=16)
+            dr.text((cx, cy), str(math.ceil(rem)), font=F("Bold", 100), fill=WHITE + (255,), anchor="mm")
+            ctext(dr, 1625, "Mets ta réponse en commentaire", F("Medium", 44), GREY + (255,))
+        im.alpha_composite(layer(c, a))
+    if T_REVEAL + 0.3 <= t < T_OUT:
+        a = prog(t, T_REVEAL + 0.3, 0.4) * (1 - prog(t, T_OUT - 0.4, 0.4))
+        def e(dr):
+            dr.rounded_rectangle([90, 1400, W - 90, 1640], 36, fill=(255, 255, 255, 22))
+            bb = dr.multiline_textbbox((0, 0), q["explain"], font=ef, spacing=14, align="center")
+            ctext(dr, 1520 - (bb[3] - bb[1]) / 2 - bb[1], q["explain"], ef, WHITE + (255,), 14)
+        im.alpha_composite(layer(e, a))
+
+def q_sounds(T_COUNT, cd):
+    s = [(T_COUNT + k, 0.12, 1200 if k < cd - 1 else 900, 0.35, 40) for k in range(cd)]
+    return s + [(T_COUNT + cd, 0.6, 880, 0.35, 5), (T_COUNT + cd + 0.08, 0.6, 1320, 0.3, 5)]
+
+def xp_sounds(t0):
+    return [(t0 + j * 0.07, 0.25, fq, 0.25, 12) for j, fq in enumerate([660, 880, 1100, 1320])]
+
+# ---------------------------------------------------------------- QUIZ (1 question)
 def quiz(spec):
     cd = spec.get("countdown", 5)
     T_Q, T_OPT, T_COUNT = 1.6, 2.6, 3.2
     T_REVEAL = T_COUNT + cd; T_XP = T_REVEAL + 2.8; T_CTA = T_XP + 2.2; T_END = T_CTA + 2.8
     hookf = fit(spec["hook"], "Bold", 84, W - 160)
-    qf = fit(spec["question"], "Bold", 120, W - 260)
-    of = [fit(o, "Bold", 80, 300) for o in spec["options"]]
-    ef = fit(spec["explain"], "Medium", 52, W - 240)
+    fonts = q_fonts(spec)
 
     def frame(t, bg):
         im = bg.copy().convert("RGBA"); header(im, spec["badge"])
@@ -120,52 +177,60 @@ def quiz(spec):
             a = prog(t, 0, 0.5) * (1 - prog(t, T_REVEAL, 0.4))
             y = 640 + 40 * (1 - prog(t, 0, 0.5)) if t < T_Q else 640 - 380 * prog(t, T_Q, 0.5)
             im.alpha_composite(layer(lambda dr: ctext(dr, y, spec["hook"], hookf, WHITE + (255,), 4), a))
-        if T_Q <= t < T_CTA:
-            a = prog(t, T_Q, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
-            def qd(dr):
-                dr.rounded_rectangle([90, 560, W - 90, 820], 40, fill=CARD + (255,), outline=(70, 85, 130, 255), width=4)
-                bb = dr.multiline_textbbox((0, 0), spec["question"], font=qf, align="center")
-                ctext(dr, 690 - (bb[3] - bb[1]) / 2 - bb[1], spec["question"], qf, GOLD + (255,))
-            im.alpha_composite(layer(qd, a))
-        if T_OPT <= t < T_CTA:
-            for i, opt in enumerate(spec["options"]):
-                good = i == spec["answer"]
-                ap = prog(t, T_OPT + i * 0.12, 0.35) * (1 if good else 1 - prog(t, T_XP - 0.3, 0.4)) * (1 - prog(t, T_CTA - 0.4, 0.4))
-                if ap <= 0: continue
-                x0 = 90 + (i % 2) * 470; y0 = 900 + (i // 2) * 230 + 30 * (1 - prog(t, T_OPT + i * 0.12, 0.35))
-                fill, outline, dim = CARD, (70, 85, 130), 1
-                if t >= T_REVEAL:
-                    fill, outline, dim = (GREEN, (180, 255, 210), 1) if good else ((60, 40, 55), RED, 0.45)
-                def od(dr, x0=x0, y0=y0, fill=fill, outline=outline, opt=opt, i=i, dim=dim):
-                    dr.rounded_rectangle([x0, y0, x0 + 430, y0 + 190], 36, fill=fill + (int(255 * dim),), outline=outline + (255,), width=5)
-                    dr.ellipse([x0 + 28, y0 + 55, x0 + 108, y0 + 135], fill=(255, 255, 255, 40))
-                    dr.text((x0 + 68, y0 + 95), "ABCD"[i], font=F("Bold", 44), fill=WHITE + (255,), anchor="mm")
-                    dr.text((x0 + 270, y0 + 95), opt, font=of[i], fill=WHITE + (int(255 * max(dim, .6)),), anchor="mm")
-                im.alpha_composite(layer(od, ap))
-        if T_COUNT <= t < T_REVEAL + 0.3:
-            rem = max(0, T_REVEAL - t); frac = rem / cd
-            a = prog(t, T_COUNT, 0.3) * (1 - prog(t, T_REVEAL, 0.3))
-            def c(dr):
-                cx, cy, r = W // 2, 1490, 105
-                dr.ellipse([cx - r, cy - r, cx + r, cy + r], fill=CARD + (255,))
-                dr.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=(GOLD if rem > 2 else RED) + (255,), width=16)
-                dr.text((cx, cy), str(math.ceil(rem)), font=F("Bold", 100), fill=WHITE + (255,), anchor="mm")
-                ctext(dr, 1625, "Mets ta réponse en commentaire", F("Medium", 44), GREY + (255,))
-            im.alpha_composite(layer(c, a))
-        if T_REVEAL + 0.3 <= t < T_CTA:
-            a = prog(t, T_REVEAL + 0.3, 0.4) * (1 - prog(t, T_CTA - 0.4, 0.4))
-            def e(dr):
-                dr.rounded_rectangle([90, 1400, W - 90, 1640], 36, fill=(255, 255, 255, 22))
-                bb = dr.multiline_textbbox((0, 0), spec["explain"], font=ef, spacing=14, align="center")
-                ctext(dr, 1520 - (bb[3] - bb[1]) / 2 - bb[1], spec["explain"], ef, WHITE + (255,), 14)
-            im.alpha_composite(layer(e, a))
+        draw_question(im, t, spec, fonts, cd, T_Q, T_OPT, T_COUNT, T_XP, T_CTA)
         if T_XP <= t < T_CTA: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 50))
         if t >= T_CTA: cta(im, t, T_CTA)
         return im.convert("RGB")
 
-    sounds = [(T_COUNT + s, 0.12, 1200 if s < cd - 1 else 900, 0.35, 40) for s in range(cd)]
-    sounds += [(T_REVEAL, 0.6, 880, 0.35, 5), (T_REVEAL + 0.08, 0.6, 1320, 0.3, 5)]
-    sounds += [(T_XP + j * 0.07, 0.25, fq, 0.25, 12) for j, fq in enumerate([660, 880, 1100, 1320])]
+    return frame, q_sounds(T_COUNT, cd) + xp_sounds(T_XP), T_END
+
+# ---------------------------------------------------------------- SÉRIE (plusieurs questions, >= 60 s)
+MIN_SERIE = 60.0
+
+def serie(spec):
+    qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
+    T_INTRO = 2.4
+    # par question : apparition, réponses 0,7 s, chrono 1,4 s, correction 3,6 s, sortie 0,4 s
+    SEG = 1.4 + cd + 3.6 + 0.4
+    T_SCORE = T_INTRO + n * SEG; T_XP = T_SCORE + 3.0; T_CTA = T_XP + 2.4; T_END = T_CTA + 3.0
+    if T_END < MIN_SERIE:
+        sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
+    hookf = fit(spec["hook"], "Bold", 84, W - 160)
+    fonts = [q_fonts(q) for q in qs]
+
+    def frame(t, bg):
+        im = bg.copy().convert("RGBA")
+        k = min(n - 1, max(0, int((t - T_INTRO) // SEG)))
+        header(im, qs[k].get("badge", spec["badge"]) if T_INTRO <= t < T_SCORE else spec["badge"])
+        if t < T_INTRO:
+            a = prog(t, 0, 0.5) * (1 - prog(t, T_INTRO - 0.4, 0.4))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 700 + 40 * (1 - prog(t, 0, 0.5)), spec["hook"], hookf, WHITE + (255,), 4), a))
+        elif t < T_SCORE:
+            u = t - T_INTRO - k * SEG
+            a = prog(u, 0, 0.4) * (1 - prog(u, SEG - 0.4, 0.4))
+            def pr(dr):
+                ctext(dr, 260, f"Question {k + 1}/{n}", F("Bold", 64), CYAN + (255,))
+                x0 = (W - (n * 44 - 16)) / 2
+                for j in range(n):
+                    dr.rounded_rectangle([x0 + j * 44, 380, x0 + j * 44 + 28, 396], 8,
+                                         fill=GOLD + (255,) if j <= k else (255, 255, 255, 40))
+            im.alpha_composite(layer(pr, a))
+            draw_question(im, u, qs[k], fonts[k], cd, 0.0, 0.7, 1.4, 1.4 + cd + 1.2, SEG)
+        elif t < T_CTA:
+            a = prog(t, T_SCORE, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 640 + 40 * (1 - prog(t, T_SCORE, 0.5)),
+                f"Ton score sur {n} ?", F("Bold", 100), GOLD + (255,)), a))
+            im.alpha_composite(layer(lambda dr: ctext(dr, 820, "Dis-le en commentaire !", F("Medium", 56), WHITE + (255,)), a))
+            if t >= T_XP: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 50 * n))
+        else:
+            cta(im, t, T_CTA)
+        return im.convert("RGB")
+
+    sounds = []
+    for k in range(n):
+        s0 = T_INTRO + k * SEG
+        sounds += [(s0, 0.3, 700, 0.25, 8)] + [(s0 + st, d, f, v, dc) for st, d, f, v, dc in q_sounds(1.4, cd)]
+    sounds += [(T_SCORE, 0.5, 880, 0.3, 5)] + xp_sounds(T_XP)
     return frame, sounds, T_END
 
 # ---------------------------------------------------------------- ASTUCE
@@ -222,7 +287,7 @@ def astuce(spec):
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
     check_glyphs(spec)
-    frame, sounds, T_END = {"quiz": quiz, "astuce": astuce}[spec["type"]](spec)
+    frame, sounds, T_END = {"quiz": quiz, "serie": serie, "astuce": astuce}[spec["type"]](spec)
     SR = 44100; N = int(SR * T_END); buf = [0.0] * N
     for start, dur, freq, vol, decay in sounds:
         for k in range(int(dur * SR)):
