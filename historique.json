@@ -1,687 +1,757 @@
 [
-  {
-    "date": "2026-11-15T20:15+01:00",
-    "creneau": "test",
-    "type": "quiz",
-    "niveau": "4e",
-    "matiere": "maths",
-    "sujet": "puissances : produit de puissances de même base (2³ × 2²)",
-    "fichier": "reels/2026-11-15-test.mp4",
-    "media_id": "18142682929527531"
+ {
+  "date": "2026-11-15T20:15+01:00",
+  "creneau": "test",
+  "type": "quiz",
+  "niveau": "4e",
+  "matiere": "maths",
+  "sujet": "puissances : produit de puissances de même base (2³ × 2²)",
+  "fichier": "reels/2026-11-15-test.mp4",
+  "media_id": "18142682929527531"
+ },
+ {
+  "date": "2026-11-16T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "question_n": 1,
+  "niveau": "6e",
+  "matiere": "géographie",
+  "sujet": "plus long fleuve de France (la Loire)",
+  "fichier": "reels/2026-11-16-08h.mp4",
+  "posty_post_id": "p0mwiwxjiy0gyao63ju",
+  "posty_media_id": "med0mwiwwos3i0snnux3f",
+  "publie_le": "2026-11-16T12:52+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
+    "id": "17978933601155083"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708735597629327382"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
+   }
   },
-  {
-    "date": "2026-11-16T08:00+01:00",
-    "creneau": "8h",
-    "type": "serie",
-    "question_n": 1,
-    "niveau": "6e",
-    "matiere": "géographie",
-    "sujet": "plus long fleuve de France (la Loire)",
-    "fichier": "reels/2026-11-16-08h.mp4",
-    "posty_post_id": "p0mwiwxjiy0gyao63ju",
-    "posty_media_id": "med0mwiwwos3i0snnux3f",
-    "publie_le": "2026-11-16T12:52+01:00",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
-        "id": "17978933601155083"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708735597629327382"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
-      }
+  "republication": {
+   "fichier": "reels/2026-11-16-08h-v2.mp4",
+   "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
+   "duree_s": 117.1,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8za40s1rrwa2dt",
+   "posty_media_id": "med0mwj8xrvnhpa2nc89q",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
+     "id": "18105059432454957"
     },
-    "republication": {
-      "fichier": "reels/2026-11-16-08h-v2.mp4",
-      "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
-      "duree_s": 117.1,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8za40s1rrwa2dt",
-      "posty_media_id": "med0mwj8xrvnhpa2nc89q",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
-          "id": "18105059432454957"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571937814"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T08:00+01:00",
-    "creneau": "8h",
-    "type": "serie",
-    "question_n": 2,
-    "niveau": "4e",
-    "matiere": "anglais",
-    "sujet": "prétérit de to go (went)",
-    "fichier": "reels/2026-11-16-08h.mp4",
-    "posty_post_id": "p0mwiwxjiy0gyao63ju",
-    "posty_media_id": "med0mwiwwos3i0snnux3f",
-    "publie_le": "2026-11-16T12:52+01:00",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
-        "id": "17978933601155083"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708735597629327382"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
-      }
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571937814"
     },
-    "republication": {
-      "fichier": "reels/2026-11-16-08h-v2.mp4",
-      "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
-      "duree_s": 117.1,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8za40s1rrwa2dt",
-      "posty_media_id": "med0mwj8xrvnhpa2nc89q",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
-          "id": "18105059432454957"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571937814"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
-        }
-      }
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
     }
-  },
-  {
-    "date": "2026-11-16T08:00+01:00",
-    "creneau": "8h",
-    "type": "serie",
-    "question_n": 3,
-    "niveau": "5e",
-    "matiere": "SVT",
-    "sujet": "nombre de cavités du cœur humain (4)",
-    "fichier": "reels/2026-11-16-08h.mp4",
-    "posty_post_id": "p0mwiwxjiy0gyao63ju",
-    "posty_media_id": "med0mwiwwos3i0snnux3f",
-    "publie_le": "2026-11-16T12:52+01:00",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
-        "id": "17978933601155083"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708735597629327382"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-08h-v2.mp4",
-      "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
-      "duree_s": 117.1,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8za40s1rrwa2dt",
-      "posty_media_id": "med0mwj8xrvnhpa2nc89q",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
-          "id": "18105059432454957"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571937814"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T08:00+01:00",
-    "creneau": "8h",
-    "type": "serie",
-    "question_n": 4,
-    "niveau": "3e",
-    "matiere": "maths",
-    "sujet": "racine carrée de 144 (12)",
-    "fichier": "reels/2026-11-16-08h.mp4",
-    "posty_post_id": "p0mwiwxjiy0gyao63ju",
-    "posty_media_id": "med0mwiwwos3i0snnux3f",
-    "publie_le": "2026-11-16T12:52+01:00",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
-        "id": "17978933601155083"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708735597629327382"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-08h-v2.mp4",
-      "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
-      "duree_s": 117.1,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8za40s1rrwa2dt",
-      "posty_media_id": "med0mwj8xrvnhpa2nc89q",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
-          "id": "18105059432454957"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571937814"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T08:00+01:00",
-    "creneau": "8h",
-    "type": "serie",
-    "question_n": 5,
-    "niveau": "5e",
-    "matiere": "français",
-    "sujet": "nature du mot « rapidement » (adverbe)",
-    "fichier": "reels/2026-11-16-08h.mp4",
-    "posty_post_id": "p0mwiwxjiy0gyao63ju",
-    "posty_media_id": "med0mwiwwos3i0snnux3f",
-    "publie_le": "2026-11-16T12:52+01:00",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
-        "id": "17978933601155083"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708735597629327382"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-08h-v2.mp4",
-      "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
-      "duree_s": 117.1,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8za40s1rrwa2dt",
-      "posty_media_id": "med0mwj8xrvnhpa2nc89q",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
-          "id": "18105059432454957"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571937814"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T13:00+01:00",
-    "creneau": "13h",
-    "type": "astuce",
-    "niveau": "2nde",
-    "matiere": "physique-chimie",
-    "sujet": "conversion km/h en m/s : diviser par 3,6 (90 km/h = 25 m/s)",
-    "fichier": "reels/2026-11-16-13h.mp4",
-    "posty_post_id": "p0mwj7kbt1yjifk7hrc",
-    "posty_media_id": "med0mwj7jfhqvjz4nej98",
-    "publie_le": "2026-11-16T12:00:21Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzThTrCLfZ/",
-        "id": "18077451878487143"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708737638949554198"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=LileqCIekLI"
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T14:00+01:00",
-    "creneau": "test",
-    "type": "astuce",
-    "info_n": 1,
-    "niveau": "5e",
-    "matiere": "français",
-    "sujet": "a ou à : remplacer par « avait » (il a faim)",
-    "fichier": "reels/2026-11-16-test-astuce.mp4",
-    "posty_post_id": "p0mwj8fz0613lxu02ld",
-    "posty_media_id": "med0mwj8f3wbxem9ycwqo",
-    "publie_le": "2026-11-16T12:22:03Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
-        "id": "17919467046265525"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708743316015319062"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
-      "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
-      "duree_s": 66.8,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8zm6b90zat84vy",
-      "posty_media_id": "med0mwj8xzqq03yspodbn",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
-          "id": "18026896175866596"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571986966"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T14:00+01:00",
-    "creneau": "test",
-    "type": "astuce",
-    "info_n": 2,
-    "niveau": "6e",
-    "matiere": "maths",
-    "sujet": "diviser par 0,5 = multiplier par 2 (7 ÷ 0,5 = 14)",
-    "fichier": "reels/2026-11-16-test-astuce.mp4",
-    "posty_post_id": "p0mwj8fz0613lxu02ld",
-    "posty_media_id": "med0mwj8f3wbxem9ycwqo",
-    "publie_le": "2026-11-16T12:22:03Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
-        "id": "17919467046265525"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708743316015319062"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
-      "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
-      "duree_s": 66.8,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8zm6b90zat84vy",
-      "posty_media_id": "med0mwj8xzqq03yspodbn",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
-          "id": "18026896175866596"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571986966"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T14:00+01:00",
-    "creneau": "test",
-    "type": "astuce",
-    "info_n": 3,
-    "niveau": "4e",
-    "matiere": "anglais",
-    "sujet": "for + durée / since + point de départ",
-    "fichier": "reels/2026-11-16-test-astuce.mp4",
-    "posty_post_id": "p0mwj8fz0613lxu02ld",
-    "posty_media_id": "med0mwj8f3wbxem9ycwqo",
-    "publie_le": "2026-11-16T12:22:03Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
-        "id": "17919467046265525"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708743316015319062"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
-      "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
-      "duree_s": 66.8,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8zm6b90zat84vy",
-      "posty_media_id": "med0mwj8xzqq03yspodbn",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
-          "id": "18026896175866596"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571986966"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T14:00+01:00",
-    "creneau": "test",
-    "type": "astuce",
-    "info_n": 4,
-    "niveau": "3e",
-    "matiere": "histoire",
-    "sujet": "Constitution de la Ve République (4 octobre 1958, de Gaulle)",
-    "fichier": "reels/2026-11-16-test-astuce.mp4",
-    "posty_post_id": "p0mwj8fz0613lxu02ld",
-    "posty_media_id": "med0mwj8f3wbxem9ycwqo",
-    "publie_le": "2026-11-16T12:22:03Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
-        "id": "17919467046265525"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708743316015319062"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
-      "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
-      "duree_s": 66.8,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8zm6b90zat84vy",
-      "posty_media_id": "med0mwj8xzqq03yspodbn",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
-          "id": "18026896175866596"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571986966"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T14:00+01:00",
-    "creneau": "test",
-    "type": "astuce",
-    "info_n": 5,
-    "niveau": "2nde",
-    "matiere": "SVT",
-    "sujet": "complémentarité des bases de l'ADN (A-T, C-G)",
-    "fichier": "reels/2026-11-16-test-astuce.mp4",
-    "posty_post_id": "p0mwj8fz0613lxu02ld",
-    "posty_media_id": "med0mwj8f3wbxem9ycwqo",
-    "publie_le": "2026-11-16T12:22:03Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
-        "id": "17919467046265525"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708743316015319062"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
-      }
-    },
-    "republication": {
-      "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
-      "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
-      "duree_s": 66.8,
-      "voix_off": true,
-      "posty_post_id": "p0mwj8zm6b90zat84vy",
-      "posty_media_id": "med0mwj8xzqq03yspodbn",
-      "publie_le": "2026-11-16T12:37Z",
-      "reseaux": {
-        "instagram": {
-          "statut": "delivered",
-          "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
-          "id": "18026896175866596"
-        },
-        "tiktok": {
-          "statut": "delivered",
-          "id": "v_pub_url~v2-1.7708747218571986966"
-        },
-        "youtube": {
-          "statut": "delivered",
-          "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
-        }
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T20:00+01:00",
-    "creneau": "20h",
-    "type": "serie",
-    "format": "Défi de la Ligue",
-    "question_n": 1,
-    "niveau": "3e",
-    "matiere": "maths",
-    "sujet": "identité remarquable : développer (x + 3)² = x² + 6x + 9",
-    "fichier": "reels/2026-11-16-20h.mp4",
-    "couverture": "reels/2026-11-16-20h-cover.jpg",
-    "duree_s": 119.4,
-    "voix_off": true,
-    "posty_post_id": "p0mwjmm6izm5a8bhd1x",
-    "posty_media_id": "med0mwjml5tn572umditk",
-    "publie_le": "2026-11-16T18:59Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
-        "id": "18653738953052251"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708845486375421955"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T20:00+01:00",
-    "creneau": "20h",
-    "type": "serie",
-    "format": "Défi de la Ligue",
-    "question_n": 2,
-    "niveau": "Terminale",
-    "matiere": "philosophie",
-    "sujet": "« Je pense, donc je suis » : Descartes (Discours de la méthode, 1637)",
-    "fichier": "reels/2026-11-16-20h.mp4",
-    "couverture": "reels/2026-11-16-20h-cover.jpg",
-    "duree_s": 119.4,
-    "voix_off": true,
-    "posty_post_id": "p0mwjmm6izm5a8bhd1x",
-    "posty_media_id": "med0mwjml5tn572umditk",
-    "publie_le": "2026-11-16T18:59Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
-        "id": "18653738953052251"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708845486375421955"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T20:00+01:00",
-    "creneau": "20h",
-    "type": "serie",
-    "format": "Défi de la Ligue",
-    "question_n": 3,
-    "niveau": "2nde",
-    "matiere": "physique-chimie",
-    "sujet": "masse molaire de l'eau H2O (18 g/mol)",
-    "fichier": "reels/2026-11-16-20h.mp4",
-    "couverture": "reels/2026-11-16-20h-cover.jpg",
-    "duree_s": 119.4,
-    "voix_off": true,
-    "posty_post_id": "p0mwjmm6izm5a8bhd1x",
-    "posty_media_id": "med0mwjml5tn572umditk",
-    "publie_le": "2026-11-16T18:59Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
-        "id": "18653738953052251"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708845486375421955"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
-      }
-    }
-  },
-  {
-    "date": "2026-11-16T20:00+01:00",
-    "creneau": "20h",
-    "type": "serie",
-    "format": "Défi de la Ligue",
-    "question_n": 4,
-    "niveau": "Terminale",
-    "matiere": "SVT",
-    "sujet": "méiose : 4 cellules filles haploïdes",
-    "fichier": "reels/2026-11-16-20h.mp4",
-    "couverture": "reels/2026-11-16-20h-cover.jpg",
-    "duree_s": 119.4,
-    "voix_off": true,
-    "posty_post_id": "p0mwjmm6izm5a8bhd1x",
-    "posty_media_id": "med0mwjml5tn572umditk",
-    "publie_le": "2026-11-16T18:59Z",
-    "reseaux": {
-      "instagram": {
-        "statut": "delivered",
-        "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
-        "id": "18653738953052251"
-      },
-      "tiktok": {
-        "statut": "delivered",
-        "id": "v_pub_url~v2-1.7708845486375421955"
-      },
-      "youtube": {
-        "statut": "delivered",
-        "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
-      }
-    }
+   }
   }
+ },
+ {
+  "date": "2026-11-16T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "question_n": 2,
+  "niveau": "4e",
+  "matiere": "anglais",
+  "sujet": "prétérit de to go (went)",
+  "fichier": "reels/2026-11-16-08h.mp4",
+  "posty_post_id": "p0mwiwxjiy0gyao63ju",
+  "posty_media_id": "med0mwiwwos3i0snnux3f",
+  "publie_le": "2026-11-16T12:52+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
+    "id": "17978933601155083"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708735597629327382"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-08h-v2.mp4",
+   "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
+   "duree_s": 117.1,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8za40s1rrwa2dt",
+   "posty_media_id": "med0mwj8xrvnhpa2nc89q",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
+     "id": "18105059432454957"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571937814"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "question_n": 3,
+  "niveau": "5e",
+  "matiere": "SVT",
+  "sujet": "nombre de cavités du cœur humain (4)",
+  "fichier": "reels/2026-11-16-08h.mp4",
+  "posty_post_id": "p0mwiwxjiy0gyao63ju",
+  "posty_media_id": "med0mwiwwos3i0snnux3f",
+  "publie_le": "2026-11-16T12:52+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
+    "id": "17978933601155083"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708735597629327382"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-08h-v2.mp4",
+   "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
+   "duree_s": 117.1,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8za40s1rrwa2dt",
+   "posty_media_id": "med0mwj8xrvnhpa2nc89q",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
+     "id": "18105059432454957"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571937814"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "question_n": 4,
+  "niveau": "3e",
+  "matiere": "maths",
+  "sujet": "racine carrée de 144 (12)",
+  "fichier": "reels/2026-11-16-08h.mp4",
+  "posty_post_id": "p0mwiwxjiy0gyao63ju",
+  "posty_media_id": "med0mwiwwos3i0snnux3f",
+  "publie_le": "2026-11-16T12:52+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
+    "id": "17978933601155083"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708735597629327382"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-08h-v2.mp4",
+   "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
+   "duree_s": 117.1,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8za40s1rrwa2dt",
+   "posty_media_id": "med0mwj8xrvnhpa2nc89q",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
+     "id": "18105059432454957"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571937814"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "question_n": 5,
+  "niveau": "5e",
+  "matiere": "français",
+  "sujet": "nature du mot « rapidement » (adverbe)",
+  "fichier": "reels/2026-11-16-08h.mp4",
+  "posty_post_id": "p0mwiwxjiy0gyao63ju",
+  "posty_media_id": "med0mwiwwos3i0snnux3f",
+  "publie_le": "2026-11-16T12:52+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzSqppH0dV/",
+    "id": "17978933601155083"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708735597629327382"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=lXLt3dMRcUY"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-08h-v2.mp4",
+   "couverture": "reels/2026-11-16-08h-v2-cover.jpg",
+   "duree_s": 117.1,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8za40s1rrwa2dt",
+   "posty_media_id": "med0mwj8xrvnhpa2nc89q",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX0ofm8FG/",
+     "id": "18105059432454957"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571937814"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=7Lhi3i_kDFg"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T13:00+01:00",
+  "creneau": "13h",
+  "type": "astuce",
+  "niveau": "2nde",
+  "matiere": "physique-chimie",
+  "sujet": "conversion km/h en m/s : diviser par 3,6 (90 km/h = 25 m/s)",
+  "fichier": "reels/2026-11-16-13h.mp4",
+  "posty_post_id": "p0mwj7kbt1yjifk7hrc",
+  "posty_media_id": "med0mwj7jfhqvjz4nej98",
+  "publie_le": "2026-11-16T12:00:21Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzThTrCLfZ/",
+    "id": "18077451878487143"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708737638949554198"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=LileqCIekLI"
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T14:00+01:00",
+  "creneau": "test",
+  "type": "astuce",
+  "info_n": 1,
+  "niveau": "5e",
+  "matiere": "français",
+  "sujet": "a ou à : remplacer par « avait » (il a faim)",
+  "fichier": "reels/2026-11-16-test-astuce.mp4",
+  "posty_post_id": "p0mwj8fz0613lxu02ld",
+  "posty_media_id": "med0mwj8f3wbxem9ycwqo",
+  "publie_le": "2026-11-16T12:22:03Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
+    "id": "17919467046265525"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708743316015319062"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
+   "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
+   "duree_s": 66.8,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8zm6b90zat84vy",
+   "posty_media_id": "med0mwj8xzqq03yspodbn",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
+     "id": "18026896175866596"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571986966"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T14:00+01:00",
+  "creneau": "test",
+  "type": "astuce",
+  "info_n": 2,
+  "niveau": "6e",
+  "matiere": "maths",
+  "sujet": "diviser par 0,5 = multiplier par 2 (7 ÷ 0,5 = 14)",
+  "fichier": "reels/2026-11-16-test-astuce.mp4",
+  "posty_post_id": "p0mwj8fz0613lxu02ld",
+  "posty_media_id": "med0mwj8f3wbxem9ycwqo",
+  "publie_le": "2026-11-16T12:22:03Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
+    "id": "17919467046265525"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708743316015319062"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
+   "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
+   "duree_s": 66.8,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8zm6b90zat84vy",
+   "posty_media_id": "med0mwj8xzqq03yspodbn",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
+     "id": "18026896175866596"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571986966"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T14:00+01:00",
+  "creneau": "test",
+  "type": "astuce",
+  "info_n": 3,
+  "niveau": "4e",
+  "matiere": "anglais",
+  "sujet": "for + durée / since + point de départ",
+  "fichier": "reels/2026-11-16-test-astuce.mp4",
+  "posty_post_id": "p0mwj8fz0613lxu02ld",
+  "posty_media_id": "med0mwj8f3wbxem9ycwqo",
+  "publie_le": "2026-11-16T12:22:03Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
+    "id": "17919467046265525"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708743316015319062"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
+   "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
+   "duree_s": 66.8,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8zm6b90zat84vy",
+   "posty_media_id": "med0mwj8xzqq03yspodbn",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
+     "id": "18026896175866596"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571986966"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T14:00+01:00",
+  "creneau": "test",
+  "type": "astuce",
+  "info_n": 4,
+  "niveau": "3e",
+  "matiere": "histoire",
+  "sujet": "Constitution de la Ve République (4 octobre 1958, de Gaulle)",
+  "fichier": "reels/2026-11-16-test-astuce.mp4",
+  "posty_post_id": "p0mwj8fz0613lxu02ld",
+  "posty_media_id": "med0mwj8f3wbxem9ycwqo",
+  "publie_le": "2026-11-16T12:22:03Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
+    "id": "17919467046265525"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708743316015319062"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
+   "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
+   "duree_s": 66.8,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8zm6b90zat84vy",
+   "posty_media_id": "med0mwj8xzqq03yspodbn",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
+     "id": "18026896175866596"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571986966"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T14:00+01:00",
+  "creneau": "test",
+  "type": "astuce",
+  "info_n": 5,
+  "niveau": "2nde",
+  "matiere": "SVT",
+  "sujet": "complémentarité des bases de l'ADN (A-T, C-G)",
+  "fichier": "reels/2026-11-16-test-astuce.mp4",
+  "posty_post_id": "p0mwj8fz0613lxu02ld",
+  "posty_media_id": "med0mwj8f3wbxem9ycwqo",
+  "publie_le": "2026-11-16T12:22:03Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DfzWF8ukcf1/",
+    "id": "17919467046265525"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708743316015319062"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=kdYboK50W6g"
+   }
+  },
+  "republication": {
+   "fichier": "reels/2026-11-16-test-astuce-v2.mp4",
+   "couverture": "reels/2026-11-16-test-astuce-v2-cover.jpg",
+   "duree_s": 66.8,
+   "voix_off": true,
+   "posty_post_id": "p0mwj8zm6b90zat84vy",
+   "posty_media_id": "med0mwj8xzqq03yspodbn",
+   "publie_le": "2026-11-16T12:37Z",
+   "reseaux": {
+    "instagram": {
+     "statut": "delivered",
+     "lien": "https://www.instagram.com/reel/DfzX1-qk2n7/",
+     "id": "18026896175866596"
+    },
+    "tiktok": {
+     "statut": "delivered",
+     "id": "v_pub_url~v2-1.7708747218571986966"
+    },
+    "youtube": {
+     "statut": "delivered",
+     "lien": "https://www.youtube.com/watch?v=MlXlZ7-mxHQ"
+    }
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 1,
+  "niveau": "3e",
+  "matiere": "maths",
+  "sujet": "identité remarquable : développer (x + 3)² = x² + 6x + 9",
+  "fichier": "reels/2026-11-16-20h.mp4",
+  "couverture": "reels/2026-11-16-20h-cover.jpg",
+  "duree_s": 119.4,
+  "voix_off": true,
+  "posty_post_id": "p0mwjmm6izm5a8bhd1x",
+  "posty_media_id": "med0mwjml5tn572umditk",
+  "publie_le": "2026-11-16T18:59Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
+    "id": "18653738953052251"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708845486375421955"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 2,
+  "niveau": "Terminale",
+  "matiere": "philosophie",
+  "sujet": "« Je pense, donc je suis » : Descartes (Discours de la méthode, 1637)",
+  "fichier": "reels/2026-11-16-20h.mp4",
+  "couverture": "reels/2026-11-16-20h-cover.jpg",
+  "duree_s": 119.4,
+  "voix_off": true,
+  "posty_post_id": "p0mwjmm6izm5a8bhd1x",
+  "posty_media_id": "med0mwjml5tn572umditk",
+  "publie_le": "2026-11-16T18:59Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
+    "id": "18653738953052251"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708845486375421955"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 3,
+  "niveau": "2nde",
+  "matiere": "physique-chimie",
+  "sujet": "masse molaire de l'eau H2O (18 g/mol)",
+  "fichier": "reels/2026-11-16-20h.mp4",
+  "couverture": "reels/2026-11-16-20h-cover.jpg",
+  "duree_s": 119.4,
+  "voix_off": true,
+  "posty_post_id": "p0mwjmm6izm5a8bhd1x",
+  "posty_media_id": "med0mwjml5tn572umditk",
+  "publie_le": "2026-11-16T18:59Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
+    "id": "18653738953052251"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708845486375421955"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
+   }
+  }
+ },
+ {
+  "date": "2026-11-16T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 4,
+  "niveau": "Terminale",
+  "matiere": "SVT",
+  "sujet": "méiose : 4 cellules filles haploïdes",
+  "fichier": "reels/2026-11-16-20h.mp4",
+  "couverture": "reels/2026-11-16-20h-cover.jpg",
+  "duree_s": 119.4,
+  "voix_off": true,
+  "posty_post_id": "p0mwjmm6izm5a8bhd1x",
+  "posty_media_id": "med0mwjml5tn572umditk",
+  "publie_le": "2026-11-16T18:59Z",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df0DfqDjZC5/",
+    "id": "18653738953052251"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7708845486375421955"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=-p_yNBX2Rcw"
+   }
+  }
+ },
+ {
+  "date": "2026-11-17T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "format": "Question du jour",
+  "question_n": 1,
+  "niveau": "6e",
+  "matiere": "histoire",
+  "sujet": "premier empereur romain (Auguste, 27 av. J.-C.)",
+  "fichier": "reels/2026-11-17-08h.mp4",
+  "couverture": "reels/2026-11-17-08h-cover.jpg",
+  "duree_s": 118.0,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-17T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "format": "Question du jour",
+  "question_n": 2,
+  "niveau": "5e",
+  "matiere": "physique-chimie",
+  "sujet": "température d'ébullition de l'eau pure (100 °C)",
+  "fichier": "reels/2026-11-17-08h.mp4",
+  "couverture": "reels/2026-11-17-08h-cover.jpg",
+  "duree_s": 118.0,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-17T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "format": "Question du jour",
+  "question_n": 3,
+  "niveau": "4e",
+  "matiere": "anglais",
+  "sujet": "pluriel irrégulier de child (children)",
+  "fichier": "reels/2026-11-17-08h.mp4",
+  "couverture": "reels/2026-11-17-08h-cover.jpg",
+  "duree_s": 118.0,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-17T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "format": "Question du jour",
+  "question_n": 4,
+  "niveau": "3e",
+  "matiere": "français",
+  "sujet": "passé simple de venir : il vint",
+  "fichier": "reels/2026-11-17-08h.mp4",
+  "couverture": "reels/2026-11-17-08h-cover.jpg",
+  "duree_s": 118.0,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-17T08:00+01:00",
+  "creneau": "8h",
+  "type": "serie",
+  "format": "Question du jour",
+  "question_n": 5,
+  "niveau": "6e",
+  "matiere": "maths",
+  "sujet": "nombre de côtés d'un hexagone (6)",
+  "fichier": "reels/2026-11-17-08h.mp4",
+  "couverture": "reels/2026-11-17-08h-cover.jpg",
+  "duree_s": 118.0,
+  "voix_off": true
+ }
 ]
