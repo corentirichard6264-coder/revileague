@@ -1003,5 +1003,61 @@
         "lien": "https://www.youtube.com/watch?v=5M-bmNu3TSE"
       }
     }
+  },
+  {
+    "date": "2026-11-17T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 1,
+    "niveau": "3e",
+    "matiere": "histoire",
+    "sujet": "chute du mur de Berlin (9 novembre 1989)",
+    "fichier": "reels/2026-11-17-20h.mp4",
+    "couverture": "reels/2026-11-17-20h-cover.jpg",
+    "duree_s": 124.8,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-17T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 2,
+    "niveau": "1re",
+    "matiere": "maths",
+    "sujet": "nombre de solutions réelles de x² + x + 1 = 0 (discriminant -3 < 0 : aucune)",
+    "fichier": "reels/2026-11-17-20h.mp4",
+    "couverture": "reels/2026-11-17-20h-cover.jpg",
+    "duree_s": 124.8,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-17T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 3,
+    "niveau": "1re",
+    "matiere": "français",
+    "sujet": "figure de style « Cette obscure clarté qui tombe des étoiles » : oxymore (Corneille, Le Cid)",
+    "fichier": "reels/2026-11-17-20h.mp4",
+    "couverture": "reels/2026-11-17-20h-cover.jpg",
+    "duree_s": 124.8,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-17T20:00+01:00",
+    "creneau": "20h",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "question_n": 4,
+    "niveau": "3e",
+    "matiere": "SVT",
+    "sujet": "donneur universel de globules rouges (O négatif)",
+    "fichier": "reels/2026-11-17-20h.mp4",
+    "couverture": "reels/2026-11-17-20h-cover.jpg",
+    "duree_s": 124.8,
+    "voix_off": true
   }
 ]
