@@ -1131,5 +1131,75 @@
         "lien": "https://www.youtube.com/watch?v=v7iYav1GXBs"
       }
     }
+  },
+  {
+    "date": "2026-11-18T08:00+01:00",
+    "creneau": "8h",
+    "type": "serie",
+    "format": "Question du jour",
+    "question_n": 1,
+    "niveau": "6e",
+    "matiere": "géographie",
+    "sujet": "capitale de l'Australie (Canberra)",
+    "fichier": "reels/2026-11-18-08h.mp4",
+    "couverture": "reels/2026-11-18-08h-cover.jpg",
+    "duree_s": 113.2,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-18T08:00+01:00",
+    "creneau": "8h",
+    "type": "serie",
+    "format": "Question du jour",
+    "question_n": 2,
+    "niveau": "5e",
+    "matiere": "maths",
+    "sujet": "somme des angles d'un triangle (180°)",
+    "fichier": "reels/2026-11-18-08h.mp4",
+    "couverture": "reels/2026-11-18-08h-cover.jpg",
+    "duree_s": 113.2,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-18T08:00+01:00",
+    "creneau": "8h",
+    "type": "serie",
+    "format": "Question du jour",
+    "question_n": 3,
+    "niveau": "4e",
+    "matiere": "SVT",
+    "sujet": "organe qui produit l'insuline (pancréas)",
+    "fichier": "reels/2026-11-18-08h.mp4",
+    "couverture": "reels/2026-11-18-08h-cover.jpg",
+    "duree_s": 113.2,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-18T08:00+01:00",
+    "creneau": "8h",
+    "type": "serie",
+    "format": "Question du jour",
+    "question_n": 4,
+    "niveau": "5e",
+    "matiere": "anglais",
+    "sujet": "comparatif de good (better)",
+    "fichier": "reels/2026-11-18-08h.mp4",
+    "couverture": "reels/2026-11-18-08h-cover.jpg",
+    "duree_s": 113.2,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-18T08:00+01:00",
+    "creneau": "8h",
+    "type": "serie",
+    "format": "Question du jour",
+    "question_n": 5,
+    "niveau": "4e",
+    "matiere": "français",
+    "sujet": "temps de « nous chantions » (imparfait)",
+    "fichier": "reels/2026-11-18-08h.mp4",
+    "couverture": "reels/2026-11-18-08h-cover.jpg",
+    "duree_s": 113.2,
+    "voix_off": true
   }
 ]
