@@ -1451,5 +1451,61 @@
     "lien": "https://www.youtube.com/watch?v=jJW9x5Qg9Gg"
    }
   }
+ },
+ {
+  "date": "2026-11-18T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 1,
+  "niveau": "3e",
+  "matiere": "histoire",
+  "sujet": "signature du traité de Versailles (28 juin 1919)",
+  "fichier": "reels/2026-11-18-20h.mp4",
+  "couverture": "reels/2026-11-18-20h-cover.jpg",
+  "duree_s": 127.7,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-18T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 2,
+  "niveau": "2nde",
+  "matiere": "maths",
+  "sujet": "probabilité somme = 7 avec 2 dés (6/36 = 1/6)",
+  "fichier": "reels/2026-11-18-20h.mp4",
+  "couverture": "reels/2026-11-18-20h-cover.jpg",
+  "duree_s": 127.7,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-18T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 3,
+  "niveau": "Terminale",
+  "matiere": "anglais",
+  "sujet": "conditionnel 3 : If I had known, I would have come",
+  "fichier": "reels/2026-11-18-20h.mp4",
+  "couverture": "reels/2026-11-18-20h-cover.jpg",
+  "duree_s": 127.7,
+  "voix_off": true
+ },
+ {
+  "date": "2026-11-18T20:00+01:00",
+  "creneau": "20h",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "question_n": 4,
+  "niveau": "1re",
+  "matiere": "physique-chimie",
+  "sujet": "énergie cinétique Ec = ½ m v²",
+  "fichier": "reels/2026-11-18-20h.mp4",
+  "couverture": "reels/2026-11-18-20h-cover.jpg",
+  "duree_s": 127.7,
+  "voix_off": true
  }
 ]
