@@ -10,11 +10,21 @@ corrections détaillées, XP, récompenses, rangs, classements entre joueurs. To
 
 ## Les 3 créneaux (heure de Paris)
 
-| Heure | Format | Spec `type` | Contenu |
-|---|---|---|---|
-| 8h | Question du jour | `serie` | **5 questions** rapides (6e à 3e), matières variées, countdown 4 s, xp 250. Durée ≈ 65 s |
-| 13h | Le savais-tu ? | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
-| 20h | Défi de la Ligue | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 63 s |
+| Fenêtre | Format | Fichier | Spec `type` | Contenu |
+|---|---|---|---|---|
+| matin 7h – 11h59 | Quiz du jour | `reels/AAAA-MM-JJ-quiz.mp4` | `serie` | **8 questions** (6e à 3e), matières variées, countdown 4 s, xp 400. Durée ≈ 1 min 45 |
+| midi 12h – 16h59 | Le savais-tu ? | `reels/AAAA-MM-JJ-astuce.mp4` | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
+| soir 17h – 22h59 | Défi de la Ligue | `reels/AAAA-MM-JJ-defi.mp4` | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 1 min 10 |
+
+**Heure de publication variable (demande de l'utilisateur, 20/11/2026) : jamais la même heure d'un jour à l'autre,
+pour mesurer quel créneau donne le plus de vues.** Chaque routine tourne au début de sa fenêtre, prépare la vidéo,
+puis la **programme** dans Posty (pas de publication immédiate) à une heure choisie ainsi :
+1. Heures possibles = les heures pleines de la fenêtre (matin 7–11, midi 12–16, soir 17–22).
+2. Dans `historique.json`, compte combien de fois chaque heure a déjà servi pour ce format (champ `heure_publication`).
+   Garde les heures les moins utilisées, **exclus l'heure utilisée la veille** pour ce format, et tires-en une au hasard.
+3. Minutes au hasard (00–59). L'heure finale doit être au moins 30 min après maintenant (sinon prends l'heure suivante).
+4. Note dans `historique.json`, pour chaque entrée de la vidéo : `heure_publication` (ex. « 9 ») et
+   `publie_a` (ex. « 2026-11-21T09:37:00+01:00 »). C'est ce qui servira à l'analyse des créneaux.
 
 **Les 3 vidéos du jour durent plus d'une minute (61 s minimum, monétisation TikTok), avec voix off et musique de fond.**
 Les séries peuvent dépasser 70 s si le format le demande (accord de l'utilisateur le 20/11/2026).
@@ -67,19 +77,22 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
    - **voix off** (séries et astuces) : lue par Fish Audio si `FISH_API_KEY` est définie dans l'environnement. Quand l'écrit
      se lit mal (puissances, fractions, sigles, dates), ajouter `dit_question` / `dit_explication` à la question
      (ou `dit` à une info d'astuce) avec la phrase à prononcer (ex. « 2 puissance 3 fois 2 puissance 2 ? A : 10. B : 32. C : 64. D : 12. »).
-3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-HHh.mp4`, puis extraire 3-4 images avec ffmpeg
-   La 1re image de la vidéo est une couverture automatique (miniature Instagram / TikTok) : vérifie-la aussi.
-   (dont une par question pour une série) et les regarder. Le script affiche « Voix off : oui/non » :
-   si c'est « non » ou si Fish Audio échoue, le signaler dans le message final (la vidéo reste publiable sans voix).
-4. Commit + push sur `main` (vidéo + ajout à `historique.json`, une entrée par question pour une série).
-5. Publier via Posty : `create_media_upload` → PUT du fichier sur `uploadUrl` avec tous les `uploadHeaders` →
-   `complete_media_upload` → `create_post` (3 contenus) → `act_on_post` submit (skipApproval) → `act_on_post` publish now
-   → `get_post` jusqu'à `deliveryStatus: delivered`. TikTok : metadata `privacyLevel: PUBLIC_TO_EVERYONE`.
+3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-<quiz|astuce|defi>.mp4`, puis extraire des images
+   avec ffmpeg (la 1re image = couverture automatique, puis une par question / info) et les regarder.
+   Le script affiche « Voix off : oui/non » : si c'est « non » ou si Fish Audio échoue, le signaler dans le message final.
+4. Choisir l'heure de publication (règle « Heure de publication variable » ci-dessus).
+5. Commit + push sur `main` (vidéo + ajout à `historique.json`, une entrée par question / info, avec `heure_publication`
+   et `publie_a`).
+6. **Programmer** via Posty : `create_media_upload` → PUT du fichier sur `uploadUrl` avec tous les `uploadHeaders` →
+   `complete_media_upload` → `create_post` (3 contenus, **`scheduledAt` = l'heure choisie**, ISO avec le décalage
+   de Paris, ex. `2026-11-21T09:37:00+01:00`) → `act_on_post` submit (skipApproval) → `act_on_post` publish **at: scheduled**
+   → `get_post` doit montrer le post programmé à la bonne heure. TikTok : metadata `privacyLevel: PUBLIC_TO_EVERYONE`.
    YouTube : metadata `title` (≤ 100 caractères), description avec le lien du site et #shorts.
-6. Légende Instagram / TikTok : 1 phrase d'accroche + appel à commenter (« Ton score ? ») + « Révise comme dans un jeu
+7. Légende Instagram / TikTok : 1 phrase d'accroche + appel à commenter (« Ton score ? ») + « Révise comme dans un jeu
    sur RéviLeague 🏆 (lien en bio) » + 5 à 8 hashtags pertinents (#revisions #brevet #bac #college #lycee + matières).
-7. Si Instagram échoue via Posty : publier en secours avec Windsor `execute_action` (`create_video_post`,
-   params `{video_url, caption, share_to_feed: true}`) à partir de l'URL GitHub Pages (vérifiée avec WebFetch).
-8. Compléter `historique.json` (id du post Posty, statut/lien par réseau), commit + push.
+8. **Contrôle de la publication précédente** : chaque routine relit avec `get_post` le post programmé par la routine
+   d'avant (dernier `posty_post_id` de `historique.json`) et note dans l'historique le statut par réseau. Si Instagram a
+   échoué : publier en secours avec Windsor `execute_action` (`create_video_post`, params
+   `{video_url, caption, share_to_feed: true}`) à partir de l'URL GitHub Pages (vérifiée avec WebFetch). Commit + push.
 
 En cas d'échec (publication refusée, accès GitHub/Posty perdu) : ne pas réessayer en boucle, notifier l'utilisateur avec la cause.
