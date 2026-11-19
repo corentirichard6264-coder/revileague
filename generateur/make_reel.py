@@ -9,7 +9,8 @@ Trois formats de spec JSON :
             "xp":50,"countdown":5}
   serie  : {"type":"serie","badge":"COLLÈGE • MIX","hook":"5 questions.\\nTu fais combien ?","countdown":5,"xp":250,
             "questions":[{"badge":"4e • MATHS","question":...,"options":[...],"answer":1,"explain":...}, ...]}
-           Vidéo d'au moins 60 s (le script refuse sinon) : 5 questions avec countdown 4, 4 avec countdown 6.
+           Vidéo d'au moins 61 s (le script refuse sinon). 3 options par question conseillées, "image_query" (anglais)
+           ou "image" (URL) par question pour l'illustration (Openverse, domaine public / CC0).
            Voix off Fish Audio si la variable d'environnement FISH_API_KEY existe (FISH_VOICE_ID = voix choisie) :
            elle lit l'intro, chaque question + ses 4 réponses, la correction, le score et la fin ; le chrono
            démarre après la lecture. Par question, "dit_question" / "dit_explication" (optionnels) remplacent
@@ -222,7 +223,8 @@ def draw_question(im, t, q, fonts, cd, T_Q, T_OPT, T_COUNT, T_DIM, T_OUT):
         im.alpha_composite(layer(e, a))
 
 def q_sounds(T_COUNT, cd):
-    s = [(T_COUNT + k, 0.12, 1200 if k < cd - 1 else 900, 0.35, 40) for k in range(cd)]
+    # tic-tac d'horloge (2 clics par seconde) puis « ding » à la révélation
+    s = [(T_COUNT + k / 2, 0.05, 2400 if k % 2 == 0 else 1800, 0.4, 120) for k in range(cd * 2)]
     return s + [(T_COUNT + cd, 0.6, 880, 0.35, 5), (T_COUNT + cd + 0.08, 0.6, 1320, 0.3, 5)]
 
 def xp_sounds(t0):
@@ -280,56 +282,170 @@ def tts(text):
 
 def dur(clip): return len(clip) / SR if clip else 0.0
 
-# ---------------------------------------------------------------- SÉRIE (plusieurs questions, >= 60 s)
+# ---------------------------------------------------------------- SÉRIE (plusieurs questions, >= 61 s)
+# Style copié sur les quiz FR qui font 750 k – 950 k vues (analyse vidIQ 20/11/2026) : fond violet clair,
+# carte blanche avec la question + une image, réponses en gros boutons blancs empilés (A. B. C.), barre de temps,
+# les mauvaises réponses disparaissent et la bonne passe au vert. Fin (score, XP, « Rejoins la Ligue ») inchangée.
 MIN_SERIE = 61.0  # monétisation TikTok : vidéos > 1 min
+P_TOP = (160, 104, 220); P_BOT = (98, 56, 166); P_LETTER = (118, 64, 196); P_SHADOW = (66, 34, 120)
+INK = (30, 26, 50); OK_GREEN = (46, 190, 96)
+ORD = ["Première", "Deuxième", "Troisième", "Quatrième", "Cinquième", "Sixième", "Septième", "Huitième"]
+IMG_W, IMG_H = 860, 470
+CT = 340  # haut de la carte question (sous l'accroche)
+
+_qbg = []
+def quiz_bg():
+    """Dégradé violet + motif de losanges discret (calculé une fois)."""
+    if not _qbg:
+        bg = Image.new("RGB", (W, H)); d = ImageDraw.Draw(bg)
+        for y in range(H):
+            k = y / H; d.line([(0, y), (W, y)], fill=tuple(int(P_TOP[i] + (P_BOT[i] - P_TOP[i]) * k) for i in range(3)))
+        pat = Image.new("RGBA", (W, H), (0, 0, 0, 0)); pd = ImageDraw.Draw(pat)
+        for j, y in enumerate(range(-60, H + 60, 120)):
+            for x in range(-60 + (60 if j % 2 else 0), W + 60, 120):
+                pd.polygon([(x, y - 34), (x + 34, y), (x, y + 34), (x - 34, y)], fill=(255, 255, 255, 16))
+        bg = bg.convert("RGBA"); bg.alpha_composite(pat); _qbg.append(bg.convert("RGB"))
+    return _qbg[0]
+
+def q_image(q):
+    """Image d'illustration : q["image"] (URL) ou q["image_query"] (recherche Openverse, domaine public / CC0
+    uniquement, donc sans droits ni crédit). None si rien ne se charge : la carte se passe d'image."""
+    import io, urllib.parse, urllib.request
+    urls = [q["image"]] if q.get("image") else []
+    if not urls and q.get("image_query"):
+        api = ("https://api.openverse.org/v1/images/?license=cc0,pdm&mature=false&page_size=8&q="
+               + urllib.parse.quote(q["image_query"]))
+        try:
+            req = urllib.request.Request(api, headers={"User-Agent": "revileague-reels/1.0"})
+            res = json.load(urllib.request.urlopen(req, timeout=20))["results"]
+            urls = [r["url"] for r in res if r.get("width", 0) >= 500]
+        except Exception as e:
+            print("Image : recherche échouée :", e)
+    for u in urls[:4]:
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": "revileague-reels/1.0"})
+            im = Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=20).read())).convert("RGB")
+        except Exception:
+            continue
+        s = max(IMG_W / im.width, IMG_H / im.height)  # remplit la zone (recadrage centré)
+        im = im.resize((math.ceil(im.width * s), math.ceil(im.height * s)), Image.LANCZOS)
+        x, y = (im.width - IMG_W) // 2, (im.height - IMG_H) // 2
+        im = im.crop((x, y, x + IMG_W, y + IMG_H)).convert("RGBA")
+        m = Image.new("L", (IMG_W, IMG_H), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, IMG_W, IMG_H], 30, fill=255)
+        im.putalpha(m); print("Image :", u); return im
+    if q.get("image") or q.get("image_query"): print("Image : aucune image chargée pour", repr(q["question"]))
+    return None
 
 def serie(spec):
     qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
-    # voix off : intro, chaque question (les réponses sont à l'écran), chaque correction, score, fin
+    # voix off : accroche, « Deuxième question… », chaque question, chaque correction (+ appels à liker /
+    # commenter comme les quiz qui percent), score, fin
     v_intro = tts(say(spec["hook"]))
-    v_q = [tts(("Dernière question, la plus dure ! " if k == n - 1 else "") + (q.get("dit_question") or say(q["question"])))
-           for k, q in enumerate(qs)]
-    v_e = [tts(q.get("dit_explication") or say(f"Réponse {'ABCD'[q['answer']]} : {q['options'][q['answer']]}. {q['explain']}")) for q in qs]
+    def intro_q(k):
+        return "Dernière question, la plus dure ! " if k == n - 1 and n > 1 else ("" if k == 0 else f"{ORD[k]} question. ")
+    v_q = [tts(intro_q(k) + (q.get("dit_question") or say(q["question"]))) for k, q in enumerate(qs)]
+    BAIT = {0: "Like si tu as eu bon !", n // 2: "Écris GÉNIE en commentaire si tu as tout bon !"} if n > 2 else {}
+    v_e = [tts((q.get("dit_explication") or say(f"Réponse {'ABCD'[q['answer']]} : {q['options'][q['answer']]}. {q['explain']}"))
+               + (" " + BAIT[k] if k in BAIT else "")) for k, q in enumerate(qs)]
     v_score = tts(f"Alors, ton score sur {n} ? Dis-le en commentaire !")
     v_cta = tts("Révise comme dans un jeu. Rejoins la Ligue, lien en bio !")
     print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
+    imgs = [q_image(q) for q in qs]
 
-    # rythme TikTok (quiz qui percent, analyse vidIQ 20/11) : pas d'écran d'intro, la question 1 est à l'écran
-    # dès la 1re seconde avec l'accroche au-dessus ; la voix lit l'accroche puis la question
-    T_INTRO = 0.0
+    # pas d'écran d'intro : la question 1 est à l'écran dès la 1re seconde, l'accroche au-dessus
     T_HOOK = dur(v_intro) + 0.1 if v_intro else 0.0
-    T_CNT = [max(1.0, 0.3 + dur(v) + 0.2) + (T_HOOK if k == 0 else 0) for k, v in enumerate(v_q)]
-    SEG = [c + cd + max(3.0, 0.3 + dur(v) + 0.4) + 0.3 for c, v in zip(T_CNT, v_e)]
-    S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
-    T_SCORE = T_INTRO + sum(SEG); T_XP = T_SCORE + max(2.4, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.0
+    T_CNT = [max(1.2, 0.3 + dur(v) + 0.2) + (T_HOOK if k == 0 else 0) for k, v in enumerate(v_q)]
+    SEG = [c + cd + max(3.2 + (1.2 if k in BAIT else 0), 0.3 + dur(v) + 0.4) + 0.3
+           for k, (c, v) in enumerate(zip(T_CNT, v_e))]
+    S = [sum(SEG[:k]) for k in range(n)]
+    T_SCORE = sum(SEG); T_XP = T_SCORE + max(2.4, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.0
     T_END = T_CTA + max(2.6, 0.3 + dur(v_cta) + 0.3)
     if v_intro and T_END < MIN_SERIE:  # sans voix (Fish en panne) la vidéo est plus courte mais reste publiable
         sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
-    hookf = fit(spec["hook"], "Bold", 76, W - 120)
-    fonts = [q_fonts(q) for q in qs]
+    hookf = fit(spec["hook"], "Bold", 64, W - 120)
+    QF = [fit(q["question"], "Bold", 84, W - 220) for q in qs]
+    OF = [[fit(o, "Bold", 70, W - 330) for o in q["options"]] for q in qs]
+    EF = [fit(q["explain"], "Medium", 50, W - 240) for q in qs]
+
+    def layout(k):
+        """Positions : haut de la carte, zone image, 1er bouton, hauteur et pas des boutons."""
+        no = len(qs[k]["options"]); img = imgs[k] is not None
+        bh, gap = (150, 30) if no <= 3 else (128, 22)
+        card_bot = CT + 230 + (IMG_H + 30 if img else 0)
+        return card_bot, card_bot + 40, bh, gap
+
+    def draw_q(im, u, k):
+        q = qs[k]; card_bot, oy, bh, gap = layout(k)
+        T_REV = T_CNT[k] + cd; out = 1 - prog(u, SEG[k] - 0.35, 0.35)
+        def card(dr):
+            dr.rounded_rectangle([70, CT + 10, W - 70, card_bot + 10], 44, fill=P_SHADOW + (255,))
+            dr.rounded_rectangle([70, CT, W - 70, card_bot], 44, fill=(255, 255, 255, 255))
+            bb = dr.multiline_textbbox((0, 0), q["question"], font=QF[k], spacing=8, align="center")
+            ctext(dr, CT + 115 - (bb[3] - bb[1]) / 2 - bb[1], q["question"], QF[k], INK + (255,), 8)
+        im.alpha_composite(layer(card, prog(u, 0, 0.25) * out))
+        if imgs[k] is not None:
+            p = prog(u, 0.15, 0.35)
+            if p * out > 0:
+                L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); L.alpha_composite(imgs[k], ((W - IMG_W) // 2, CT + 230))
+                if p * out < 1: L.putalpha(L.getchannel("A").point(lambda v: int(v * p * out)))
+                im.alpha_composite(L)
+        good = q["answer"]
+        for i, opt in enumerate(q["options"]):
+            ok = i == good
+            ap = prog(u, 0.5 + i * 0.12, 0.3) * (1 if ok else 1 - prog(u, T_REV, 0.35)) * out
+            if ap <= 0: continue
+            y = oy + i * (bh + gap) + 40 * (1 - prog(u, 0.5 + i * 0.12, 0.3))
+            if ok and u >= T_REV + 0.5:  # la bonne réponse remonte en 1re position
+                y = oy + (y - oy) * (1 - prog(u, T_REV + 0.5, 0.4))
+            green = ok and u >= T_REV
+            def od(dr, y=y, opt=opt, i=i, green=green):
+                dr.rounded_rectangle([90, y + 9, W - 90, y + bh + 9], 40, fill=(P_SHADOW if not green else (25, 120, 60)) + (255,))
+                dr.rounded_rectangle([90, y, W - 90, y + bh], 40, fill=(OK_GREEN if green else (255, 255, 255)) + (255,))
+                lf = F("Bold", 70 if bh >= 150 else 62)
+                dr.text((140, y + bh / 2), "ABCD"[i] + ".", font=lf, fill=(WHITE if green else P_LETTER) + (255,), anchor="lm")
+                dr.text((250, y + bh / 2), opt, font=OF[k][i], fill=(WHITE if green else INK) + (255,), anchor="lm")
+            im.alpha_composite(layer(od, ap))
+        if T_CNT[k] <= u < T_REV + 0.3:  # barre de temps qui se vide (jaune puis rouge)
+            rem = max(0, T_REV - u); frac = rem / cd
+            def bar(dr):
+                dr.rounded_rectangle([90, 1800, W - 90, 1836], 18, fill=(255, 255, 255, 70))
+                dr.rounded_rectangle([90, 1800, 90 + (W - 180) * frac, 1836], 18, fill=(GOLD if rem > 1.5 else RED) + (255,))
+                dr.text((W / 2, 1755), str(math.ceil(rem)), font=F("Bold", 64), fill=WHITE + (255,), anchor="mm")
+            im.alpha_composite(layer(bar, prog(u, T_CNT[k], 0.2) * (1 - prog(u, T_REV, 0.3))))
+        if u >= T_REV + 0.7:  # correction sous la bonne réponse
+            ey = oy + bh + gap + 10
+            def ex(dr):
+                bb = dr.multiline_textbbox((0, 0), q["explain"], font=EF[k], spacing=10, align="center")
+                hh = bb[3] - bb[1] + 70
+                dr.rounded_rectangle([90, ey, W - 90, ey + hh], 36, fill=(255, 255, 255, 235))
+                ctext(dr, ey + 35 - bb[1], q["explain"], EF[k], INK + (255,), 10)
+            im.alpha_composite(layer(ex, prog(u, T_REV + 0.7, 0.35) * out))
+        if k in BAIT and u >= T_REV + 1.0:  # appel à liker / commenter (comme les quiz qui percent)
+            def bt(dr):
+                f = fit(BAIT[k], "Bold", 52, W - 260); tw = f.getlength(BAIT[k]) + 80
+                dr.rounded_rectangle([(W - tw) / 2, 1700, (W + tw) / 2, 1800], 50, fill=GOLD + (255,))
+                dr.text((W / 2, 1750), BAIT[k], font=f, fill=INK + (255,), anchor="mm")
+            im.alpha_composite(layer(bt, back(u, T_REV + 1.0, 0.4) * out))
 
     def frame(t, bg):
         k = max([0] + [j for j in range(n) if S[j] <= t])
-        badge = qs[k].get("badge", spec["badge"]) if t < T_SCORE else spec["badge"]
-        bg, tint = bg_for(badge); im = bg.copy().convert("RGBA"); deco(im, t, tint)
-        header(im, badge)
         if t < T_SCORE:
-            u = t - S[k]
-            a = (1.0 if k == 0 else prog(u, 0, 0.4)) * (1 - prog(u, SEG[k] - 0.4, 0.4))
-            def pr(dr):
-                if k == 0:  # l'accroche remplace « Question 1/n », pleine dès la 1re image
+            im = quiz_bg().copy().convert("RGBA"); u = t - S[k]
+            header(im, qs[k].get("badge", spec["badge"]))
+            a = (1.0 if k == 0 else prog(u, 0, 0.3)) * (1 - prog(u, SEG[k] - 0.35, 0.35))
+            def top(dr):
+                if k == 0:  # l'accroche, pleine dès la 1re image
                     bb = dr.multiline_textbbox((0, 0), spec["hook"], font=hookf, spacing=4, align="center")
-                    ctext(dr, 275 - (bb[3] - bb[1]) / 2 - bb[1], spec["hook"], hookf, WHITE + (255,), 4)
+                    y = 250 - (bb[3] - bb[1]) / 2 - bb[1]
+                    ctext(dr, y + 4, spec["hook"], hookf, P_SHADOW + (255,), 4); ctext(dr, y, spec["hook"], hookf, WHITE + (255,), 4)
                 else:
-                    ctext(dr, 260, "Dernière question !" if k == n - 1 else f"Question {k + 1}/{n}", F("Bold", 64),
-                          (RED if k == n - 1 else CYAN) + (255,))
-                x0 = (W - (n * 44 - 16)) / 2
-                for j in range(n):
-                    dr.rounded_rectangle([x0 + j * 44, 380, x0 + j * 44 + 28, 396], 8,
-                                         fill=GOLD + (255,) if j <= k else (255, 255, 255, 40))
-            im.alpha_composite(layer(pr, a))
-            draw_question(im, u, qs[k], fonts[k], cd, 0.0, 0.7, T_CNT[k], T_CNT[k] + cd + 1.2, SEG[k])
-        elif t < T_CTA:
+                    txt = "Dernière question !" if k == n - 1 else f"Question {k + 1}/{n}"
+                    ctext(dr, 214, txt, F("Bold", 66), P_SHADOW + (255,)); ctext(dr, 210, txt, F("Bold", 66), (GOLD if k == n - 1 else WHITE) + (255,))
+            im.alpha_composite(layer(top, a))
+            draw_q(im, u, k)
+            return im.convert("RGB")
+        im = bg.copy().convert("RGBA"); header(im, spec["badge"])  # fin inchangée
+        if t < T_CTA:
             a = prog(t, T_SCORE, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
             im.alpha_composite(layer(lambda dr: ctext(dr, 640 + 40 * (1 - prog(t, T_SCORE, 0.5)),
                 f"Ton score sur {n} ?", F("Bold", 100), GOLD + (255,)), a))
@@ -337,7 +453,6 @@ def serie(spec):
             if t >= T_XP: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 50 * n))
         else:
             cta(im, t, T_CTA)
-        if t < T_SCORE: im = shake(im, t - S[k] - T_CNT[k] - cd)
         return im.convert("RGB")
 
     sounds = []

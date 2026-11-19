@@ -16,8 +16,8 @@ corrections détaillées, XP, récompenses, rangs, classements entre joueurs. To
 | 13h | Le savais-tu ? | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
 | 20h | Défi de la Ligue | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 63 s |
 
-**Les 3 vidéos du jour durent un peu plus d'une minute (pas plus de ~70 s), avec voix off et musique de fond**
-(demande de l'utilisateur, 16/11/2026 ; raccourcies le 19/11 car 2 min faisait décrocher sur TikTok).
+**Les 3 vidéos du jour durent plus d'une minute (61 s minimum, monétisation TikTok), avec voix off et musique de fond.**
+Les séries peuvent dépasser 70 s si le format le demande (accord de l'utilisateur le 20/11/2026).
 
 **Accroche (hook) — c'est elle qui décide si on reste sur TikTok.** Elle s'affiche en gros dès la 1re seconde
 et la voix la lit : 2 lignes courtes maximum (`\n` entre les deux), un défi ou une promesse concrète, jamais une
@@ -35,6 +35,20 @@ La voix ne lit que la question (les réponses sont à l'écran) : garde les ques
 - ~10-12 s par question, chrono 4 s avec tic-tac, réponse annoncée brièvement ;
 - légende : finir par un appel à commenter précis, ex. « Écris GÉNIE en commentaire si tu as 5/5 🧠 » (varier le mot).
 
+**Look des séries (20/11/2026, copié sur ces quiz)** : fond violet clair, carte blanche avec la question **et une image**,
+**3 réponses** en gros boutons blancs empilés (A. B. C.), barre de temps, mauvaises réponses qui disparaissent, bonne
+réponse en vert puis correction ; la voix annonce « Deuxième question… » et glisse « Like si tu as eu bon » (Q1) et
+« Écris GÉNIE en commentaire… » (milieu). Le générateur fait tout ; la fin (score, XP, « Rejoins la Ligue ») ne change pas.
+- **Mets 3 options par question** (4 possible mais moins lisible). Les options peuvent faire jusqu'à ~18 caractères.
+- **Chaque question a une image** : `"image_query"` = 2-3 mots **en anglais**, concrets et visuels (« rome colosseum »,
+  « human heart anatomy », « volcano eruption », « eiffel tower »). Le générateur cherche sur Openverse en domaine public /
+  CC0 uniquement (aucun droit à payer, aucun crédit à citer). Tu peux aussi donner `"image"` = URL directe d'une image du
+  domaine public (Wikimedia Commons). Pour une question abstraite (grammaire, calcul), choisis un objet lié au sujet
+  (« open book », « calculator », « blackboard math »).
+- **Vérifie chaque image** sur les images extraites (une par question) : si elle est hors sujet, moche, ou montre une
+  personne reconnaissable, une marque ou un logo, change `image_query` et relance ; si rien ne va, retire `image_query`
+  (la carte s'affiche sans image).
+
 Le générateur refuse une `serie` ou une `astuce` de moins de 61 s (il faut dépasser 1 min pour la monétisation TikTok) : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
 dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche
@@ -47,7 +61,7 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
 1. Lire `historique.json` pour éviter les doublons.
 2. Écrire la spec JSON (voir l'en-tête de `generateur/make_reel.py`). Règles :
    - contenu **exact et vérifié** (une seule bonne réponse, distracteurs plausibles) ;
-   - textes courts : options ≤ 10 caractères si possible, lignes ≤ 30 caractères, `\n` pour couper ;
+   - textes courts : options ≤ 18 caractères, lignes ≤ 30 caractères, `\n` pour couper ;
    - caractères interdits par la police : ⁴ ⁵ ᵉ → (écrire « 4e », « puissance 5 », « donc ») ; le script refuse sinon ;
    - pas d'emoji dans la vidéo ; aucun personnage, marque ou œuvre protégée.
    - **voix off** (séries et astuces) : lue par Fish Audio si `FISH_API_KEY` est définie dans l'environnement. Quand l'écrit
