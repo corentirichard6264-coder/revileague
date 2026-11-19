@@ -1739,5 +1739,75 @@
         "lien": "https://www.youtube.com/watch?v=Sg4oBLgY_WQ"
       }
     }
+  },
+  {
+    "date": "2026-11-19T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "info_n": 1,
+    "niveau": "6e",
+    "matiere": "français",
+    "sujet": "leur (devant un verbe, = lui) / leurs (devant un nom pluriel) : je leur donne leurs cahiers",
+    "fichier": "reels/2026-11-19-13h.mp4",
+    "couverture": "reels/2026-11-19-13h-cover.jpg",
+    "duree_s": 83.3,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-19T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "info_n": 2,
+    "niveau": "5e",
+    "matiere": "SVT",
+    "sujet": "artères : partent du cœur / veines : reviennent au cœur (artère = aller)",
+    "fichier": "reels/2026-11-19-13h.mp4",
+    "couverture": "reels/2026-11-19-13h-cover.jpg",
+    "duree_s": 83.3,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-19T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "info_n": 3,
+    "niveau": "4e",
+    "matiere": "histoire",
+    "sujet": "été 1789 : prise de la Bastille 14 juillet, DDHC 26 août",
+    "fichier": "reels/2026-11-19-13h.mp4",
+    "couverture": "reels/2026-11-19-13h-cover.jpg",
+    "duree_s": 83.3,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-19T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "info_n": 4,
+    "niveau": "3e",
+    "matiere": "anglais",
+    "sujet": "prétérit (moment précis passé) / present perfect (pas de date) : I saw it yesterday / I have already seen it",
+    "fichier": "reels/2026-11-19-13h.mp4",
+    "couverture": "reels/2026-11-19-13h-cover.jpg",
+    "duree_s": 83.3,
+    "voix_off": true
+  },
+  {
+    "date": "2026-11-19T13:00+01:00",
+    "creneau": "13h",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "info_n": 5,
+    "niveau": "Terminale",
+    "matiere": "maths",
+    "sujet": "ln(a × b) = ln(a) + ln(b) : ln(6) = ln(2) + ln(3)",
+    "fichier": "reels/2026-11-19-13h.mp4",
+    "couverture": "reels/2026-11-19-13h-cover.jpg",
+    "duree_s": 83.3,
+    "voix_off": true
   }
 ]
