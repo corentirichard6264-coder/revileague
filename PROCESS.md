@@ -12,11 +12,20 @@ corrections détaillées, XP, récompenses, rangs, classements entre joueurs. To
 
 | Heure | Format | Spec `type` | Contenu |
 |---|---|---|---|
-| 8h | Question du jour | `serie` | **5 questions** rapides (6e à 3e), matières variées, countdown 5 s, xp 250, hook « 5 questions.\nTu fais combien ? » ou variante. Durée ≥ 60 s |
-| 13h | Le savais-tu ? | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, hook « 5 infos à connaître\navant le contrôle » ou variante, xp 100. Durée ≥ 60 s |
-| 20h | Défi de la Ligue | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 7 s, xp 400. Durée ≥ 60 s |
+| 8h | Question du jour | `serie` | **5 questions** rapides (6e à 3e), matières variées, countdown 4 s, xp 250. Durée ≈ 65 s |
+| 13h | Le savais-tu ? | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
+| 20h | Défi de la Ligue | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 63 s |
 
-**Les 3 vidéos du jour durent plus d'une minute, avec voix off et musique de fond** (demande de l'utilisateur, 16/11/2026).
+**Les 3 vidéos du jour durent un peu plus d'une minute (pas plus de ~70 s), avec voix off et musique de fond**
+(demande de l'utilisateur, 16/11/2026 ; raccourcies le 19/11 car 2 min faisait décrocher sur TikTok).
+
+**Accroche (hook) — c'est elle qui décide si on reste sur TikTok.** Elle s'affiche en gros dès la 1re seconde
+et la voix la lit : 2 lignes courtes maximum (`\n` entre les deux), un défi ou une promesse concrète, jamais une
+description. Exemples : « 90 % des élèves se trompent\nà la question 3 », « Si tu as 5/5,\ntu as le niveau brevet »,
+« Personne ne connaît la 4e\n(même les profs) », « 5 erreurs qui coûtent\ndes points au bac ». Varie l'accroche à chaque vidéo,
+ne réutilise jamais la même deux fois de suite (vérifie historique.json), et varie aussi la 1re phrase de la légende.
+La voix ne lit que la question (les réponses sont à l'écran) : garde les questions courtes.
+
 Le générateur refuse une `serie` ou une `astuce` de moins de 60 s : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
 dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche

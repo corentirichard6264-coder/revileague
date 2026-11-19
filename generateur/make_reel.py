@@ -9,7 +9,7 @@ Trois formats de spec JSON :
             "xp":50,"countdown":5}
   serie  : {"type":"serie","badge":"COLLÈGE • MIX","hook":"5 questions.\\nTu fais combien ?","countdown":5,"xp":250,
             "questions":[{"badge":"4e • MATHS","question":...,"options":[...],"answer":1,"explain":...}, ...]}
-           Vidéo d'au moins 60 s (le script refuse sinon) : 5 questions avec countdown 5, 4 avec countdown 7.
+           Vidéo d'au moins 60 s (le script refuse sinon) : 5 questions avec countdown 4, 4 avec countdown 6.
            Voix off Fish Audio si la variable d'environnement FISH_API_KEY existe (FISH_VOICE_ID = voix choisie) :
            elle lit l'intro, chaque question + ses 4 réponses, la correction, le score et la fin ; le chrono
            démarre après la lecture. Par question, "dit_question" / "dit_explication" (optionnels) remplacent
@@ -211,7 +211,7 @@ def tts(text):
     if not key: return None
     import array, urllib.request
     voice = os.environ.get("FISH_VOICE_ID")
-    body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.05}}
+    body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.15}}
     if voice: body["reference_id"] = voice
     req = urllib.request.Request("https://api.fish.audio/v1/tts", data=json.dumps(body).encode(), method="POST",
                                  headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
@@ -231,27 +231,24 @@ MIN_SERIE = 60.0
 
 def serie(spec):
     qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
-    # voix off : intro, chaque question + réponses, chaque correction, score, fin
+    # voix off : intro, chaque question (les réponses sont à l'écran), chaque correction, score, fin
     v_intro = tts(say(spec["hook"]))
-    def lire_q(q):
-        txt = say(q["question"]); txt += "" if txt[-1:] in ".?!" else "."
-        return txt + " " + ". ".join(f"{'ABCD'[i]} : {say(o)}" for i, o in enumerate(q["options"])) + "."
-    v_q = [tts(q.get("dit_question") or lire_q(q)) for q in qs]
+    v_q = [tts(q.get("dit_question") or say(q["question"])) for q in qs]
     v_e = [tts(q.get("dit_explication") or say(f"Réponse {'ABCD'[q['answer']]} : {q['options'][q['answer']]}. {q['explain']}")) for q in qs]
     v_score = tts(f"Alors, ton score sur {n} ? Dis-le en commentaire !")
     v_cta = tts("Révise comme dans un jeu. Rejoins la Ligue, lien en bio !")
     print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
 
-    T_INTRO = max(2.4, 0.3 + dur(v_intro) + 0.4)
-    # par question : réponses à 0,7 s, chrono après la lecture, correction lue, sortie 0,4 s
-    T_CNT = [max(1.4, 0.3 + dur(v) + 0.3) for v in v_q]
-    SEG = [c + cd + max(3.6, 0.4 + dur(v) + 0.6) + 0.4 for c, v in zip(T_CNT, v_e)]
+    # rythme TikTok : accroche immédiate, chrono dès la question lue, correction courte
+    T_INTRO = max(1.6, 0.2 + dur(v_intro) + 0.2)
+    T_CNT = [max(1.0, 0.3 + dur(v) + 0.2) for v in v_q]
+    SEG = [c + cd + max(3.0, 0.3 + dur(v) + 0.4) + 0.3 for c, v in zip(T_CNT, v_e)]
     S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
-    T_SCORE = T_INTRO + sum(SEG); T_XP = T_SCORE + max(3.0, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.4
-    T_END = T_CTA + max(3.0, 0.3 + dur(v_cta) + 0.4)
-    if T_END < MIN_SERIE:
+    T_SCORE = T_INTRO + sum(SEG); T_XP = T_SCORE + max(2.4, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.0
+    T_END = T_CTA + max(2.6, 0.3 + dur(v_cta) + 0.3)
+    if v_intro and T_END < MIN_SERIE:  # sans voix (Fish en panne) la vidéo est plus courte mais reste publiable
         sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
-    hookf = fit(spec["hook"], "Bold", 84, W - 160)
+    hookf = fit(spec["hook"], "Bold", 112, W - 140)
     fonts = [q_fonts(q) for q in qs]
 
     def frame(t, bg):
@@ -259,8 +256,8 @@ def serie(spec):
         k = max([0] + [j for j in range(n) if S[j] <= t])
         header(im, qs[k].get("badge", spec["badge"]) if T_INTRO <= t < T_SCORE else spec["badge"])
         if t < T_INTRO:
-            a = prog(t, 0, 0.5) * (1 - prog(t, T_INTRO - 0.4, 0.4))
-            im.alpha_composite(layer(lambda dr: ctext(dr, 700 + 40 * (1 - prog(t, 0, 0.5)), spec["hook"], hookf, WHITE + (255,), 4), a))
+            a = 1 - prog(t, T_INTRO - 0.3, 0.3)  # accroche pleine dès la 1re image après la couverture
+            im.alpha_composite(layer(lambda dr: ctext(dr, 700, spec["hook"], hookf, WHITE + (255,), 4), a))
         elif t < T_SCORE:
             u = t - S[k]
             a = prog(u, 0, 0.4) * (1 - prog(u, SEG[k] - 0.4, 0.4))
@@ -307,15 +304,15 @@ def astuce(spec):
     v_end = tts(f"Tu en connaissais combien sur {n} ? Dis-le en commentaire ! Révise comme dans un jeu, rejoins la Ligue, lien en bio !")
     print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
 
-    T_INTRO = max(2.8, 0.3 + dur(v_intro) + 0.5)
+    T_INTRO = max(1.8, 0.2 + dur(v_intro) + 0.3)
     # par info : titre à 0,3 s, lignes réparties pendant la lecture, exemple, pause de lecture
     SEG = [max(4.0 + 1.6 * len(i["lines"]) + 3.0, 0.4 + dur(v) + 1.4) for i, v in zip(infos, v_i)]
     S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
     T_XP = T_INTRO + sum(SEG); T_CTA = T_XP + 2.2
     T_END = max(T_CTA + 3.0, T_XP + 0.2 + dur(v_end) + 0.6)
-    if T_END < MIN_ASTUCE:
+    if v_intro and T_END < MIN_ASTUCE:  # sans voix la vidéo reste publiable
         sys.exit(f"Astuce trop courte ({T_END:.1f} s < {MIN_ASTUCE:.0f} s) : ajoute une info.")
-    hookf = fit(hook, "Bold", 84, W - 160)
+    hookf = fit(hook, "Bold", 112, W - 140)
     F_T = [fit(i["title"], "Bold", 92, W - 260) for i in infos]
     F_L = [[fit(l, "Medium", 50, W - 300) for l in i["lines"]] for i in infos]
     F_E = [fit(i["example"], "Bold", 54, W - 260) for i in infos]
@@ -330,7 +327,7 @@ def astuce(spec):
         k = max([0] + [j for j in range(n) if S[j] <= t])
         header(im, infos[k].get("badge", spec["badge"]) if T_INTRO <= t < T_XP else spec["badge"])
         if t < T_INTRO:
-            a = prog(t, 0, 0.5) * (1 - prog(t, T_INTRO - 0.4, 0.4)); dy = 40 * (1 - prog(t, 0, 0.5))
+            a = 1 - prog(t, T_INTRO - 0.3, 0.3); dy = 0  # accroche pleine dès la 1re image
             im.alpha_composite(layer(lambda dr: ctext(dr, 560 + dy, "Le savais-tu ?", F("Bold", 100), CYAN + (255,)), a))
             im.alpha_composite(layer(lambda dr: ctext(dr, 760 + dy, hook, hookf, WHITE + (255,), 4), a))
         elif t < T_XP:
@@ -421,7 +418,7 @@ def music(T_END, voice_spans):
     return out
 
 # ---------------------------------------------------------------- COUVERTURE (1re image = miniature Instagram / TikTok)
-COVER = 0.5  # secondes affichées au début ; les plateformes prennent la 1re image comme miniature
+COVER = 0.2  # secondes affichées au début ; les plateformes prennent la 1re image comme miniature
 
 def cover(spec, bg):
     defi = spec.get("badge", "").upper().startswith("DÉFI")
