@@ -58,15 +58,58 @@ def check_glyphs(spec):
 
 def ease(t): t = max(0.0, min(1.0, t)); return 1 - (1 - t) ** 3
 def prog(t, a, d): return ease((t - a) / d)
+def back(t, a, d):
+    """Entrée avec rebond (dépasse un peu puis revient) : 0 -> 1."""
+    x = max(0.0, min(1.0, (t - a) / d)) - 1; return 1 + 2.7 * x ** 3 + 1.7 * x ** 2
 
-def make_bg():
+# couleur de fond par matière (lue dans le badge, ex. « 4e • MATHS »)
+SUBJECTS = [("MATH", (40, 95, 215)), ("FRAN", (185, 50, 110)), ("HIST", (190, 110, 30)), ("GÉO", (190, 110, 30)),
+            ("SVT", (30, 150, 85)), ("PHYS", (125, 60, 200)), ("CHIM", (125, 60, 200)), ("ANGL", (200, 55, 55)),
+            ("PHILO", (40, 140, 160))]
+_bgs = {}
+def bg_for(badge):
+    tint = next((c for k, c in SUBJECTS if k in badge.upper()), (40, 60, 120))
+    if tint not in _bgs: _bgs[tint] = make_bg(tint)
+    return _bgs[tint], tint
+
+def deco(im, t, tint):
+    """Formes qui flottent lentement vers le haut, couleur de la matière (fond vivant)."""
+    def d(dr):
+        for i in range(16):
+            x = (i * 389 + 70) % W + 30 * math.sin(t * 0.8 + i)
+            y = H + 150 - ((t * (40 + 25 * (i % 3)) + i * 260) % (H + 300))
+            s = 18 + (i % 4) * 10; c = tuple(min(255, v + 90) for v in tint) + (55,)
+            if i % 3 == 0: dr.ellipse([x - s, y - s, x + s, y + s], outline=c, width=6)
+            elif i % 3 == 1: dr.rectangle([x - s, y - 4, x + s, y + 4], fill=c); dr.rectangle([x - 4, y - s, x + 4, y + s], fill=c)
+            else: dr.polygon([(x, y - s), (x + s, y + s * 0.8), (x - s, y + s * 0.8)], outline=c, width=6)
+    im.alpha_composite(layer(d, 1))
+
+def confetti(im, u, cx, cy, seed):
+    """Explosion de confettis depuis (cx, cy), u = temps depuis la révélation (1,3 s)."""
+    if not 0 <= u < 1.3: return
+    import random
+    rnd = random.Random(seed); cols = [GOLD, CYAN, GREEN, RED, WHITE]
+    def d(dr):
+        for _ in range(46):
+            a = rnd.uniform(0, 2 * math.pi); v = rnd.uniform(500, 1300); c = rnd.choice(cols); s = rnd.uniform(9, 17)
+            x = cx + math.cos(a) * v * u; y = cy + math.sin(a) * v * u - 300 * u + 1400 * u * u
+            dr.rectangle([x - s, y - s / 2, x + s, y + s / 2], fill=c + (255,))
+    im.alpha_composite(layer(d, 1 - prog(u, 0.8, 0.5)))
+
+def shake(im, u):
+    """Petit tremblement de l'écran pendant 0,35 s après u = 0."""
+    if not 0 <= u < 0.35: return im
+    k = 1 - u / 0.35
+    return ImageChops.offset(im, int(16 * k * math.sin(u * 90)), int(10 * k * math.cos(u * 70)))
+
+def make_bg(tint=(40, 60, 120)):
     bg = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(bg)
     for y in range(H):
         k = y / H
         d.line([(0, y), (W, y)], fill=tuple(int(NAVY[i] + (NAVY2[i] - NAVY[i]) * k) for i in range(3)))
     glow = Image.new("RGB", (W, H), (0, 0, 0)); gd = ImageDraw.Draw(glow)
-    gd.ellipse([-300, -200, 700, 700], fill=(40, 60, 120)); gd.ellipse([500, 1300, 1400, 2200], fill=(70, 50, 110))
-    bg = Image.blend(bg, ImageChops.lighter(bg, glow.filter(ImageFilter.GaussianBlur(180))), 0.7)
+    gd.ellipse([-300, -200, 800, 800], fill=tint); gd.ellipse([400, 1200, 1500, 2300], fill=tuple(int(v * 0.8) for v in tint))
+    bg = Image.blend(bg, ImageChops.lighter(bg, glow.filter(ImageFilter.GaussianBlur(180))), 0.85)
     gd = ImageDraw.Draw(bg)
     for x in range(0, W, 90):
         for y in range(0, H, 90):
@@ -128,18 +171,21 @@ def draw_question(im, t, q, fonts, cd, T_Q, T_OPT, T_COUNT, T_DIM, T_OUT):
     qf, of, ef = fonts
     T_REVEAL = T_COUNT + cd
     if T_Q <= t < T_OUT:
-        a = prog(t, T_Q, 0.5) * (1 - prog(t, T_OUT - 0.4, 0.4))
+        a = prog(t, T_Q, 0.25) * (1 - prog(t, T_OUT - 0.4, 0.4))
+        sc = 0.8 + 0.2 * back(t, T_Q, 0.5)  # la carte « pop » à l'arrivée
         def qd(dr):
-            dr.rounded_rectangle([90, 560, W - 90, 820], 40, fill=CARD + (255,), outline=(70, 85, 130, 255), width=4)
+            hw, hh = (W - 180) / 2 * sc, 130 * sc
+            dr.rounded_rectangle([W / 2 - hw, 690 - hh, W / 2 + hw, 690 + hh], 40, fill=CARD + (255,), outline=GOLD + (255,), width=5)
             bb = dr.multiline_textbbox((0, 0), q["question"], font=qf, align="center")
             ctext(dr, 690 - (bb[3] - bb[1]) / 2 - bb[1], q["question"], qf, GOLD + (255,))
         im.alpha_composite(layer(qd, a))
     if T_OPT <= t < T_OUT:
         for i, opt in enumerate(q["options"]):
             good = i == q["answer"]
-            ap = prog(t, T_OPT + i * 0.12, 0.35) * (1 if good else 1 - prog(t, T_DIM - 0.3, 0.4)) * (1 - prog(t, T_OUT - 0.4, 0.4))
+            ap = prog(t, T_OPT + i * 0.12, 0.2) * (1 if good else 1 - prog(t, T_DIM - 0.3, 0.4)) * (1 - prog(t, T_OUT - 0.4, 0.4))
             if ap <= 0: continue
-            x0 = 90 + (i % 2) * 470; y0 = 900 + (i // 2) * 230 + 30 * (1 - prog(t, T_OPT + i * 0.12, 0.35))
+            x0 = 90 + (i % 2) * 470 + (1 if i % 2 else -1) * 160 * (1 - back(t, T_OPT + i * 0.12, 0.45))  # arrivent des côtés
+            y0 = 900 + (i // 2) * 230 - (14 * math.sin((t - T_REVEAL) * 14) * (1 - prog(t, T_REVEAL, 0.6)) if good and t >= T_REVEAL else 0)
             fill, outline, dim = CARD, (70, 85, 130), 1
             if t >= T_REVEAL:
                 fill, outline, dim = (GREEN, (180, 255, 210), 1) if good else ((60, 40, 55), RED, 0.45)
@@ -153,12 +199,20 @@ def draw_question(im, t, q, fonts, cd, T_Q, T_OPT, T_COUNT, T_DIM, T_OUT):
         rem = max(0, T_REVEAL - t); frac = rem / cd
         a = prog(t, T_COUNT, 0.3) * (1 - prog(t, T_REVEAL, 0.3))
         def c(dr):
-            cx, cy, r = W // 2, 1490, 105
+            col = GOLD if rem > 2 else RED
+            cx, cy = W // 2, 1490; r = 105 + 16 * prog(rem % 1, 0.75, 0.25)  # pulse à chaque seconde
+            dr.ellipse([cx - r - 14, cy - r - 14, cx + r + 14, cy + r + 14], fill=col + (40,))
             dr.ellipse([cx - r, cy - r, cx + r, cy + r], fill=CARD + (255,))
-            dr.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=(GOLD if rem > 2 else RED) + (255,), width=16)
-            dr.text((cx, cy), str(math.ceil(rem)), font=F("Bold", 100), fill=WHITE + (255,), anchor="mm")
+            dr.arc([cx - r, cy - r, cx + r, cy + r], -90, -90 + 360 * frac, fill=col + (255,), width=16)
+            dr.text((cx, cy), str(math.ceil(rem)), font=F("Bold", int(r)), fill=WHITE + (255,), anchor="mm")
             ctext(dr, 1625, "Mets ta réponse en commentaire", F("Medium", 44), GREY + (255,))
+            dr.rounded_rectangle([90, 1720, W - 90, 1744], 12, fill=(255, 255, 255, 30))  # barre qui se vide
+            dr.rounded_rectangle([90, 1720, 90 + (W - 180) * frac, 1744], 12, fill=col + (255,))
         im.alpha_composite(layer(c, a))
+    if T_REVEAL <= t < T_REVEAL + 0.4:  # flash vert à la révélation
+        im.alpha_composite(layer(lambda dr: dr.rectangle([0, 0, W, H], fill=GREEN + (255,)), 0.28 * (1 - prog(t, T_REVEAL, 0.4))))
+    gi = q["answer"]
+    confetti(im, t - T_REVEAL, 90 + (gi % 2) * 470 + 215, 900 + (gi // 2) * 230 + 95, sum(map(ord, q["question"])))
     if T_REVEAL + 0.3 <= t < T_OUT:
         a = prog(t, T_REVEAL + 0.3, 0.4) * (1 - prog(t, T_OUT - 0.4, 0.4))
         def e(dr):
@@ -255,9 +309,10 @@ def serie(spec):
     fonts = [q_fonts(q) for q in qs]
 
     def frame(t, bg):
-        im = bg.copy().convert("RGBA")
         k = max([0] + [j for j in range(n) if S[j] <= t])
-        header(im, qs[k].get("badge", spec["badge"]) if T_INTRO <= t < T_SCORE else spec["badge"])
+        badge = qs[k].get("badge", spec["badge"]) if t < T_SCORE else spec["badge"]
+        bg, tint = bg_for(badge); im = bg.copy().convert("RGBA"); deco(im, t, tint)
+        header(im, badge)
         if t < T_SCORE:
             u = t - S[k]
             a = (1.0 if k == 0 else prog(u, 0, 0.4)) * (1 - prog(u, SEG[k] - 0.4, 0.4))
@@ -282,6 +337,7 @@ def serie(spec):
             if t >= T_XP: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 50 * n))
         else:
             cta(im, t, T_CTA)
+        if t < T_SCORE: im = shake(im, t - S[k] - T_CNT[k] - cd)
         return im.convert("RGB")
 
     sounds = []
@@ -328,9 +384,10 @@ def astuce(spec):
     TM = [times(k) for k in range(n)]
 
     def frame(t, bg):
-        im = bg.copy().convert("RGBA")
         k = max([0] + [j for j in range(n) if S[j] <= t])
-        header(im, infos[k].get("badge", spec["badge"]) if T_INTRO <= t < T_XP else spec["badge"])
+        badge = infos[k].get("badge", spec["badge"]) if T_INTRO <= t < T_XP else spec["badge"]
+        bg, tint = bg_for(badge); im = bg.copy().convert("RGBA"); deco(im, t, tint)
+        header(im, badge)
         if t < T_INTRO:
             a = 1 - prog(t, T_INTRO - 0.3, 0.3); dy = 0  # accroche pleine dès la 1re image
             im.alpha_composite(layer(lambda dr: ctext(dr, 560 + dy, "Le savais-tu ?", F("Bold", 100), CYAN + (255,)), a))
