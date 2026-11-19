@@ -233,36 +233,41 @@ def serie(spec):
     qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
     # voix off : intro, chaque question (les réponses sont à l'écran), chaque correction, score, fin
     v_intro = tts(say(spec["hook"]))
-    v_q = [tts(q.get("dit_question") or say(q["question"])) for q in qs]
+    v_q = [tts(("Dernière question, la plus dure ! " if k == n - 1 else "") + (q.get("dit_question") or say(q["question"])))
+           for k, q in enumerate(qs)]
     v_e = [tts(q.get("dit_explication") or say(f"Réponse {'ABCD'[q['answer']]} : {q['options'][q['answer']]}. {q['explain']}")) for q in qs]
     v_score = tts(f"Alors, ton score sur {n} ? Dis-le en commentaire !")
     v_cta = tts("Révise comme dans un jeu. Rejoins la Ligue, lien en bio !")
     print("Voix off :", "oui" if v_intro else "non (FISH_API_KEY absente)")
 
-    # rythme TikTok : accroche immédiate, chrono dès la question lue, correction courte
-    T_INTRO = max(1.6, 0.2 + dur(v_intro) + 0.2)
-    T_CNT = [max(1.0, 0.3 + dur(v) + 0.2) for v in v_q]
+    # rythme TikTok (quiz qui percent, analyse vidIQ 20/11) : pas d'écran d'intro, la question 1 est à l'écran
+    # dès la 1re seconde avec l'accroche au-dessus ; la voix lit l'accroche puis la question
+    T_INTRO = 0.0
+    T_HOOK = dur(v_intro) + 0.1 if v_intro else 0.0
+    T_CNT = [max(1.0, 0.3 + dur(v) + 0.2) + (T_HOOK if k == 0 else 0) for k, v in enumerate(v_q)]
     SEG = [c + cd + max(3.0, 0.3 + dur(v) + 0.4) + 0.3 for c, v in zip(T_CNT, v_e)]
     S = [T_INTRO + sum(SEG[:k]) for k in range(n)]
     T_SCORE = T_INTRO + sum(SEG); T_XP = T_SCORE + max(2.4, 0.2 + dur(v_score) + 0.3); T_CTA = T_XP + 2.0
     T_END = T_CTA + max(2.6, 0.3 + dur(v_cta) + 0.3)
     if v_intro and T_END < MIN_SERIE:  # sans voix (Fish en panne) la vidéo est plus courte mais reste publiable
         sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
-    hookf = fit(spec["hook"], "Bold", 112, W - 140)
+    hookf = fit(spec["hook"], "Bold", 76, W - 120)
     fonts = [q_fonts(q) for q in qs]
 
     def frame(t, bg):
         im = bg.copy().convert("RGBA")
         k = max([0] + [j for j in range(n) if S[j] <= t])
         header(im, qs[k].get("badge", spec["badge"]) if T_INTRO <= t < T_SCORE else spec["badge"])
-        if t < T_INTRO:
-            a = 1 - prog(t, T_INTRO - 0.3, 0.3)  # accroche pleine dès la 1re image après la couverture
-            im.alpha_composite(layer(lambda dr: ctext(dr, 700, spec["hook"], hookf, WHITE + (255,), 4), a))
-        elif t < T_SCORE:
+        if t < T_SCORE:
             u = t - S[k]
-            a = prog(u, 0, 0.4) * (1 - prog(u, SEG[k] - 0.4, 0.4))
+            a = (1.0 if k == 0 else prog(u, 0, 0.4)) * (1 - prog(u, SEG[k] - 0.4, 0.4))
             def pr(dr):
-                ctext(dr, 260, f"Question {k + 1}/{n}", F("Bold", 64), CYAN + (255,))
+                if k == 0:  # l'accroche remplace « Question 1/n », pleine dès la 1re image
+                    bb = dr.multiline_textbbox((0, 0), spec["hook"], font=hookf, spacing=4, align="center")
+                    ctext(dr, 275 - (bb[3] - bb[1]) / 2 - bb[1], spec["hook"], hookf, WHITE + (255,), 4)
+                else:
+                    ctext(dr, 260, "Dernière question !" if k == n - 1 else f"Question {k + 1}/{n}", F("Bold", 64),
+                          (RED if k == n - 1 else CYAN) + (255,))
                 x0 = (W - (n * 44 - 16)) / 2
                 for j in range(n):
                     dr.rounded_rectangle([x0 + j * 44, 380, x0 + j * 44 + 28, 396], 8,
@@ -284,7 +289,7 @@ def serie(spec):
         sounds += [(S[k], 0.3, 700, 0.25, 8)] + [(S[k] + st, d, f, v, dc) for st, d, f, v, dc in q_sounds(T_CNT[k], cd)]
     sounds += [(T_SCORE, 0.5, 880, 0.3, 5)] + xp_sounds(T_XP)
     voices = [(0.3, v_intro), (T_SCORE + 0.2, v_score), (T_CTA + 0.3, v_cta)]
-    voices += [(S[k] + 0.3, v_q[k]) for k in range(n)] + [(S[k] + T_CNT[k] + cd + 0.4, v_e[k]) for k in range(n)]
+    voices += [(S[k] + 0.3 + (T_HOOK if k == 0 else 0), v_q[k]) for k in range(n)] + [(S[k] + T_CNT[k] + cd + 0.4, v_e[k]) for k in range(n)]
     return frame, sounds, T_END, [(s, c) for s, c in voices if c]
 
 # ---------------------------------------------------------------- ASTUCE (plusieurs infos, voix off, >= 60 s)

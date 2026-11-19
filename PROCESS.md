@@ -26,6 +26,15 @@ description. Exemples : « 90 % des élèves se trompent\nà la question 3 », �
 ne réutilise jamais la même deux fois de suite (vérifie historique.json), et varie aussi la 1re phrase de la légende.
 La voix ne lit que la question (les réponses sont à l'écran) : garde les questions courtes.
 
+**Ce qui fait percer les quiz TikTok (analyse vidIQ du 20/11/2026, quiz FR à 750 k – 950 k vues) :**
+- aucune intro : la question 1 est à l'écran dès la 1re seconde, l'accroche affichée au-dessus (le générateur le fait) ;
+- l'accroche est un **défi d'ego sur le score** : « Impossible d'avoir 5/5 », « Tu peux faire un sans-faute ? »,
+  « Personne ne trouve la dernière » ; c'est ce format qui marche le mieux, privilégie-le ;
+- la **question 1 est facile** (tout le monde doit pouvoir répondre, ça accroche), la difficulté monte, et la
+  **dernière est la plus dure** (le générateur l'annonce : « Dernière question, la plus dure ! ») ;
+- ~10-12 s par question, chrono 4 s avec tic-tac, réponse annoncée brièvement ;
+- légende : finir par un appel à commenter précis, ex. « Écris GÉNIE en commentaire si tu as 5/5 🧠 » (varier le mot).
+
 Le générateur refuse une `serie` ou une `astuce` de moins de 60 s : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
 dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche
