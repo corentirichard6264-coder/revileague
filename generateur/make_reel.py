@@ -227,7 +227,7 @@ def tts(text):
 def dur(clip): return len(clip) / SR if clip else 0.0
 
 # ---------------------------------------------------------------- SÉRIE (plusieurs questions, >= 60 s)
-MIN_SERIE = 60.0
+MIN_SERIE = 61.0  # monétisation TikTok : vidéos > 1 min
 
 def serie(spec):
     qs = spec["questions"]; cd = spec.get("countdown", 5); n = len(qs)
@@ -293,7 +293,7 @@ def serie(spec):
     return frame, sounds, T_END, [(s, c) for s, c in voices if c]
 
 # ---------------------------------------------------------------- ASTUCE (plusieurs infos, voix off, >= 60 s)
-MIN_ASTUCE = 60.0
+MIN_ASTUCE = 61.0  # monétisation TikTok : vidéos > 1 min
 
 def astuce(spec):
     infos = spec.get("infos") or [{k: spec[k] for k in ("title", "lines", "example") if k in spec}]

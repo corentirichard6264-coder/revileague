@@ -35,7 +35,7 @@ La voix ne lit que la question (les réponses sont à l'écran) : garde les ques
 - ~10-12 s par question, chrono 4 s avec tic-tac, réponse annoncée brièvement ;
 - légende : finir par un appel à commenter précis, ex. « Écris GÉNIE en commentaire si tu as 5/5 🧠 » (varier le mot).
 
-Le générateur refuse une `serie` ou une `astuce` de moins de 60 s : ajouter une question / une info dans ce cas.
+Le générateur refuse une `serie` ou une `astuce` de moins de 61 s (il faut dépasser 1 min pour la monétisation TikTok) : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
 dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche
 « Voix off : non », la vidéo ne respecte pas la consigne → le signaler dans la notification.
