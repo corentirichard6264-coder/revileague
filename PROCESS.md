@@ -113,7 +113,10 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
    `complete_media_upload` → `create_post` (3 contenus, **`scheduledAt` = l'heure choisie**, ISO avec le décalage
    de Paris, ex. `2026-11-21T09:37:00+01:00`) → `act_on_post` submit (skipApproval) → `act_on_post` publish **at: scheduled**
    → `get_post` doit montrer le post programmé à la bonne heure. TikTok : metadata `privacyLevel: PUBLIC_TO_EVERYONE`.
-   YouTube : metadata `title` (≤ 100 caractères), description avec le lien du site et #shorts.
+   YouTube : metadata `{"title": ≤ 100 caractères, "privacyStatus": "public", "visibility": "public"}`, description
+   avec le lien du site et #shorts. (Le 20/11/2026, toutes les vidéos YouTube étaient arrivées en **privé** : sans ces
+   deux champs, Posty les envoie peut-être en privé. Au contrôle de l'étape 8, ouvre le lien YouTube : si la page dit
+   « Vidéo privée », signale-le dans la notification.)
 7. Légende Instagram / TikTok : 1 phrase d'accroche + appel à commenter (« Ton score ? ») + « Révise comme dans un jeu
    sur RéviLeague 🏆 (lien en bio) » + 5 à 8 hashtags pertinents (#revisions #brevet #bac #college #lycee + matières).
 8. **Contrôle de la publication précédente** : chaque routine relit avec `get_post` le post programmé par la routine
