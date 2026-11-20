@@ -8,25 +8,26 @@ Hébergement / archive des vidéos : GitHub Pages de ce dépôt → `https://cor
 RéviLeague est une plateforme de révision gamifiée (6e → Terminale) : cours interactifs, exercices adaptés au niveau,
 corrections détaillées, XP, récompenses, rangs, classements entre joueurs. Ton : motivant, jeune, jamais condescendant.
 
-## Les 3 créneaux (heure de Paris)
+## Les 4 vidéos du jour (heure de Paris)
 
-| Fenêtre | Format | Fichier | Spec `type` | Contenu |
-|---|---|---|---|---|
-| matin 7h – 11h59 | Quiz du jour | `reels/AAAA-MM-JJ-quiz.mp4` | `serie` | **8 questions** (6e à 3e), matières variées, countdown 4 s, xp 400. Durée ≈ 1 min 45 |
-| midi 12h – 16h59 | Le savais-tu ? | `reels/AAAA-MM-JJ-astuce.mp4` | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
-| soir 17h – 22h59 | Défi de la Ligue | `reels/AAAA-MM-JJ-defi.mp4` | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 1 min 10 |
+| Fenêtre | Routine lancée à | Format | Fichier | Spec `type` | Contenu |
+|---|---|---|---|---|---|
+| 7h – 9h59 | 6h00 | Quiz du jour | `reels/AAAA-MM-JJ-quiz.mp4` | `serie` | **8 questions** (6e à 3e), matières variées, countdown 4 s, xp 400. Durée ≈ 1 min 45 |
+| 10h – 13h59 | 9h15 | Info brevet / bac | `reels/AAAA-MM-JJ-info.mp4` | `info` | **Une info officielle** (brevet, bac, orientation, notes) en tableau de 5-6 lignes + un conseil + la source. xp 100. ≥ 61 s |
+| 14h – 17h59 | 13h15 | Le savais-tu ? | `reels/AAAA-MM-JJ-astuce.mp4` | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
+| 18h – 22h59 | 17h15 | Défi de la Ligue | `reels/AAAA-MM-JJ-defi.mp4` | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 1 min 10 |
 
 **Heure de publication variable (demande de l'utilisateur, 20/11/2026) : jamais la même heure d'un jour à l'autre,
 pour mesurer quel créneau donne le plus de vues.** Chaque routine tourne au début de sa fenêtre, prépare la vidéo,
 puis la **programme** dans Posty (pas de publication immédiate) à une heure choisie ainsi :
-1. Heures possibles = les heures pleines de la fenêtre (matin 7–11, midi 12–16, soir 17–22).
+1. Heures possibles = les heures pleines de la fenêtre (quiz 7–9, info 10–13, savais-tu 14–17, défi 18–22).
 2. Dans `historique.json`, compte combien de fois chaque heure a déjà servi pour ce format (champ `heure_publication`).
    Garde les heures les moins utilisées, **exclus l'heure utilisée la veille** pour ce format, et tires-en une au hasard.
 3. Minutes au hasard (00–59). L'heure finale doit être au moins 30 min après maintenant (sinon prends l'heure suivante).
 4. Note dans `historique.json`, pour chaque entrée de la vidéo : `heure_publication` (ex. « 9 ») et
    `publie_a` (ex. « 2026-11-21T09:37:00+01:00 »). C'est ce qui servira à l'analyse des créneaux.
 
-**Les 3 vidéos du jour durent plus d'une minute (61 s minimum, monétisation TikTok), avec voix off et musique de fond.**
+**Les 4 vidéos du jour durent plus d'une minute (61 s minimum, monétisation TikTok), avec voix off et musique de fond.**
 Les séries peuvent dépasser 70 s si le format le demande (accord de l'utilisateur le 20/11/2026).
 
 **Accroche (hook) — c'est elle qui décide si on reste sur TikTok.** Elle s'affiche en gros dès la 1re seconde
@@ -58,6 +59,31 @@ réponse en vert puis correction ; la voix annonce « Deuxième question… » e
 - **Vérifie chaque image** sur les images extraites (une par question) : si elle est hors sujet, moche, ou montre une
   personne reconnaissable, une marque ou un logo, change `image_query` et relance ; si rien ne va, retire `image_query`
   (la carte s'affiche sans image).
+
+**Format « Info brevet / bac » (`type: "info"`, ajouté le 20/11/2026, inspiré des comptes d'infos brevet très enregistrés)**
+- Sujet : une info **officielle et utile** pour les élèves : calcul des points et mentions du brevet, dates d'examen,
+  épreuves et coefficients, oral, contrôle continu du bac, bac de français, Grand oral, Parcoursup / Affelnet (dates,
+  étapes), passage en seconde, redoublement… Alterner brevet (3e) et lycée/bac. Jamais deux fois le même sujet de suite.
+- **Exactitude obligatoire** : chaque chiffre et chaque date vient d'une source officielle consultée pendant la routine
+  (education.gouv.fr, eduscol.education.gouv.fr, service-public.fr, parcoursup.fr, onisep.fr), pour la **session en
+  cours** (2027 en 2026-2027). Si tu ne trouves pas de source officielle claire, **change de sujet**. Mets la source
+  dans `source` (ex. « education.gouv.fr (BO 2026) »). Aucune rumeur, aucune réforme non publiée.
+- Spec : `{"type":"info","badge":"3e • BREVET","hook":"Brevet 2027 :
+ta moyenne de 3e
+compte pour 40 %","stamp":"OFFICIEL",
+  "table_title":"brevet 2027","table_tag":"ta note finale","rows":[{"label":"examens","value":"60 % de la note","dit":"..."}, ...],
+  "conseil":"Chaque contrôle de 3e compte :
+ne lâche rien dès maintenant","dit_conseil":"...","source":"education.gouv.fr (BO 2026)",
+  "question":"Tu le savais ?","xp":100}`
+  - `hook` : 3 lignes courtes max, la 1re (en or) annonce l'examen (« Brevet 2027 : », « Bac 2027 : », « Parcoursup : »),
+    puis l'info choc. `stamp` : « OFFICIEL », « NOUVEAU », « IMPORTANT » ou « DATES ».
+  - `rows` : **5 ou 6 lignes** ; `label` ≤ 12 caractères, `value` ≤ 20 caractères (court, percutant).
+  - **Durée ≥ 61 s** : la voix lit l'accroche, chaque ligne puis le conseil. Donne à chaque ligne un `dit` de 1-2 phrases
+    qui explique (ex. « Les épreuves finales, c'est 60 % de ta note : français, maths, sciences, histoire-géo et l'oral. »)
+    et un `dit_conseil` de 2-3 phrases. Si le script dit « trop courte », allonge les `dit`.
+- Légende : 1 phrase choc + **« (garde-la) »** + « Révise comme dans un jeu sur RéviLeague 🏆 (lien en bio) » +
+  hashtags dont **l'année de naissance du public** (#2012 pour les 3e de 2026-2027, #2010 pour les 1re, #2009 pour les
+  Terminales) + #brevet2027 / #bac2027 + #3eme / #lycee.
 
 Le générateur refuse une `serie` ou une `astuce` de moins de 61 s (il faut dépasser 1 min pour la monétisation TikTok) : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
