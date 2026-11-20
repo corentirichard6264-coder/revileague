@@ -2385,10 +2385,16 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
       }
     }
   },
@@ -2413,10 +2419,16 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
       }
     }
   },
@@ -2441,10 +2453,16 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
       }
     }
   },
@@ -2469,10 +2487,16 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
       }
     }
   },
@@ -2497,10 +2521,16 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
       }
     }
   },
@@ -2525,11 +2555,167 @@
     "publie_a": "2026-11-20T11:52:00+01:00",
     "reseaux": {
       "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/Df9d8o1nM8m/",
+        "id": "18423005983080377"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7710204591191476246"
+      },
+      "youtube": {
+        "statut": "absent du post (non programmé)"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "hook": "Tu en connais combien\nsur les 5 ?",
+    "fichier": "reels/2026-11-20-astuce.mp4",
+    "couverture": "reels/2026-11-20-astuce-cover.jpg",
+    "duree_s": 66.9,
+    "voix_off": true,
+    "posty_post_id": "p0mwoy7kdiierczcabw",
+    "posty_media_id": "med0mwoy6zhusdursjpk9",
+    "heure_publication": "15",
+    "publie_a": "2026-11-20T15:38:00+01:00",
+    "reseaux": {
+      "instagram": {
         "statut": "scheduled"
       },
       "tiktok": {
         "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
       }
-    }
+    },
+    "info_n": 1,
+    "niveau": "5e",
+    "matiere": "maths",
+    "sujet": "priorités de calcul : × avant + (2 + 3 × 4 = 14)"
+  },
+  {
+    "date": "2026-11-20T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "hook": "Tu en connais combien\nsur les 5 ?",
+    "fichier": "reels/2026-11-20-astuce.mp4",
+    "couverture": "reels/2026-11-20-astuce-cover.jpg",
+    "duree_s": 66.9,
+    "voix_off": true,
+    "posty_post_id": "p0mwoy7kdiierczcabw",
+    "posty_media_id": "med0mwoy6zhusdursjpk9",
+    "heure_publication": "15",
+    "publie_a": "2026-11-20T15:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "info_n": 2,
+    "niveau": "6e",
+    "matiere": "français",
+    "sujet": "on / ont : remplacer par « avaient » (ils ont faim)"
+  },
+  {
+    "date": "2026-11-20T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "hook": "Tu en connais combien\nsur les 5 ?",
+    "fichier": "reels/2026-11-20-astuce.mp4",
+    "couverture": "reels/2026-11-20-astuce-cover.jpg",
+    "duree_s": 66.9,
+    "voix_off": true,
+    "posty_post_id": "p0mwoy7kdiierczcabw",
+    "posty_media_id": "med0mwoy6zhusdursjpk9",
+    "heure_publication": "15",
+    "publie_a": "2026-11-20T15:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "info_n": 3,
+    "niveau": "3e",
+    "matiere": "SVT",
+    "sujet": "donneur universel O négatif, receveur universel AB+"
+  },
+  {
+    "date": "2026-11-20T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "hook": "Tu en connais combien\nsur les 5 ?",
+    "fichier": "reels/2026-11-20-astuce.mp4",
+    "couverture": "reels/2026-11-20-astuce-cover.jpg",
+    "duree_s": 66.9,
+    "voix_off": true,
+    "posty_post_id": "p0mwoy7kdiierczcabw",
+    "posty_media_id": "med0mwoy6zhusdursjpk9",
+    "heure_publication": "15",
+    "publie_a": "2026-11-20T15:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "info_n": 4,
+    "niveau": "4e",
+    "matiere": "physique-chimie",
+    "sujet": "1 L d'eau pèse environ 1 kg (1,5 L = 1,5 kg)"
+  },
+  {
+    "date": "2026-11-20T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "astuce",
+    "format": "Le savais-tu ?",
+    "hook": "Tu en connais combien\nsur les 5 ?",
+    "fichier": "reels/2026-11-20-astuce.mp4",
+    "couverture": "reels/2026-11-20-astuce-cover.jpg",
+    "duree_s": 66.9,
+    "voix_off": true,
+    "posty_post_id": "p0mwoy7kdiierczcabw",
+    "posty_media_id": "med0mwoy6zhusdursjpk9",
+    "heure_publication": "15",
+    "publie_a": "2026-11-20T15:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "info_n": 5,
+    "niveau": "Terminale",
+    "matiere": "philosophie",
+    "sujet": "« Je pense, donc je suis » : Descartes, Discours de la méthode (1637)"
   }
 ]
