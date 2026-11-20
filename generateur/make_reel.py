@@ -557,6 +557,121 @@ def astuce(spec):
     voices = [(0.3, v_intro), (T_XP + 0.2, v_end)] + [(S[k] + 0.3, v_i[k]) for k in range(n)]
     return frame, sounds, T_END, [(s, c) for s, c in voices if c]
 
+# ---------------------------------------------------------------- INFO (info officielle brevet / bac, >= 61 s)
+# Format inspiré des comptes « infos brevet » qui font beaucoup d'enregistrements : accroche « alerte » dans un
+# bandeau, tableau dont les lignes se dévoilent (flou -> net) au rythme de la voix, conseil concret, source
+# officielle. Fond cahier à carreaux aux couleurs RéviLeague. Fin (question, XP, « Rejoins la Ligue ») inchangée.
+MIN_INFO = 61.0
+PAPER = (247, 243, 234); GRID = (214, 226, 240); INK_BLUE = (36, 62, 150)
+
+_pbg = []
+def paper_bg():
+    if not _pbg:
+        bg = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(bg)
+        for x in range(0, W, 54): d.line([(x, 0), (x, H)], fill=GRID, width=2)
+        for y in range(0, H, 54): d.line([(0, y), (W, y)], fill=GRID, width=2)
+        _pbg.append(bg)
+    return _pbg[0]
+
+def info(spec):
+    rows = spec["rows"]; n = len(rows)
+    v_hook = tts(say(spec["hook"]))
+    v_r = [tts(r.get("dit") or say(f"{r['label']} : {r['value']}.")) for r in rows]
+    v_c = tts(spec.get("dit_conseil") or "Mon conseil : " + say(spec["conseil"]))
+    v_q = tts(say(spec.get("question", "Tu le savais ?")) + " Dis-le en commentaire !")
+    v_cta = tts("Révise comme dans un jeu. Rejoins la Ligue, lien en bio !")
+    print("Voix off :", "oui" if v_hook else "non (FISH_API_KEY absente)")
+
+    T0 = max(2.6, 0.3 + dur(v_hook) + 0.3)            # 1re ligne dévoilée après l'accroche
+    RS = [max(2.8, 0.3 + dur(v) + 0.5) for v in v_r]
+    R = [T0 + sum(RS[:k]) for k in range(n)]
+    T_C = T0 + sum(RS); T_END_INFO = T_C + max(4.0, 0.3 + dur(v_c) + 1.2)
+    T_Q = T_END_INFO; T_XP = T_Q + max(2.4, 0.2 + dur(v_q) + 0.3); T_CTA = T_XP + 2.0
+    T_END = T_CTA + max(2.6, 0.3 + dur(v_cta) + 0.3)
+    if v_hook and T_END < MIN_INFO:
+        sys.exit(f"Info trop courte ({T_END:.1f} s < {MIN_INFO:.0f} s) : ajoute une ligne.")
+
+    hook_lines = spec["hook"].split("\n")
+    hookf = fit(spec["hook"], "Bold", 78, W - 200)
+    LF = F("Medium", 40); VF = [fit(r["value"], "Bold", 56, W - 520) for r in rows]
+    CF = fit(spec["conseil"], "Bold", 50, W - 260)
+    TY, HH, RH = 660, 90, 128  # haut du tableau, en-tête, hauteur d'une ligne
+    TB = TY + HH + n * RH
+
+    def value_patch(k, blur):
+        P = Image.new("RGBA", (W - 420, RH), (0, 0, 0, 0))
+        ImageDraw.Draw(P).text((0, RH / 2), rows[k]["value"], font=VF[k], fill=INK_BLUE + (255,), anchor="lm")
+        return P.filter(ImageFilter.GaussianBlur(blur)) if blur > 0.3 else P
+
+    def frame(t, bg):
+        if t >= T_END_INFO:  # fin identique aux autres formats
+            im = bg.copy().convert("RGBA"); header(im, spec["badge"])
+            if t < T_CTA:
+                a = prog(t, T_Q, 0.5) * (1 - prog(t, T_CTA - 0.4, 0.4))
+                im.alpha_composite(layer(lambda dr: ctext(dr, 640 + 40 * (1 - prog(t, T_Q, 0.5)),
+                    spec.get("question", "Tu le savais ?"), fit(spec.get("question", "Tu le savais ?"), "Bold", 96, W - 160), GOLD + (255,)), a))
+                im.alpha_composite(layer(lambda dr: ctext(dr, 840, "Dis-le en commentaire !", F("Medium", 56), WHITE + (255,)), a))
+                if t >= T_XP: xp_block(im, t, T_XP, T_CTA, spec.get("xp", 100))
+            else:
+                cta(im, t, T_CTA)
+            return im.convert("RGB")
+        im = paper_bg().copy().convert("RGBA"); out = 1 - prog(t, T_END_INFO - 0.4, 0.4)
+        im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))  # logo lisible sur fond clair
+        header(im, spec["badge"])
+        def banner(dr):  # accroche, 1re ligne en or
+            dr.rounded_rectangle([60, 210 + 10, W - 60, 580 + 10], 40, fill=(10, 14, 26, 255))
+            dr.rounded_rectangle([60, 210, W - 60, 580], 40, fill=NAVY2 + (255,))
+            lh = hookf.size * 1.25; y = 395 - lh * len(hook_lines) / 2
+            for i, l in enumerate(hook_lines):
+                dr.text((W / 2, y + i * lh + lh / 2), l, font=hookf, fill=(GOLD if i == 0 else WHITE) + (255,), anchor="mm")
+        im.alpha_composite(layer(banner, out))
+        if spec.get("stamp"):  # tampon rouge penché
+            sp = back(t, 0.5, 0.4); sf = F("Bold", 40); sw = int(sf.getlength(spec["stamp"]) + 60)
+            S = Image.new("RGBA", (sw + 20, 100), (0, 0, 0, 0)); sd = ImageDraw.Draw(S)
+            sd.rounded_rectangle([10, 10, sw + 10, 90], 14, outline=RED + (255,), width=6)
+            sd.text((sw / 2 + 10, 50), spec["stamp"], font=sf, fill=RED + (255,), anchor="mm")
+            S = S.rotate(-8, expand=True, resample=Image.BICUBIC)
+            if sp * out < 1: S.putalpha(S.getchannel("A").point(lambda v: int(v * max(0, min(1, sp * out)))))
+            im.alpha_composite(S, (W - 60 - S.width + 10, 592 - S.height // 2))
+        def table(dr):
+            dr.rounded_rectangle([70, TY + 10, W - 70, TB + 10], 30, fill=NAVY2 + (255,))
+            dr.rounded_rectangle([70, TY, W - 70, TB], 30, fill=(255, 255, 255, 255), outline=NAVY2 + (255,), width=5)
+            dr.rounded_rectangle([75, TY + 5, W - 75, TY + HH], 26, fill=(232, 236, 247, 255))
+            dr.text((110, TY + HH / 2 + 3), spec.get("table_title", ""), font=F("Bold", 40), fill=NAVY + (255,), anchor="lm")
+            dr.text((W - 110, TY + HH / 2 + 3), spec.get("table_tag", ""), font=F("Medium", 36), fill=GREY + (255,), anchor="rm")
+            for k, r in enumerate(rows):
+                y = TY + HH + k * RH
+                if k: dr.line([(90, y), (W - 90, y)], fill=(225, 228, 238, 255), width=3)
+                dr.text((110, y + RH / 2), r["label"], font=LF, fill=(90, 96, 120, 255), anchor="lm")
+            dr.line([(400, TY + HH), (400, TB - 10)], fill=(225, 228, 238, 255), width=3)
+        im.alpha_composite(layer(table, prog(t, 0.2, 0.4) * out))
+        for k in range(n):  # valeurs floues tant qu'elles ne sont pas lues
+            p = prog(t, R[k], 0.5)
+            P = value_patch(k, 16 * (1 - p))
+            if k == max([j for j in range(n) if R[j] <= t] or [-1]) and t < T_C:  # ligne en cours surlignée
+                im.alpha_composite(layer(lambda dr, k=k: dr.rectangle([78, TY + HH + k * RH + 6, W - 78, TY + HH + (k + 1) * RH - 6],
+                                                                       fill=GOLD + (60,)), out))
+            if out < 1: P.putalpha(P.getchannel("A").point(lambda v: int(v * out)))
+            im.alpha_composite(P, (428, TY + HH + k * RH))
+        if t >= T_C:
+            def tip(dr):
+                y0 = TB + 50
+                bb = dr.multiline_textbbox((0, 0), spec["conseil"], font=CF, spacing=10, align="center")
+                h = bb[3] - bb[1] + 150
+                dr.rounded_rectangle([70, y0 + 10, W - 70, y0 + h + 10], 30, fill=(200, 150, 30, 255))
+                dr.rounded_rectangle([70, y0, W - 70, y0 + h], 30, fill=GOLD + (255,))
+                ctext(dr, y0 + 22, "LE CONSEIL", F("Bold", 40), NAVY + (255,))
+                ctext(dr, y0 + 90 - bb[1], spec["conseil"], CF, NAVY + (255,), 10)
+            im.alpha_composite(layer(tip, back(t, T_C, 0.45) * out))
+        if spec.get("source"):
+            im.alpha_composite(layer(lambda dr: ctext(dr, 1835, "Source : " + spec["source"], F("Medium", 32), (110, 116, 140, 255)), out))
+        return im.convert("RGB")
+
+    sounds = [(R[k], 0.25, 1100, 0.3, 14) for k in range(n)] + [(T_C, 0.5, 880, 0.3, 6), (T_C + 0.08, 0.5, 1320, 0.25, 6)]
+    sounds += [(T_Q, 0.5, 880, 0.3, 5)] + xp_sounds(T_XP)
+    voices = [(0.3, v_hook), (T_C + 0.3, v_c), (T_Q + 0.2, v_q), (T_CTA + 0.3, v_cta)] + [(R[k], v_r[k]) for k in range(n)]
+    return frame, sounds, T_END, [(s, c) for s, c in voices if c]
+
 # ---------------------------------------------------------------- MUSIQUE DE FOND (synthétisée, libre de droits)
 def music(T_END, voice_spans):
     """Boucle pop/lo-fi originale à 100 BPM (Am-F-C-G), baissée automatiquement sous la voix off."""
@@ -600,7 +715,7 @@ COVER = 0.2  # secondes affichées au début ; les plateformes prennent la 1re i
 def cover(spec, bg):
     defi = spec.get("badge", "").upper().startswith("DÉFI")
     kicker = spec.get("cover_title") or ("DÉFI DE LA LIGUE" if defi else
-                                         {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ"}.get(spec["type"], "QUESTION DU JOUR"))
+                                         {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ", "info": "INFO BREVET"}.get(spec["type"], "QUESTION DU JOUR"))
     hook = spec.get("hook", "")
     n = len(spec.get("questions") or spec.get("infos") or [1])
     xp = spec.get("xp", 50)
@@ -625,7 +740,7 @@ def cover(spec, bg):
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
     check_glyphs(spec)
-    frame, sounds, T_END, *voices = {"quiz": quiz, "serie": serie, "astuce": astuce}[spec["type"]](spec)
+    frame, sounds, T_END, *voices = {"quiz": quiz, "serie": serie, "astuce": astuce, "info": info}[spec["type"]](spec)
     N = int(SR * T_END); buf = [0.0] * N
     duck = 0.45 if voices and voices[0] else 1.0  # bips plus discrets sous la voix
     sounds = [(s, d, f, v * duck, dc) for s, d, f, v, dc in sounds]
