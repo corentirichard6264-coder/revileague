@@ -1930,6 +1930,12 @@
         "statut": "delivered",
         "lien": "https://www.youtube.com/watch?v=IZIWpCqAl4c"
       }
+    },
+    "controle": {
+      "date": "2026-11-20T06:15+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered",
+      "youtube": "delivered (public, oEmbed 200)"
     }
   },
   {
@@ -1962,6 +1968,12 @@
         "statut": "delivered",
         "lien": "https://www.youtube.com/watch?v=IZIWpCqAl4c"
       }
+    },
+    "controle": {
+      "date": "2026-11-20T06:15+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered",
+      "youtube": "delivered (public, oEmbed 200)"
     }
   },
   {
@@ -1994,6 +2006,12 @@
         "statut": "delivered",
         "lien": "https://www.youtube.com/watch?v=IZIWpCqAl4c"
       }
+    },
+    "controle": {
+      "date": "2026-11-20T06:15+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered",
+      "youtube": "delivered (public, oEmbed 200)"
     }
   },
   {
@@ -2025,6 +2043,252 @@
       "youtube": {
         "statut": "delivered",
         "lien": "https://www.youtube.com/watch?v=IZIWpCqAl4c"
+      }
+    },
+    "controle": {
+      "date": "2026-11-20T06:15+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered",
+      "youtube": "delivered (public, oEmbed 200)"
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 1,
+    "niveau": "6e",
+    "matiere": "géographie",
+    "sujet": "océan qui borde l'ouest de la France (Atlantique)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 2,
+    "niveau": "6e",
+    "matiere": "maths",
+    "sujet": "minutes dans 2 heures (120)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 3,
+    "niveau": "6e",
+    "matiere": "anglais",
+    "sujet": "contraire de big (small)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 4,
+    "niveau": "5e",
+    "matiere": "SVT",
+    "sujet": "nombre d'os du squelette adulte (206)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 5,
+    "niveau": "5e",
+    "matiere": "histoire",
+    "sujet": "sacre de Charlemagne empereur (25 décembre 800)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 6,
+    "niveau": "4e",
+    "matiere": "physique-chimie",
+    "sujet": "formule du dioxygène (O2)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 7,
+    "niveau": "4e",
+    "matiere": "français",
+    "sujet": "nature de « que » dans « le chat que j'ai vu » (pronom relatif)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    }
+  },
+  {
+    "date": "2026-11-20T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "question_n": 8,
+    "niveau": "3e",
+    "matiere": "maths",
+    "sujet": "PGCD de 24 et 36 (12)",
+    "hook": "Impossible d'avoir 8/8\n(la dernière est un piège)",
+    "fichier": "reels/2026-11-20-quiz.mp4",
+    "couverture": "reels/2026-11-20-quiz-cover.jpg",
+    "duree_s": 142.1,
+    "voix_off": true,
+    "posty_post_id": "p0mwoizo2ekyyt6fpex",
+    "posty_media_id": "med0mwoiyv8hji4t0r8ps",
+    "heure_publication": "9",
+    "publie_a": "2026-11-20T09:22:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
       }
     }
   }
