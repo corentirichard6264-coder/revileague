@@ -318,7 +318,7 @@ def q_image(q):
         try:
             req = urllib.request.Request(api, headers={"User-Agent": "revileague-reels/1.0"})
             res = json.load(urllib.request.urlopen(req, timeout=20))["results"]
-            urls = [r["url"] for r in res if r.get("width", 0) >= 500]
+            urls = [r["url"] for r in res if (r.get("width") or 0) >= 500]
         except Exception as e:
             print("Image : recherche échouée :", e)
     for u in urls[:4]:
