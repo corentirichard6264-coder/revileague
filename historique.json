@@ -2940,13 +2940,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 1,
@@ -2970,13 +2974,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 2,
@@ -3000,13 +3008,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 3,
@@ -3030,13 +3042,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 4,
@@ -3060,13 +3076,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 5,
@@ -3090,13 +3110,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 6,
@@ -3120,13 +3144,17 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 7,
@@ -3150,18 +3178,208 @@
   "publie_a": "2026-11-21T08:20:00+01:00",
   "reseaux": {
    "instagram": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/Df_qZYCjCv-/",
+    "id": "18117367922030312"
    },
    "tiktok": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7710521160827652099"
    },
    "youtube": {
-    "statut": "scheduled"
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=IsZ33H_iUKg"
    }
   },
   "question_n": 8,
   "niveau": "3e",
   "matiere": "maths",
   "sujet": "Pythagore : hypoténuse avec côtés 5 et 12 (13)"
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 1,
+  "niveau": "Tle",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : lundi 14 juin 2027 (8h-12h)",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 2,
+  "niveau": "1re",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : épreuve anticipée écrite mardi 15 juin 2027",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 3,
+  "niveau": "Tle",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : écrits de spécialité 16, 17 et 18 juin 2027",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 4,
+  "niveau": "1re",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : épreuve anticipée de maths lundi 21 juin 2027 (8h-10h)",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 5,
+  "niveau": "Tle",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : Grand oral du 21 juin au 2 juillet 2027",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
+ },
+ {
+  "date": "2026-11-21T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info brevet / bac",
+  "question_n": 6,
+  "niveau": "Tle",
+  "matiere": "bac",
+  "sujet": "Bac 2027, calendrier : résultats du 1er groupe dès le mardi 6 juillet 2027, second groupe jusqu'au 9 juillet",
+  "hook": "Bac 2027 :\nles dates officielles\nsont tombées",
+  "source": "education.gouv.fr, BO spécial n° 2 du 25/08/2026 (circulaire calendrier session 2027, annexe III)",
+  "fichier": "reels/2026-11-21-info.mp4",
+  "couverture": "reels/2026-11-21-info-cover.jpg",
+  "duree_s": 71.3,
+  "voix_off": true,
+  "posty_post_id": "p0mwq527xfpto9nkdo5",
+  "posty_media_id": "med0mwq51qc3f8bgu14tc",
+  "heure_publication": "12",
+  "publie_a": "2026-11-21T12:57:00+01:00",
+  "reseaux": {
+   "instagram": {
+    "statut": "scheduled"
+   },
+   "tiktok": {
+    "statut": "scheduled"
+   },
+   "youtube": {
+    "statut": "absent du post (non programmé)"
+   }
+  }
  }
 ]
