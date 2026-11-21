@@ -14,13 +14,13 @@ corrections détaillées, XP, récompenses, rangs, classements entre joueurs. To
 |---|---|---|---|---|---|
 | 7h – 9h59 | 6h00 | Quiz du jour | `reels/AAAA-MM-JJ-quiz.mp4` | `serie` | **8 questions** (6e à 3e), matières variées, countdown 4 s, xp 400. Durée ≈ 1 min 45 |
 | 10h – 13h59 | 9h15 | Info brevet / bac | `reels/AAAA-MM-JJ-info.mp4` | `info` | **Une info officielle** (brevet, bac, orientation, notes) en tableau de 5-6 lignes + un conseil + la source. xp 100. ≥ 61 s |
-| 14h – 17h59 | 13h15 | Le savais-tu ? | `reels/AAAA-MM-JJ-astuce.mp4` | `astuce` | **5 infos** (règles / astuces / méthodes), chacune : titre + 2 lignes courtes + un exemple, matières et niveaux variés, xp 100. Durée ≈ 62 s |
+| 14h – 17h59 | 13h15 | Info actu (news éducation) | `reels/AAAA-MM-JJ-actu.mp4` | `info` | **Une actu ou une date à venir** utile aux élèves (news de la semaine, calendrier, événements), même format que l'Info brevet / bac. xp 100. ≥ 61 s |
 | 18h – 22h59 | 17h15 | Défi de la Ligue | `reels/AAAA-MM-JJ-defi.mp4` | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 1 min 10 |
 
 **Heure de publication variable (demande de l'utilisateur, 20/11/2026) : jamais la même heure d'un jour à l'autre,
 pour mesurer quel créneau donne le plus de vues.** Chaque routine tourne au début de sa fenêtre, prépare la vidéo,
 puis la **programme** dans Posty (pas de publication immédiate) à une heure choisie ainsi :
-1. Heures possibles = les heures pleines de la fenêtre (quiz 7–9, info 10–13, savais-tu 14–17, défi 18–22).
+1. Heures possibles = les heures pleines de la fenêtre (quiz 7–9, info 10–13, actu 14–17, défi 18–22).
 2. Dans `historique.json`, compte combien de fois chaque heure a déjà servi pour ce format (champ `heure_publication`).
    Garde les heures les moins utilisées, **exclus l'heure utilisée la veille** pour ce format, et tires-en une au hasard.
 3. Minutes au hasard (00–59). L'heure finale doit être au moins 30 min après maintenant (sinon prends l'heure suivante).
@@ -85,6 +85,28 @@ ne lâche rien dès maintenant","dit_conseil":"...","source":"education.gouv.fr 
   hashtags dont **l'année de naissance du public** (#2012 pour les 3e de 2026-2027, #2010 pour les 1re, #2009 pour les
   Terminales) + #brevet2027 / #bac2027 + #3eme / #lycee.
 
+**Format « Info actu » (`type: "info"`, routine de l'après-midi, ajouté le 22/11/2026)** — même rendu que l'Info
+brevet / bac, mais centré sur **l'actualité et le calendrier** (demande de l'utilisateur : « des news, des dates, des
+événements qui peuvent servir et intéresser les élèves », car la vidéo « Bac 2027 : toutes les dates » a fait
+x14 la portée habituelle avec 57 partages et 40 enregistrements sur Instagram).
+- **Chaque jour, cherche** (WebSearch / WebFetch) ce qui est nouveau ou proche, dans cet ordre :
+  1. **Actus des 7 derniers jours** : annonces du ministère, réformes publiées, nouveaux textes au BO, changements
+     d'examens, résultats de concours ou classements officiels (education.gouv.fr/actualites, service-public.fr/actualites,
+     eduscol, onisep.fr, parcoursup.fr, etudiant.gouv.fr).
+  2. **Dates à venir dans les 30 prochains jours** : vacances scolaires (par zone), ouverture/clôture Parcoursup,
+     journées portes ouvertes, salons de l'orientation, inscriptions aux examens, brevets/bacs blancs habituels,
+     concours (Kangourou, Olympiades…), Journée nationale…
+  3. **Calendriers officiels utiles** à rappeler (examens 2027, Parcoursup 2027, vacances 2026-2027), en variant
+     l'angle (« dans 3 semaines : … », « ce qui change en janvier »).
+- Les médias (Le Monde, franceinfo, L'Étudiant, Ouest-France…) servent à **repérer** une actu ; chaque chiffre/date
+  affiché doit être **confirmé sur une source officielle**. Une simple annonce non publiée au BO → tampon « ANNONCE »
+  et le dire clairement (« le ministre a annoncé… »). Rumeur, polémique politique ou info non confirmée → on n'en parle pas.
+- `stamp` : « NEWS », « DATES », « À VENIR », « OFFICIEL » ou « ANNONCE ». Accroche avec l'échéance ou la nouveauté en 1re
+  ligne (« Vacances de Noël : », « Parcoursup 2027 : », « Nouveau au brevet : »).
+- Ne jamais refaire un sujet déjà traité les 14 derniers jours (historique.json, champ `sujet`), sauf mise à jour réelle.
+- Légende : « (garde-la) » + l'appel à commenter + hashtags avec l'année de naissance du public concerné + #actu #education.
+- Si aucune actu ni date ne passe ces règles, fais une Info brevet / bac classique sur un autre sujet que celle du matin.
+
 Le générateur refuse une `serie` ou une `astuce` de moins de 61 s (il faut dépasser 1 min pour la monétisation TikTok) : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
 dans TikTok/Instagram). La voix off (Fish Audio) lit l'intro, chaque question ou info, et la fin : si le script affiche
@@ -103,7 +125,7 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
    - **voix off** (séries et astuces) : lue par Fish Audio si `FISH_API_KEY` est définie dans l'environnement. Quand l'écrit
      se lit mal (puissances, fractions, sigles, dates), ajouter `dit_question` / `dit_explication` à la question
      (ou `dit` à une info d'astuce) avec la phrase à prononcer (ex. « 2 puissance 3 fois 2 puissance 2 ? A : 10. B : 32. C : 64. D : 12. »).
-3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-<quiz|astuce|defi>.mp4`, puis extraire des images
+3. `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-<quiz|info|actu|defi>.mp4`, puis extraire des images
    avec ffmpeg (la 1re image = couverture automatique, puis une par question / info) et les regarder.
    Le script affiche « Voix off : oui/non » : si c'est « non » ou si Fish Audio échoue, le signaler dans le message final.
 4. Choisir l'heure de publication (règle « Heure de publication variable » ci-dessus).
