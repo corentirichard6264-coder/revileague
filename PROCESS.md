@@ -101,6 +101,23 @@ x14 la portée habituelle avec 57 partages et 40 enregistrements sur Instagram).
 - Les médias (Le Monde, franceinfo, L'Étudiant, Ouest-France…) servent à **repérer** une actu ; chaque chiffre/date
   affiché doit être **confirmé sur une source officielle**. Une simple annonce non publiée au BO → tampon « ANNONCE »
   et le dire clairement (« le ministre a annoncé… »). Rumeur, polémique politique ou info non confirmée → on n'en parle pas.
+- **Vraie info ou fake news ? (règle prioritaire, demandée par l'utilisateur)** — une info n'est publiée que si
+  TOUTES ces conditions sont remplies, sinon on change de sujet :
+  1. **Source primaire officielle** trouvée et lue : la page elle-même sur un domaine officiel exact
+     (education.gouv.fr, eduscol.education.gouv.fr, service-public.fr, legifrance.gouv.fr, parcoursup.fr, onisep.fr,
+     etudiant.gouv.fr, site d'une académie en ac-*.fr). Méfie-toi des domaines qui imitent (« education-gouv.fr »,
+     « .com » …) et des captures d'écran.
+  2. **Date vérifiée** : la page est datée et l'info concerne la session / l'année en cours (pas une vieille actu
+     qui recircule, pas une ancienne réforme abandonnée).
+  3. Si l'info vient d'un média : **au moins deux médias reconnus et indépendants** la rapportent ET la source
+     officielle la confirme. Une info vue seulement sur TikTok, X, Instagram, un forum, un site satirique (Le Gorafi…)
+     ou un seul média = **rejetée**.
+  4. Les chiffres et dates affichés sont **recopiés exactement** de la source officielle, sans arrondi ni extrapolation.
+  5. Projet, consultation ou déclaration d'un ministre pas encore publiée au BO / Journal officiel → seulement avec le
+     tampon « ANNONCE » et le mot « annoncé », jamais présenté comme acté.
+  6. En cas de doute, contradiction entre sources ou sujet polémique → on ne publie pas cette info.
+  Note dans `historique.json` (champ `sources`) **les URL exactes** utilisées, et cite la source officielle dans la
+  vidéo et la légende.
 - `stamp` : « NEWS », « DATES », « À VENIR », « OFFICIEL » ou « ANNONCE ». Accroche avec l'échéance ou la nouveauté en 1re
   ligne (« Vacances de Noël : », « Parcoursup 2027 : », « Nouveau au brevet : »).
 - Ne jamais refaire un sujet déjà traité les 14 derniers jours (historique.json, champ `sujet`), sauf mise à jour réelle.
