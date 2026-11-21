@@ -3446,13 +3446,16 @@
     "publie_a": "2026-11-21T16:37:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgAjRJvD7r3/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=JVrzGXH-GK4",
+        "public": true
       }
     },
     "info_n": 1,
@@ -3476,13 +3479,16 @@
     "publie_a": "2026-11-21T16:37:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgAjRJvD7r3/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=JVrzGXH-GK4",
+        "public": true
       }
     },
     "info_n": 2,
@@ -3506,13 +3512,16 @@
     "publie_a": "2026-11-21T16:37:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgAjRJvD7r3/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=JVrzGXH-GK4",
+        "public": true
       }
     },
     "info_n": 3,
@@ -3536,13 +3545,16 @@
     "publie_a": "2026-11-21T16:37:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgAjRJvD7r3/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=JVrzGXH-GK4",
+        "public": true
       }
     },
     "info_n": 4,
@@ -3566,6 +3578,39 @@
     "publie_a": "2026-11-21T16:37:00+01:00",
     "reseaux": {
       "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgAjRJvD7r3/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=JVrzGXH-GK4",
+        "public": true
+      }
+    },
+    "info_n": 5,
+    "niveau": "2nde",
+    "matiere": "maths",
+    "sujet": "coefficient directeur a = (yB - yA) ÷ (xB - xA) : A(1;2), B(3;8) donne a = 3"
+  },
+  {
+    "date": "2026-11-21T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu fais 4/4 ?\nLa dernière piège tout le monde",
+    "fichier": "reels/2026-11-21-defi.mp4",
+    "couverture": "reels/2026-11-21-defi-cover.jpg",
+    "duree_s": 98.3,
+    "voix_off": true,
+    "posty_post_id": "p0mwqmmdmnz5dvi9czn",
+    "posty_media_id": "med0mwqmlticbzhxmf71k",
+    "heure_publication": "20",
+    "publie_a": "2026-11-21T20:38:00+01:00",
+    "reseaux": {
+      "instagram": {
         "statut": "scheduled"
       },
       "tiktok": {
@@ -3575,9 +3620,99 @@
         "statut": "scheduled"
       }
     },
-    "info_n": 5,
+    "question_n": 1,
+    "niveau": "3e",
+    "matiere": "géographie",
+    "sujet": "plus haut sommet de France (mont Blanc, environ 4 805 m)"
+  },
+  {
+    "date": "2026-11-21T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu fais 4/4 ?\nLa dernière piège tout le monde",
+    "fichier": "reels/2026-11-21-defi.mp4",
+    "couverture": "reels/2026-11-21-defi-cover.jpg",
+    "duree_s": 98.3,
+    "voix_off": true,
+    "posty_post_id": "p0mwqmmdmnz5dvi9czn",
+    "posty_media_id": "med0mwqmlticbzhxmf71k",
+    "heure_publication": "20",
+    "publie_a": "2026-11-21T20:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "question_n": 2,
     "niveau": "2nde",
+    "matiere": "physique-chimie",
+    "sujet": "nombre d'électrons d'un atome de carbone Z = 6 (6, atome neutre)"
+  },
+  {
+    "date": "2026-11-21T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu fais 4/4 ?\nLa dernière piège tout le monde",
+    "fichier": "reels/2026-11-21-defi.mp4",
+    "couverture": "reels/2026-11-21-defi-cover.jpg",
+    "duree_s": 98.3,
+    "voix_off": true,
+    "posty_post_id": "p0mwqmmdmnz5dvi9czn",
+    "posty_media_id": "med0mwqmlticbzhxmf71k",
+    "heure_publication": "20",
+    "publie_a": "2026-11-21T20:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "question_n": 3,
+    "niveau": "1re",
+    "matiere": "français",
+    "sujet": "auteur des Fleurs du mal (Baudelaire, 1857)"
+  },
+  {
+    "date": "2026-11-21T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu fais 4/4 ?\nLa dernière piège tout le monde",
+    "fichier": "reels/2026-11-21-defi.mp4",
+    "couverture": "reels/2026-11-21-defi-cover.jpg",
+    "duree_s": 98.3,
+    "voix_off": true,
+    "posty_post_id": "p0mwqmmdmnz5dvi9czn",
+    "posty_media_id": "med0mwqmlticbzhxmf71k",
+    "heure_publication": "20",
+    "publie_a": "2026-11-21T20:38:00+01:00",
+    "reseaux": {
+      "instagram": {
+        "statut": "scheduled"
+      },
+      "tiktok": {
+        "statut": "scheduled"
+      },
+      "youtube": {
+        "statut": "scheduled"
+      }
+    },
+    "question_n": 4,
+    "niveau": "Terminale",
     "matiere": "maths",
-    "sujet": "coefficient directeur a = (yB - yA) ÷ (xB - xA) : A(1;2), B(3;8) donne a = 3"
+    "sujet": "limite de (1 + 1/n) puissance n en +∞ (e)"
   }
 ]
