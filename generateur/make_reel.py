@@ -342,7 +342,7 @@ def quiz_bg():
         bg = bg.convert("RGBA"); bg.alpha_composite(pat); _qbg.append(bg.convert("RGB"))
     return _qbg[0]
 
-def q_image(q):
+def q_image(q, size=None, radius=30):
     """Image d'illustration : q["image"] (URL) ou q["image_query"] (recherche Openverse, domaine public / CC0
     uniquement, donc sans droits ni crédit). None si rien ne se charge : la carte se passe d'image."""
     import io, urllib.parse, urllib.request
@@ -362,13 +362,15 @@ def q_image(q):
             im = Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=20).read())).convert("RGB")
         except Exception:
             continue
-        s = max(IMG_W / im.width, IMG_H / im.height)  # remplit la zone (recadrage centré)
+        tw, th = size or (IMG_W, IMG_H)
+        s = max(tw / im.width, th / im.height)  # remplit la zone (recadrage centré)
         im = im.resize((math.ceil(im.width * s), math.ceil(im.height * s)), Image.LANCZOS)
-        x, y = (im.width - IMG_W) // 2, (im.height - IMG_H) // 2
-        im = im.crop((x, y, x + IMG_W, y + IMG_H)).convert("RGBA")
-        m = Image.new("L", (IMG_W, IMG_H), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, IMG_W, IMG_H], 30, fill=255)
-        im.putalpha(m); print("Image :", u); return im
-    if q.get("image") or q.get("image_query"): print("Image : aucune image chargée pour", repr(q["question"]))
+        x, y = (im.width - tw) // 2, (im.height - th) // 2
+        im = im.crop((x, y, x + tw, y + th)).convert("RGBA")
+        if radius:
+            m = Image.new("L", (tw, th), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, tw, th], radius, fill=255); im.putalpha(m)
+        print("Image :", u); return im
+    if q.get("image") or q.get("image_query"): print("Image : aucune image chargée pour", repr(q.get("question", "la couverture")))
     return None
 
 def serie(spec):
@@ -754,57 +756,38 @@ def music(T_END, voice_spans):
 COVER = 0.2  # secondes affichées au début ; les plateformes prennent la 1re image comme miniature
 
 def cover(spec, bg):
-    """Miniature au style « Brevet 2027 » : bandeau bleu nuit (titre en or + accroche), tampon rouge,
-    tableau blanc qui résume la vidéo (nombre de questions, niveau, XP…)."""
+    """Miniature (style choisi le 22/11/2026) : photo plein écran en rapport avec le sujet, assombrie, logo + badge
+    en haut, un encadré bleu nuit avec le type de vidéo (en or) et UNIQUEMENT le sujet de la vidéo, tampon rouge.
+    Photo : spec["cover_image"] (URL) ou spec["cover_image_query"] ; à défaut la 1re question (série) ;
+    sans photo, fond cahier."""
     defi = spec.get("badge", "").upper().startswith("DÉFI")
     typ = spec["type"]
     kicker = spec.get("cover_title") or ("DÉFI DE LA LIGUE" if defi else
                                          {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ DU JOUR"}.get(typ, "INFO BREVET / BAC"))
     stamp = spec.get("stamp") or ("DÉFI" if defi else {"serie": "QUIZ"}.get(typ, "À SAVOIR"))
-    hook = spec.get("hook", "")
-    n = len(spec.get("questions") or spec.get("infos") or spec.get("rows") or [1])
-    xp = spec.get("xp", 50)
-    if typ == "serie":
-        rows = [("questions", f"{n} {'défis' if defi else 'questions'}"),
-                ("niveau", "brevet, lycée, bac" if defi else "de la 6e à la 3e"),
-                ("chrono", f"{spec.get('countdown', 5)} s par question"), ("à gagner", f"+{xp} XP")]
-    elif typ == "info":
-        rows = [(r["label"], "?") for r in spec["rows"][:4]]  # valeurs cachées : on veut savoir la suite
-    else:
-        rows = [("infos", f"{n} infos"), ("matières", "variées"), ("à gagner", f"+{xp} XP")]
-    im = paper_bg().copy().convert("RGBA")
+    text = spec.get("cover_text") or spec.get("hook", "")
+    src = ({"image": spec.get("cover_image"), "image_query": spec.get("cover_image_query")}
+           if spec.get("cover_image") or spec.get("cover_image_query") else (spec.get("questions") or [{}])[0])
+    photo = q_image(src, size=(W, H), radius=0) if (src.get("image") or src.get("image_query")) else None
+    im = photo if photo is not None else paper_bg().copy().convert("RGBA")
+    im.alpha_composite(Image.new("RGBA", (W, H), (10, 14, 26, 150 if photo is not None else 0)))
     im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))
     header(im, spec.get("badge", ""))
-    kf = fit(kicker, "Bold", 96, W - 200)
-    hook_lines = hook.split("\n"); hf = fit(hook, "Bold", 84, W - 200)
-    lh = hf.size * 1.25; bh = 150 + lh * len(hook_lines) + 90
+    kf = fit(kicker, "Bold", 96, W - 220); tf = fit(text, "Bold", 120, W - 220)
     def c(dr):
-        dr.rounded_rectangle([60, 230 + 12, W - 60, 230 + bh + 12], 44, fill=(10, 14, 26, 255))
-        dr.rounded_rectangle([60, 230, W - 60, 230 + bh], 44, fill=NAVY2 + (255,))
-        dr.text((W / 2, 320), kicker, font=kf, fill=GOLD + (255,), anchor="mm")
-        for i, l in enumerate(hook_lines):
-            dr.text((W / 2, 420 + i * lh + lh / 2), l, font=hf, fill=WHITE + (255,), anchor="mm")
-        ty = 230 + bh + 140; rh = 165
-        dr.rounded_rectangle([70, ty + 10, W - 70, ty + 90 + rh * len(rows) + 10], 30, fill=NAVY2 + (255,))
-        dr.rounded_rectangle([70, ty, W - 70, ty + 90 + rh * len(rows)], 30, fill=(255, 255, 255, 255), outline=NAVY2 + (255,), width=5)
-        dr.rounded_rectangle([75, ty + 5, W - 75, ty + 90], 26, fill=(232, 236, 247, 255))
-        dr.text((110, ty + 48), "RéviLeague", font=F("Bold", 42), fill=NAVY + (255,), anchor="lm")
-        dr.text((W - 110, ty + 48), "glisse pour voir" if typ == "carrousel" else "regarde jusqu'au bout", font=F("Medium", 36), fill=GREY + (255,), anchor="rm")
-        dr.line([(420, ty + 90), (420, ty + 90 + rh * len(rows) - 10)], fill=(225, 228, 238, 255), width=3)
-        for k, (lab, val) in enumerate(rows):
-            y = ty + 90 + k * rh
-            if k: dr.line([(90, y), (W - 90, y)], fill=(225, 228, 238, 255), width=3)
-            dr.text((110, y + rh / 2), lab, font=fit(lab, "Medium", 46, 290), fill=(90, 96, 120, 255), anchor="lm")
-            dr.text((450, y + rh / 2), val, font=fit(val, "Bold", 62, W - 560), fill=(INK_BLUE if val != "?" else GOLD) + (255,), anchor="lm")
-        ctext(dr, ty + 90 + rh * len(rows) + 70, "Révise comme dans un jeu", F("Bold", 60), NAVY2 + (255,))
+        bb = dr.multiline_textbbox((0, 0), text, font=tf, spacing=10, align="center")
+        th = bb[3] - bb[1]; top = 960 - (190 + th) / 2
+        dr.rounded_rectangle([60, top, W - 60, top + 190 + th + 70], 50, fill=NAVY2 + (215,))
+        ctext(dr, top + 60, kicker, kf, GOLD + (255,))
+        ctext(dr, top + 190 - bb[1], text, tf, WHITE + (255,), 10)
+        c.top = top
     im.alpha_composite(layer(c, 1))
-    # tampon rouge penché en bas à droite du bandeau
-    sf = F("Bold", 52); sw = int(sf.getlength(stamp) + 70)
-    S = Image.new("RGBA", (sw + 20, 120), (0, 0, 0, 0)); sd = ImageDraw.Draw(S)
-    sd.rounded_rectangle([10, 10, sw + 10, 110], 16, fill=(255, 255, 255, 230), outline=RED + (255,), width=7)
-    sd.text((sw / 2 + 10, 60), stamp, font=sf, fill=RED + (255,), anchor="mm")
+    sf = F("Bold", 54); sw = int(sf.getlength(stamp) + 80)
+    S = Image.new("RGBA", (sw + 20, 128), (0, 0, 0, 0)); sd = ImageDraw.Draw(S)
+    sd.rounded_rectangle([10, 10, sw + 10, 118], 18, fill=(255, 255, 255, 235), outline=RED + (255,), width=8)
+    sd.text((sw / 2 + 10, 64), stamp, font=sf, fill=RED + (255,), anchor="mm")
     S = S.rotate(-8, expand=True, resample=Image.BICUBIC)
-    im.alpha_composite(S, (W - 70 - S.width, int(230 + bh + 30 - S.height / 2)))
+    im.alpha_composite(S, (W - 90 - S.width, int(c.top - S.height / 2 + 10)))
     return im.convert("RGB")
 
 # ---------------------------------------------------------------- CARROUSEL PHOTO « Le savais-tu ? » (5 images 4:5)

@@ -129,6 +129,18 @@ x14 la portée habituelle avec 57 partages et 40 enregistrements sur Instagram).
 bandeau bleu nuit, 1re ligne de l'accroche en or, cartes blanches bordées de bleu nuit. Le générateur le fait seul. La
 fin des vidéos (score, XP, « Rejoins la Ligue », « Lien en bio ») ne change pas.
 
+**Couverture / miniature (22/11/2026, style choisi par l'utilisateur)** : photo plein écran **en rapport avec le
+sujet**, assombrie, logo + badge en haut, encadré bleu nuit avec le type (QUIZ DU JOUR / INFO BREVET / BAC / DÉFI DE
+LA LIGUE) et **seulement le sujet de la vidéo**, tampon rouge. Pas de « 8 questions • +400 XP ». Dans chaque spec vidéo :
+- `cover_text` : 2 lignes courtes qui disent de quoi parle la vidéo (ex. « Capitales, cœur,
+Charlemagne, la Loire… »,
+  « Brevet 2027 :
+le calcul de ta note », « Vacances de Noël :
+les dates par zone ») ;
+- `cover_image_query` : 2-3 mots en anglais pour la photo (sinon la photo de la 1re question est reprise ; obligatoire
+  pour une info). Pas de personne reconnaissable, ni marque, ni logo : vérifie la 1re image de la vidéo et change la
+  requête si la photo est hors sujet.
+
 **Voix off (22/11/2026)** : le générateur adapte le texte avant de le faire lire (« 8/8 » → « 8 sur 8 », « 3e » →
 « troisième », « 1re » → « première », « Tle » → « terminale », dates « 14/06/2027 » → « 14 juin 2027 », « 8h30 » →
 « 8 heures 30 », « % », « n° », sigles BO/DNB/AB/TB, mots EN CAPITALES lus normalement, retour à la ligne = pause si
