@@ -8,19 +8,19 @@ Hébergement / archive des vidéos : GitHub Pages de ce dépôt → `https://cor
 RéviLeague est une plateforme de révision gamifiée (6e → Terminale) : cours interactifs, exercices adaptés au niveau,
 corrections détaillées, XP, récompenses, rangs, classements entre joueurs. Ton : motivant, jeune, jamais condescendant.
 
-## Les 4 vidéos du jour (heure de Paris)
+## Les 4 publications du jour (heure de Paris)
 
 | Fenêtre | Routine lancée à | Format | Fichier | Spec `type` | Contenu |
 |---|---|---|---|---|---|
 | 7h – 9h59 | 6h00 | Quiz du jour | `reels/AAAA-MM-JJ-quiz.mp4` | `serie` | **8 questions** (6e à 3e), matières variées, countdown 4 s, xp 400. Durée ≈ 1 min 45 |
-| 10h – 13h59 | 9h15 | Info brevet / bac | `reels/AAAA-MM-JJ-info.mp4` | `info` | **Une info officielle** (brevet, bac, orientation, notes) en tableau de 5-6 lignes + un conseil + la source. xp 100. ≥ 61 s |
-| 14h – 17h59 | 13h15 | Info actu (news éducation) | `reels/AAAA-MM-JJ-actu.mp4` | `info` | **Une actu ou une date à venir** utile aux élèves (news de la semaine, calendrier, événements), même format que l'Info brevet / bac. xp 100. ≥ 61 s |
+| 10h – 13h59 | 9h15 | **Info actu** (news éducation, dates, événements) | `reels/AAAA-MM-JJ-actu.mp4` | `info` | **Une actu ou une date à venir** utile aux élèves, en tableau de 5-6 lignes + conseil + source officielle (voir « Format Info actu »). xp 100. ≥ 61 s |
+| 14h – 17h59 | 13h15 | **Le savais-tu ?** en **carrousel photo** (pas une vidéo) | `reels/AAAA-MM-JJ-savais-1.jpg` … `-5.jpg` | `carrousel` | 5 images : couverture « Le savais-tu ? », **3 infos** (règles / astuces / méthodes, matières et niveaux variés), « Abonne-toi ! » |
 | 18h – 22h59 | 17h15 | Défi de la Ligue | `reels/AAAA-MM-JJ-defi.mp4` | `serie` | **4 défis** plus durs (brevet, lycée, bac), badge de série « DÉFI • … », countdown 6 s, xp 400. Durée ≈ 1 min 10 |
 
 **Heure de publication variable (demande de l'utilisateur, 20/11/2026) : jamais la même heure d'un jour à l'autre,
 pour mesurer quel créneau donne le plus de vues.** Chaque routine tourne au début de sa fenêtre, prépare la vidéo,
 puis la **programme** dans Posty (pas de publication immédiate) à une heure choisie ainsi :
-1. Heures possibles = les heures pleines de la fenêtre (quiz 7–9, info 10–13, actu 14–17, défi 18–22).
+1. Heures possibles = les heures pleines de la fenêtre (quiz 7–9, actu 10–13, savais-tu 14–17, défi 18–22).
 2. Dans `historique.json`, compte combien de fois chaque heure a déjà servi pour ce format (champ `heure_publication`).
    Garde les heures les moins utilisées, **exclus l'heure utilisée la veille** pour ce format, et tires-en une au hasard.
 3. Minutes au hasard (00–59). L'heure finale doit être au moins 30 min après maintenant (sinon prends l'heure suivante).
@@ -85,7 +85,7 @@ ne lâche rien dès maintenant","dit_conseil":"...","source":"education.gouv.fr 
   hashtags dont **l'année de naissance du public** (#2012 pour les 3e de 2026-2027, #2010 pour les 1re, #2009 pour les
   Terminales) + #brevet2027 / #bac2027 + #3eme / #lycee.
 
-**Format « Info actu » (`type: "info"`, routine de l'après-midi, ajouté le 22/11/2026)** — même rendu que l'Info
+**Format « Info actu » (`type: "info"`, routine de 9h15, publication 10h–14h, ajouté le 22/11/2026)** — même rendu que l'Info
 brevet / bac, mais centré sur **l'actualité et le calendrier** (demande de l'utilisateur : « des news, des dates, des
 événements qui peuvent servir et intéresser les élèves », car la vidéo « Bac 2027 : toutes les dates » a fait
 x14 la portée habituelle avec 57 partages et 40 enregistrements sur Instagram).
@@ -123,6 +123,30 @@ x14 la portée habituelle avec 57 partages et 40 enregistrements sur Instagram).
 - Ne jamais refaire un sujet déjà traité les 14 derniers jours (historique.json, champ `sujet`), sauf mise à jour réelle.
 - Légende : « (garde-la) » + l'appel à commenter + hashtags avec l'année de naissance du public concerné + #actu #education.
 - Si aucune actu ni date ne passe ces règles, fais une Info brevet / bac classique sur un autre sujet que celle du matin.
+
+**Design commun (22/11/2026, demande de l'utilisateur : « on se base sur ce modèle maintenant »)** : toutes les vidéos
+(quiz, défi, info actu) et le carrousel ont le look de la vidéo « Brevet 2027 » : fond cahier à carreaux, logo et
+bandeau bleu nuit, 1re ligne de l'accroche en or, cartes blanches bordées de bleu nuit. Le générateur le fait seul. La
+fin des vidéos (score, XP, « Rejoins la Ligue », « Lien en bio ») ne change pas.
+
+**Voix off (22/11/2026)** : le générateur adapte le texte avant de le faire lire (« 8/8 » → « 8 sur 8 », « 3e » →
+« troisième », « 1re » → « première », « Tle » → « terminale », dates « 14/06/2027 » → « 14 juin 2027 », « 8h30 » →
+« 8 heures 30 », « % », « n° », sigles BO/DNB/AB/TB, mots EN CAPITALES lus normalement, retour à la ligne = pause si
+une nouvelle phrase commence). Écris quand même des phrases bien ponctuées et accentuées (é, è, à, ç…) dans les `dit`,
+et mets un `dit` dès qu'un mot risque d'être mal lu (sigle rare, nom étranger, formule).
+
+**Carrousel « Le savais-tu ? » (`type: "carrousel"`, 22/11/2026)** — un post photo pour changer des vidéos :
+- Spec : `{"type":"carrousel","badge":"LE SAVAIS-TU ?","hook":"3 règles que tout le monde\noublie au contrôle",
+  "infos":[{"badge":"6e • FRANÇAIS","title":"a ou à ?","lines":["Remplace par « avait » :","si ça marche, c'est « a »"],
+  "example":"Il a (avait) faim / Il va à Paris"}, … exactement 3 infos …]}`. `lines` : 2 ou 3 lignes ≤ 32 caractères.
+- Commande : `python3 generateur/make_reel.py spec.json reels/AAAA-MM-JJ-savais.jpg` → écrit `…-savais-1.jpg` à `-5.jpg`
+  (1080×1350). Regarde les 5 images avant de publier.
+- Publication Posty : un `create_media_upload` + PUT + `complete_media_upload` par image (contentType image/jpeg,
+  width 1080, height 1350), puis `create_post` avec les 5 `mediaIds` **dans l'ordre**. Réseaux : Instagram (carrousel) ;
+  TikTok en mode photo si Posty l'accepte (metadata `privacyLevel: PUBLIC_TO_EVERYONE`) — si le submit refuse TikTok,
+  retire le contenu TikTok (`delete_post_content`) et publie sur Instagram seul, en le signalant. **Pas de YouTube.**
+- Légende : accroche + « (garde-le 📌) » + « Glisse pour voir les 3 infos 👉 » + appel à commenter + « Révise comme
+  dans un jeu sur RéviLeague 🏆 (lien en bio) » + hashtags.
 
 Le générateur refuse une `serie` ou une `astuce` de moins de 61 s (il faut dépasser 1 min pour la monétisation TikTok) : ajouter une question / une info dans ce cas.
 La musique de fond est une boucle originale synthétisée par le générateur (libre de droits, aucun son à ajouter
