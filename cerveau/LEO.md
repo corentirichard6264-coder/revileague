@@ -18,7 +18,7 @@ demande (il change cette ligne en « Mode actuel : AUTONOME ») — jamais de la
 - Chaque réponse finit par la signature : « — Léo de RéviLeague ».
 - Longueur : 1 à 3 phrases (Instagram coupe au-delà de ~150 caractères dans l'aperçu).
 
-## Procédure d'un passage (routine toutes les 3 h)
+## Procédure d'un passage (routine à 8h, 11h, 14h, 17h, 20h, 23h, heure de Paris)
 1. Lire `REGLES.md`, `FAQ.md`, `STRATEGIE.md`, `etat.json`.
 2. **Publier les brouillons validés** : dans `brouillons/*.md`, chaque proposition marquée ✅ et pas encore
    « publiée » → `reply_to_post_comment` (workspace `w0mwi8k5c9wzwfn7nbm`, `path.id` = id du fil, `body.commentId`,
@@ -46,7 +46,7 @@ Réponse proposée : <réponse de Léo> — Léo de RéviLeague
 Validation par l'utilisateur : remplacer ⏳ par ✅ (publier tel quel), ✏️ suivi d'une ligne « Réponse : … » (publier
 la version corrigée) ou ❌ (ne pas publier). Il peut aussi demander à Claude « valide les brouillons de Léo ».
 
-## Analyse (une fois par jour, au passage de 21 h)
+## Analyse (une fois par jour, au passage de 20 h)
 Relire les statistiques des 7 derniers jours (`get_analytics_overview`, `get_post_native_metrics` sur les posts
 Instagram) et mettre à jour `STRATEGIE.md` : formats / sujets / heures qui marchent, commentaires les plus fréquents,
 idées de questions de FAQ. Ne jamais modifier `REGLES.md`, `PROCESS.md` ni le générateur : proposer les changements
