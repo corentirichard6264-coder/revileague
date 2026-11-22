@@ -155,7 +155,7 @@ et mets un `dit` dès qu'un mot risque d'être mal lu (sigle rare, nom étranger
   (1080×1350). Regarde les 5 images avant de publier.
 - Publication Posty : un `create_media_upload` + PUT + `complete_media_upload` par image (contentType image/jpeg,
   width 1080, height 1350), puis `create_post` avec les 5 `mediaIds` **dans l'ordre**. Réseaux : Instagram (carrousel) ;
-  TikTok en mode photo si Posty l'accepte (metadata `privacyLevel: PUBLIC_TO_EVERYONE`) — si le submit refuse TikTok,
+  TikTok en mode photo si Posty l'accepte (metadata `{"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": true, "allowDuet": true, "allowStitch": true}`) — si le submit refuse TikTok,
   retire le contenu TikTok (`delete_post_content`) et publie sur Instagram seul, en le signalant. **Pas de YouTube.**
 - Légende : accroche + « (garde-le 📌) » + « Glisse pour voir les 3 infos 👉 » + appel à commenter + « Révise comme
   dans un jeu sur RéviLeague 🏆 (lien en bio) » + hashtags.
@@ -187,7 +187,9 @@ y compris à l'intérieur d'une série. Ne jamais répéter une question déjà 
 6. **Programmer** via Posty : `create_media_upload` → PUT du fichier sur `uploadUrl` avec tous les `uploadHeaders` →
    `complete_media_upload` → `create_post` (3 contenus, **`scheduledAt` = l'heure choisie**, ISO avec le décalage
    de Paris, ex. `2026-11-21T09:37:00+01:00`) → `act_on_post` submit (skipApproval) → `act_on_post` publish **at: scheduled**
-   → `get_post` doit montrer le post programmé à la bonne heure. TikTok : metadata `privacyLevel: PUBLIC_TO_EVERYONE`.
+   → `get_post` doit montrer le post programmé à la bonne heure. TikTok : metadata `{"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": true, "allowDuet": true, "allowStitch": true}`.
+   **Ne jamais oublier `allowComment: true`** : sans lui, Posty envoie `false` par défaut et la vidéo sort avec les
+   commentaires désactivés (constaté le 22/11/2026 sur toutes les vidéos TikTok publiées jusque-là).
    YouTube : metadata `{"title": ≤ 100 caractères, "privacyStatus": "public", "visibility": "public"}`, description
    avec le lien du site et #shorts. (Le 20/11/2026, toutes les vidéos YouTube étaient arrivées en **privé** : sans ces
    deux champs, Posty les envoie peut-être en privé. Au contrôle de l'étape 8, ouvre le lien YouTube : si la page dit
