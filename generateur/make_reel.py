@@ -11,6 +11,7 @@ Trois formats de spec JSON :
             "questions":[{"badge":"4e • MATHS","question":...,"options":[...],"answer":1,"explain":...}, ...]}
            Vidéo d'au moins 61 s (le script refuse sinon). 3 options par question conseillées, "image_query" (anglais)
            ou "image" (URL) par question pour l'illustration (Openverse, domaine public / CC0).
+           "banque" (slug de banque/index.md) = image maison prioritaire ; image_query sert de secours.
            Voix off Fish Audio si la variable d'environnement FISH_API_KEY existe (FISH_VOICE_ID = voix choisie) :
            elle lit l'intro, chaque question + ses 4 réponses, la correction, le score et la fin ; le chrono
            démarre après la lecture. Par question, "dit_question" / "dit_explication" (optionnels) remplacent
@@ -347,7 +348,12 @@ def q_image(q, size=None, radius=30):
     uniquement, donc sans droits ni crédit). None si rien ne se charge : la carte se passe d'image."""
     import io, urllib.parse, urllib.request
     urls = [q["image"]] if q.get("image") else []
-    if not urls and q.get("image_query"):
+    if q.get("banque"):  # banque d'images maison (banque/<slug>.jpg ou banque/covers/<slug>.jpg), prioritaire
+        root = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "banque")
+        found = [f for f in (os.path.join(root, q["banque"] + ".jpg"), os.path.join(root, "covers", q["banque"] + ".jpg")) if os.path.exists(f)]
+        if found: urls = ["file:" + urllib.request.pathname2url(found[0])] + urls
+        else: print("Image : banque introuvable :", q["banque"], "-> Openverse")
+    if len(urls) <= (1 if q.get("image") else 0) and q.get("image_query"):
         api = ("https://api.openverse.org/v1/images/?license=cc0,pdm&mature=false&page_size=8&q="
                + urllib.parse.quote(q["image_query"]))
         try:
@@ -370,7 +376,7 @@ def q_image(q, size=None, radius=30):
         if radius:
             m = Image.new("L", (tw, th), 0); ImageDraw.Draw(m).rounded_rectangle([0, 0, tw, th], radius, fill=255); im.putalpha(m)
         print("Image :", u); return im
-    if q.get("image") or q.get("image_query"): print("Image : aucune image chargée pour", repr(q.get("question", "la couverture")))
+    if q.get("image") or q.get("image_query") or q.get("banque"): print("Image : aucune image chargée pour", repr(q.get("question", "la couverture")))
     return None
 
 def serie(spec):
@@ -766,9 +772,9 @@ def cover(spec, bg):
                                          {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ DU JOUR"}.get(typ, "INFO BREVET / BAC"))
     stamp = spec.get("stamp") or ("DÉFI" if defi else {"serie": "QUIZ"}.get(typ, "À SAVOIR"))
     text = spec.get("cover_text") or spec.get("hook", "")
-    src = ({"image": spec.get("cover_image"), "image_query": spec.get("cover_image_query")}
-           if spec.get("cover_image") or spec.get("cover_image_query") else (spec.get("questions") or [{}])[0])
-    photo = q_image(src, size=(W, H), radius=0) if (src.get("image") or src.get("image_query")) else None
+    src = ({"image": spec.get("cover_image"), "image_query": spec.get("cover_image_query"), "banque": spec.get("cover_banque")}
+           if spec.get("cover_image") or spec.get("cover_image_query") or spec.get("cover_banque") else (spec.get("questions") or [{}])[0])
+    photo = q_image(src, size=(W, H), radius=0) if (src.get("image") or src.get("image_query") or src.get("banque")) else None
     im = photo if photo is not None else paper_bg().copy().convert("RGBA")
     im.alpha_composite(Image.new("RGBA", (W, H), (10, 14, 26, 150 if photo is not None else 0)))
     im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))

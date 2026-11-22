@@ -51,6 +51,14 @@ La voix ne lit que la question (les réponses sont à l'écran) : garde les ques
 réponse en vert puis correction ; la voix annonce « Deuxième question… » et glisse « Like si tu as eu bon » (Q1) et
 « Écris GÉNIE en commentaire… » (milieu). Le générateur fait tout ; la fin (score, XP, « Rejoins la Ligue ») ne change pas.
 - **Mets 3 options par question** (4 possible mais moins lisible). Les options peuvent faire jusqu'à ~18 caractères.
+- **Banque d'images maison (22/11/2026, choix de l'utilisateur) — à utiliser en priorité.** Le dossier `banque/`
+  contient ~200 images générées sur le PC de l'utilisateur (IA locale, libres de droits). Liste dans `banque/index.md`.
+  Pour chaque question, mets `"banque": "<slug>"` si un slug de l'index colle **vraiment** au sujet (ex. Colomb →
+  `caravel`, cœur → `heart`), **et garde toujours un `image_query`** : il sert de secours si le slug manque. Pour la
+  couverture : `"cover_banque": "<slug>"` pris dans la section Couvertures de l'index (images verticales) ou une image
+  de question si rien d'autre ne va. Ne réutilise pas le même slug deux jours de suite pour le même format.
+  Ces images sont des illustrations IA, pas des photos réelles : pour montrer un vrai document ou un vrai monument
+  précis, préfère `image_query`.
 - **Chaque question a une image** : `"image_query"` = 2-3 mots **en anglais**, concrets et visuels (« rome colosseum »,
   « human heart anatomy », « volcano eruption », « eiffel tower »). Le générateur cherche sur Openverse en domaine public /
   CC0 uniquement (aucun droit à payer, aucun crédit à citer). Tu peux aussi donner `"image"` = URL directe d'une image du
