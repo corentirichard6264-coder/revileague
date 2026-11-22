@@ -1,3 +1,4 @@
 # Journal de Léo
 
 - 22/11/2026 : création du cerveau, mode brouillon jusqu au 29/11/2026.
+- 22/11/2026 03h (Paris) : 3 commentaires lus (tous sous « Bac 2027 »), 2 propositions à valider, 0 publiée, 0 signalement. Pas d'analyse (pas 20h).
