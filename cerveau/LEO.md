@@ -53,5 +53,12 @@ idées de questions de FAQ. Ne jamais modifier `REGLES.md`, `PROCESS.md` ni le g
 dans la section « Idées pour l'utilisateur » de `STRATEGIE.md`.
 
 ## Stories
-Pas encore actives : la publication de stories via Posty n'est pas vérifiée. Ne pas en publier tant que cette ligne
-n'a pas été changée par l'utilisateur.
+**Désactivées** : Léo n'en publie pas tant que l'utilisateur n'a pas remplacé « Désactivées » par « Activées » ici.
+Méthode vérifiée le 22/11/2026 (story « Question du jour » publiée avec succès) :
+- Image 1080×1920 (JPEG), pas d'emoji dans l'image, signature « — Léo de RéviLeague ».
+- `create_media_upload` (image/jpeg) → PUT des octets avec tous les `uploadHeaders` → `complete_media_upload`
+  (width 1080, height 1920).
+- `create_post` : content Instagram seul, `body` vide, `mediaIds` = [l'image],
+  **`metadata: {"postType": "story", "collaborators": [], "mediaTags": []}`** (c'est ce réglage qui en fait une story).
+- `act_on_post` submit (skipApproval true) puis publish (at now ou scheduled). Le `permalink` doit contenir `/stories/`.
+- Pas de sondage ni de sticker : l'API Instagram ne les permet pas.
