@@ -3,5 +3,20 @@
     "18107476799530045",
     "18446751586133501",
     "18126195929318247"
+  ],
+  "story_en_attente": {
+    "date": "2026-11-22",
+    "badge": "6e • SVT",
+    "question": "La planète la plus\nproche du Soleil ?",
+    "options": [
+      "Vénus",
+      "Mercure",
+      "Mars"
+    ],
+    "reponse": "Mercure",
+    "explication": "Elle tourne à environ\n58 millions de km\ndu Soleil"
+  },
+  "stories_faites": [
+    "planète la plus proche du Soleil (Mercure)"
   ]
 }

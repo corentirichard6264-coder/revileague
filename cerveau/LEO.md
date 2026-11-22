@@ -53,12 +53,27 @@ idées de questions de FAQ. Ne jamais modifier `REGLES.md`, `PROCESS.md` ni le g
 dans la section « Idées pour l'utilisateur » de `STRATEGIE.md`.
 
 ## Stories
-**Désactivées** : Léo n'en publie pas tant que l'utilisateur n'a pas remplacé « Désactivées » par « Activées » ici.
+**Activées** (depuis le 22/11/2026, accord de l'utilisateur). Les stories ne passent pas par le mode brouillon.
+
+### Le rendez-vous quotidien (au passage de 11h uniquement)
+1. **Réponse d'hier** : si `etat.json` contient `story_en_attente`, publier la story « LA RÉPONSE ! » de cette question
+   (type `reponse`), puis retirer `story_en_attente`.
+2. **Question du jour** : choisir une question **facile à moyenne (6e → 3e)**, 3 options courtes, une seule bonne
+   réponse **certaine** (fait scolaire stable, jamais une actu ni une date à vérifier), matière différente de la veille,
+   jamais déjà posée (`historique.json` champ `sujet`, et `etat.json` champ `stories_faites`). Publier la story
+   (type `question`), puis enregistrer dans `etat.json` : `story_en_attente` = {date, badge, question, options,
+   reponse, explication} et ajouter le sujet à `stories_faites`.
+3. Fabriquer chaque image avec `python3 generateur/make_story.py spec.json cerveau/stories/AAAA-MM-JJ-<question|reponse>.jpg`
+   (voir l'en-tête du script ; si `import PIL` échoue : `python3 -m pip install -q --break-system-packages pillow`),
+   **regarder l'image** avant de publier, la garder dans `cerveau/stories/`.
+4. Une story ratée (erreur Posty) : ne pas réessayer en boucle, le noter dans le journal et le message final.
+Maximum 2 stories par jour. Jamais d'autre story (pas de promo, pas d'annonce) sans demande de l'utilisateur.
 Méthode vérifiée le 22/11/2026 (story « Question du jour » publiée avec succès) :
 - Image 1080×1920 (JPEG), pas d'emoji dans l'image, signature « — Léo de RéviLeague ».
 - `create_media_upload` (image/jpeg) → PUT des octets avec tous les `uploadHeaders` → `complete_media_upload`
   (width 1080, height 1920).
 - `create_post` : content Instagram seul, `body` vide, `mediaIds` = [l'image],
   **`metadata: {"postType": "story", "collaborators": [], "mediaTags": []}`** (c'est ce réglage qui en fait une story).
-- `act_on_post` submit (skipApproval true) puis publish (at now ou scheduled). Le `permalink` doit contenir `/stories/`.
+- `act_on_post` submit (skipApproval true) puis publish (at now) ; `idempotencyKey` = `leo-story-AAAA-MM-JJ-<type>-<étape>`.
+  Contrôle avec `get_post` : le `permalink` doit contenir `/stories/`.
 - Pas de sondage ni de sticker : l'API Instagram ne les permet pas.
