@@ -754,31 +754,57 @@ def music(T_END, voice_spans):
 COVER = 0.2  # secondes affichées au début ; les plateformes prennent la 1re image comme miniature
 
 def cover(spec, bg):
+    """Miniature au style « Brevet 2027 » : bandeau bleu nuit (titre en or + accroche), tampon rouge,
+    tableau blanc qui résume la vidéo (nombre de questions, niveau, XP…)."""
     defi = spec.get("badge", "").upper().startswith("DÉFI")
+    typ = spec["type"]
     kicker = spec.get("cover_title") or ("DÉFI DE LA LIGUE" if defi else
-                                         {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ", "info": "INFO BREVET"}.get(spec["type"], "QUESTION DU JOUR"))
+                                         {"astuce": "LE SAVAIS-TU ?", "serie": "QUIZ DU JOUR"}.get(typ, "INFO BREVET / BAC"))
+    stamp = spec.get("stamp") or ("DÉFI" if defi else {"serie": "QUIZ"}.get(typ, "À SAVOIR"))
     hook = spec.get("hook", "")
-    n = len(spec.get("questions") or spec.get("infos") or [1])
+    n = len(spec.get("questions") or spec.get("infos") or spec.get("rows") or [1])
     xp = spec.get("xp", 50)
-    im = paper_bg().copy().convert("RGBA")  # même look cahier que les vidéos
+    if typ == "serie":
+        rows = [("questions", f"{n} {'défis' if defi else 'questions'}"),
+                ("niveau", "brevet, lycée, bac" if defi else "de la 6e à la 3e"),
+                ("chrono", f"{spec.get('countdown', 5)} s par question"), ("à gagner", f"+{xp} XP")]
+    elif typ == "info":
+        rows = [(r["label"], "?") for r in spec["rows"][:4]]  # valeurs cachées : on veut savoir la suite
+    else:
+        rows = [("infos", f"{n} infos"), ("matières", "variées"), ("à gagner", f"+{xp} XP")]
+    im = paper_bg().copy().convert("RGBA")
     im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))
     header(im, spec.get("badge", ""))
-    kf = fit(kicker, "Bold", 120, W - 160); hf = fit(hook, "Bold", 96, W - 220)
+    kf = fit(kicker, "Bold", 96, W - 200)
+    hook_lines = hook.split("\n"); hf = fit(hook, "Bold", 84, W - 200)
+    lh = hf.size * 1.25; bh = 150 + lh * len(hook_lines) + 90
     def c(dr):
-        dr.rounded_rectangle([60, 430, W - 60, 1390], 60, fill=(10, 14, 26, 255))
-        dr.rounded_rectangle([60, 420, W - 60, 1380], 60, fill=NAVY2 + (255,), outline=GOLD + (255,), width=6)
-        ctext(dr, 500, kicker, kf, GOLD + (255,))
-        dr.rounded_rectangle([W / 2 - 180, 660, W / 2 + 180, 668], 4, fill=CYAN + (255,))
-        bb = dr.multiline_textbbox((0, 0), hook, font=hf, spacing=12, align="center")
-        ctext(dr, 960 - (bb[3] - bb[1]) / 2 - bb[1], hook, hf, WHITE + (255,), 12)
-        pill = f"{n} {'défis' if defi else 'questions'}  •  +{xp} XP" if spec["type"] == "serie" else (
-               f"{n} infos  •  +{xp} XP" if spec["type"] == "astuce" else f"+{xp} XP")
-        pf = F("Bold", 56); pw = pf.getlength(pill) + 100
-        dr.rounded_rectangle([(W - pw) / 2, 1230, (W + pw) / 2, 1330], 50, fill=GOLD + (255,))
-        dr.text((W / 2, 1280), pill, font=pf, fill=NAVY + (255,), anchor="mm")
-        ctext(dr, 1560, "Révise comme dans un jeu", F("Bold", 64), NAVY2 + (255,))
-        ctext(dr, 1660, "de la 6e à la Terminale", F("Medium", 48), (90, 96, 120, 255))
+        dr.rounded_rectangle([60, 230 + 12, W - 60, 230 + bh + 12], 44, fill=(10, 14, 26, 255))
+        dr.rounded_rectangle([60, 230, W - 60, 230 + bh], 44, fill=NAVY2 + (255,))
+        dr.text((W / 2, 320), kicker, font=kf, fill=GOLD + (255,), anchor="mm")
+        for i, l in enumerate(hook_lines):
+            dr.text((W / 2, 420 + i * lh + lh / 2), l, font=hf, fill=WHITE + (255,), anchor="mm")
+        ty = 230 + bh + 140; rh = 165
+        dr.rounded_rectangle([70, ty + 10, W - 70, ty + 90 + rh * len(rows) + 10], 30, fill=NAVY2 + (255,))
+        dr.rounded_rectangle([70, ty, W - 70, ty + 90 + rh * len(rows)], 30, fill=(255, 255, 255, 255), outline=NAVY2 + (255,), width=5)
+        dr.rounded_rectangle([75, ty + 5, W - 75, ty + 90], 26, fill=(232, 236, 247, 255))
+        dr.text((110, ty + 48), "RéviLeague", font=F("Bold", 42), fill=NAVY + (255,), anchor="lm")
+        dr.text((W - 110, ty + 48), "glisse pour voir" if typ == "carrousel" else "regarde jusqu'au bout", font=F("Medium", 36), fill=GREY + (255,), anchor="rm")
+        dr.line([(420, ty + 90), (420, ty + 90 + rh * len(rows) - 10)], fill=(225, 228, 238, 255), width=3)
+        for k, (lab, val) in enumerate(rows):
+            y = ty + 90 + k * rh
+            if k: dr.line([(90, y), (W - 90, y)], fill=(225, 228, 238, 255), width=3)
+            dr.text((110, y + rh / 2), lab, font=fit(lab, "Medium", 46, 290), fill=(90, 96, 120, 255), anchor="lm")
+            dr.text((450, y + rh / 2), val, font=fit(val, "Bold", 62, W - 560), fill=(INK_BLUE if val != "?" else GOLD) + (255,), anchor="lm")
+        ctext(dr, ty + 90 + rh * len(rows) + 70, "Révise comme dans un jeu", F("Bold", 60), NAVY2 + (255,))
     im.alpha_composite(layer(c, 1))
+    # tampon rouge penché en bas à droite du bandeau
+    sf = F("Bold", 52); sw = int(sf.getlength(stamp) + 70)
+    S = Image.new("RGBA", (sw + 20, 120), (0, 0, 0, 0)); sd = ImageDraw.Draw(S)
+    sd.rounded_rectangle([10, 10, sw + 10, 110], 16, fill=(255, 255, 255, 230), outline=RED + (255,), width=7)
+    sd.text((sw / 2 + 10, 60), stamp, font=sf, fill=RED + (255,), anchor="mm")
+    S = S.rotate(-8, expand=True, resample=Image.BICUBIC)
+    im.alpha_composite(S, (W - 70 - S.width, int(230 + bh + 30 - S.height / 2)))
     return im.convert("RGB")
 
 # ---------------------------------------------------------------- CARROUSEL PHOTO « Le savais-tu ? » (5 images 4:5)
