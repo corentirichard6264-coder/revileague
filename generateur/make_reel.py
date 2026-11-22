@@ -254,12 +254,46 @@ def quiz(spec):
 # ---------------------------------------------------------------- VOIX OFF (Fish Audio)
 SR = 44100
 
+ORDINAUX = {1: "premier", 2: "deuxième", 3: "troisième", 4: "quatrième", 5: "cinquième", 6: "sixième", 7: "septième",
+            8: "huitième", 9: "neuvième", 10: "dixième", 11: "onzième", 12: "douzième"}
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
 def say(txt):
-    """Texte écrit -> texte à lire (maths lisibles, sans retours à la ligne)."""
-    for a, b in [("\n", " "), ("×", " fois "), ("÷", " divisé par "), ("²", " au carré"), ("³", " au cube"),
-                 ("=", " égale "), ("≈", " environ "), ("•", ","), ("%", " pour cent")]:
+    """Texte écrit -> texte que la voix lit bien : « 8/8 » -> « 8 sur 8 », « 3e » -> « troisième », dates, heures,
+    sigles, symboles ; un retour à la ligne devient une petite pause. Les accents et la ponctuation sont gardés."""
+    import re
+    txt = "".join(c for c in txt if ord(c) < 0x2190 or c in "→•…≈×÷")  # retire les emojis
+    txt = re.sub(r"(?<![.,;:!?…])\s*\n\s*(?=[A-ZÀ-Ý(])", ", ", txt.strip())  # nouvelle phrase à la ligne = pause
+    txt = txt.replace("\n", " ")
+    txt = re.sub(r"\b(\d{1,2})/(\d{1,2})/(\d{4})\b",
+                 lambda m: f"{'1er' if m[1] in ('1', '01') else int(m[1])} {MOIS[int(m[2]) - 1]} {m[3]}"
+                 if 1 <= int(m[2]) <= 12 else m[0], txt)
+    txt = re.sub(r"\bkm/h\b", "kilomètres heure", txt).replace("n°", "numéro ")
+    txt = re.sub(r"(\d)\s*/\s*(\d)", r"\1 sur \2", txt)  # score ou note : 8/8, 12/20 (jamais « huitièmes »)
+    txt = re.sub(r"\b(\d{1,2})h(\d{2})\b", r"\1 heures \2", txt)
+    txt = re.sub(r"\b(\d{1,2})h\b", r"\1 heures", txt)
+    txt = re.sub(r"\b1(?:er|re|ère)\b", lambda m: "première" if m[0] != "1er" else "premier", txt)
+    txt = re.sub(r"\b(\d{1,2})(?:e|ème|eme)\b", lambda m: ORDINAUX.get(int(m[1]), m[1] + "ième"), txt)
+    for a, b in [("Tle", "terminale"), ("2nde", "seconde"), ("2nd", "second"), ("BO", "Bulletin officiel"),
+                 ("DNB", "brevet"), ("TB", "très bien"), ("AB", "assez bien"), ("n°", "numéro "), ("ex.", "par exemple"),
+                 ("env.", "environ")]:
+        txt = re.sub(r"(?<!\w)" + re.escape(a) + r"(?!\w)", b, txt)
+    for a, b in [("×", " fois "), ("÷", " divisé par "), ("²", " au carré"), ("³", " au cube"), ("=", " égale "),
+                 ("≈", " environ "), ("•", ","), ("→", ", donc "), ("%", " pour cent"), ("€", " euros"),
+                 ("°C", " degrés Celsius"), ("°", " degrés"), ("&", " et "), (" - ", ", "), ("«", ""), ("»", "")]:
         txt = txt.replace(a, b)
-    return " ".join(txt.split())
+    txt = re.sub(r"(\d)\+(\d)", r"\1 plus \2", txt.replace(" + ", " plus "))
+    txt = re.sub(r"\b[A-ZÀ-Ý]{5,}\b", lambda m: m[0].lower(), txt)  # MOTS EN CAPITALES lus normalement (sigles courts gardés)
+    txt = re.sub(r"\s+([,.])", r"\1", " ".join(txt.split()))
+    return re.sub(r",\s*,", ",", txt)
+
+def _test_say():
+    assert say("Impossible d'avoir 8/8") == "Impossible d'avoir 8 sur 8", say("Impossible d'avoir 8/8")
+    assert say("Brevet 2027 :\nta moyenne de 3e\ncompte pour 40 %") == "Brevet 2027 : ta moyenne de troisième compte pour 40 pour cent"
+    assert say("La n°4 : x² + 3 = 12") == "La numéro 4 : x au carré plus 3 égale 12"
+    assert say("Philo le 14/06/2027 à 8h") == "Philo le 14 juin 2027 à 8 heures"
+    assert say("12 AB • 14 B • 16 TB") == "12 assez bien, 14 B, 16 très bien"
+    assert say("élève de 1re et de Tle, OFFICIEL") == "élève de première et de terminale, officiel"
 
 def tts(text):
     """Voix off Fish Audio -> échantillons mono 16 bits à 44,1 kHz. None si FISH_API_KEY est absente."""
@@ -267,6 +301,7 @@ def tts(text):
     if not key: return None
     import array, urllib.request
     voice = os.environ.get("FISH_VOICE_ID")
+    text = say(text)  # toujours normalisé, même pour les « dit » écrits à la main
     body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.15}}
     if voice: body["reference_id"] = voice
     req = urllib.request.Request("https://api.fish.audio/v1/tts", data=json.dumps(body).encode(), method="POST",
@@ -287,11 +322,11 @@ def dur(clip): return len(clip) / SR if clip else 0.0
 # carte blanche avec la question + une image, réponses en gros boutons blancs empilés (A. B. C.), barre de temps,
 # les mauvaises réponses disparaissent et la bonne passe au vert. Fin (score, XP, « Rejoins la Ligue ») inchangée.
 MIN_SERIE = 61.0  # monétisation TikTok : vidéos > 1 min
-P_TOP = (160, 104, 220); P_BOT = (98, 56, 166); P_LETTER = (118, 64, 196); P_SHADOW = (66, 34, 120)
+P_TOP = (160, 104, 220); P_BOT = (98, 56, 166); P_LETTER = (36, 62, 150); P_SHADOW = (28, 36, 60)  # thème cahier (20/11 : comme l'Info brevet)
 INK = (30, 26, 50); OK_GREEN = (46, 190, 96)
 ORD = ["Première", "Deuxième", "Troisième", "Quatrième", "Cinquième", "Sixième", "Septième", "Huitième"]
 IMG_W, IMG_H = 860, 470
-CT = 340  # haut de la carte question (sous l'accroche)
+CT = 370  # haut de la carte question (sous le bandeau)
 
 _qbg = []
 def quiz_bg():
@@ -362,7 +397,7 @@ def serie(spec):
     T_END = T_CTA + max(2.6, 0.3 + dur(v_cta) + 0.3)
     if v_intro and T_END < MIN_SERIE:  # sans voix (Fish en panne) la vidéo est plus courte mais reste publiable
         sys.exit(f"Série trop courte ({T_END:.1f} s < {MIN_SERIE:.0f} s) : ajoute une question.")
-    hookf = fit(spec["hook"], "Bold", 64, W - 120)
+    hookf = fit(spec["hook"], "Bold", 60, W - 180)
     QF = [fit(q["question"], "Bold", 84, W - 220) for q in qs]
     OF = [[fit(o, "Bold", 70, W - 330) for o in q["options"]] for q in qs]
     EF = [fit(q["explain"], "Medium", 50, W - 240) for q in qs]
@@ -379,7 +414,7 @@ def serie(spec):
         T_REV = T_CNT[k] + cd; out = 1 - prog(u, SEG[k] - 0.35, 0.35)
         def card(dr):
             dr.rounded_rectangle([70, CT + 10, W - 70, card_bot + 10], 44, fill=P_SHADOW + (255,))
-            dr.rounded_rectangle([70, CT, W - 70, card_bot], 44, fill=(255, 255, 255, 255))
+            dr.rounded_rectangle([70, CT, W - 70, card_bot], 44, fill=(255, 255, 255, 255), outline=P_SHADOW + (255,), width=5)
             bb = dr.multiline_textbbox((0, 0), q["question"], font=QF[k], spacing=8, align="center")
             ctext(dr, CT + 115 - (bb[3] - bb[1]) / 2 - bb[1], q["question"], QF[k], INK + (255,), 8)
         im.alpha_composite(layer(card, prog(u, 0, 0.25) * out))
@@ -400,7 +435,8 @@ def serie(spec):
             green = ok and u >= T_REV
             def od(dr, y=y, opt=opt, i=i, green=green):
                 dr.rounded_rectangle([90, y + 9, W - 90, y + bh + 9], 40, fill=(P_SHADOW if not green else (25, 120, 60)) + (255,))
-                dr.rounded_rectangle([90, y, W - 90, y + bh], 40, fill=(OK_GREEN if green else (255, 255, 255)) + (255,))
+                dr.rounded_rectangle([90, y, W - 90, y + bh], 40, fill=(OK_GREEN if green else (255, 255, 255)) + (255,),
+                                     outline=((25, 120, 60) if green else P_SHADOW) + (255,), width=4)
                 lf = F("Bold", 70 if bh >= 150 else 62)
                 dr.text((140, y + bh / 2), "ABCD"[i] + ".", font=lf, fill=(WHITE if green else P_LETTER) + (255,), anchor="lm")
                 dr.text((250, y + bh / 2), opt, font=OF[k][i], fill=(WHITE if green else INK) + (255,), anchor="lm")
@@ -408,16 +444,16 @@ def serie(spec):
         if T_CNT[k] <= u < T_REV + 0.3:  # barre de temps qui se vide (jaune puis rouge)
             rem = max(0, T_REV - u); frac = rem / cd
             def bar(dr):
-                dr.rounded_rectangle([90, 1800, W - 90, 1836], 18, fill=(255, 255, 255, 70))
+                dr.rounded_rectangle([90, 1800, W - 90, 1836], 18, fill=P_SHADOW + (40,))
                 dr.rounded_rectangle([90, 1800, 90 + (W - 180) * frac, 1836], 18, fill=(GOLD if rem > 1.5 else RED) + (255,))
-                dr.text((W / 2, 1755), str(math.ceil(rem)), font=F("Bold", 64), fill=WHITE + (255,), anchor="mm")
+                dr.text((W / 2, 1755), str(math.ceil(rem)), font=F("Bold", 64), fill=P_SHADOW + (255,), anchor="mm")
             im.alpha_composite(layer(bar, prog(u, T_CNT[k], 0.2) * (1 - prog(u, T_REV, 0.3))))
         if u >= T_REV + 0.7:  # correction sous la bonne réponse
             ey = oy + bh + gap + 10
             def ex(dr):
                 bb = dr.multiline_textbbox((0, 0), q["explain"], font=EF[k], spacing=10, align="center")
                 hh = bb[3] - bb[1] + 70
-                dr.rounded_rectangle([90, ey, W - 90, ey + hh], 36, fill=(255, 255, 255, 235))
+                dr.rounded_rectangle([90, ey, W - 90, ey + hh], 36, fill=(255, 255, 255, 255), outline=(200, 206, 222, 255), width=3)
                 ctext(dr, ey + 35 - bb[1], q["explain"], EF[k], INK + (255,), 10)
             im.alpha_composite(layer(ex, prog(u, T_REV + 0.7, 0.35) * out))
         if k in BAIT and u >= T_REV + 1.0:  # appel à liker / commenter (comme les quiz qui percent)
@@ -430,17 +466,22 @@ def serie(spec):
     def frame(t, bg):
         k = max([0] + [j for j in range(n) if S[j] <= t])
         if t < T_SCORE:
-            im = quiz_bg().copy().convert("RGBA"); u = t - S[k]
+            im = paper_bg().copy().convert("RGBA"); u = t - S[k]
+            im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))
             header(im, qs[k].get("badge", spec["badge"]))
             a = (1.0 if k == 0 else prog(u, 0, 0.3)) * (1 - prog(u, SEG[k] - 0.35, 0.35))
+            def banner(dr):  # bandeau bleu nuit, comme l'Info brevet
+                dr.rounded_rectangle([60, 185 + 8, W - 60, 345 + 8], 36, fill=(10, 14, 26, 255))
+                dr.rounded_rectangle([60, 185, W - 60, 345], 36, fill=NAVY2 + (255,))
+            im.alpha_composite(layer(banner, 1))
             def top(dr):
-                if k == 0:  # l'accroche, pleine dès la 1re image
-                    bb = dr.multiline_textbbox((0, 0), spec["hook"], font=hookf, spacing=4, align="center")
-                    y = 250 - (bb[3] - bb[1]) / 2 - bb[1]
-                    ctext(dr, y + 4, spec["hook"], hookf, P_SHADOW + (255,), 4); ctext(dr, y, spec["hook"], hookf, WHITE + (255,), 4)
+                if k == 0:  # l'accroche, pleine dès la 1re image, 1re ligne en or
+                    ls = spec["hook"].split(chr(10)); lh = hookf.size * 1.2; y = 265 - lh * len(ls) / 2
+                    for i, l in enumerate(ls):
+                        dr.text((W / 2, y + i * lh + lh / 2), l, font=hookf, fill=(GOLD if i == 0 else WHITE) + (255,), anchor="mm")
                 else:
                     txt = "Dernière question !" if k == n - 1 else f"Question {k + 1}/{n}"
-                    ctext(dr, 214, txt, F("Bold", 66), P_SHADOW + (255,)); ctext(dr, 210, txt, F("Bold", 66), (GOLD if k == n - 1 else WHITE) + (255,))
+                    dr.text((W / 2, 265), txt, font=F("Bold", 66), fill=(GOLD if k == n - 1 else WHITE) + (255,), anchor="mm")
             im.alpha_composite(layer(top, a))
             draw_q(im, u, k)
             return im.convert("RGB")
@@ -719,10 +760,13 @@ def cover(spec, bg):
     hook = spec.get("hook", "")
     n = len(spec.get("questions") or spec.get("infos") or [1])
     xp = spec.get("xp", 50)
-    im = bg.copy().convert("RGBA"); header(im, spec.get("badge", ""))
+    im = paper_bg().copy().convert("RGBA")  # même look cahier que les vidéos
+    im.alpha_composite(layer(lambda dr: dr.rounded_rectangle([60, 70, 520, 160], 45, fill=NAVY2 + (255,)), 1))
+    header(im, spec.get("badge", ""))
     kf = fit(kicker, "Bold", 120, W - 160); hf = fit(hook, "Bold", 96, W - 220)
     def c(dr):
-        dr.rounded_rectangle([60, 420, W - 60, 1380], 60, fill=CARD + (235,), outline=GOLD + (255,), width=6)
+        dr.rounded_rectangle([60, 430, W - 60, 1390], 60, fill=(10, 14, 26, 255))
+        dr.rounded_rectangle([60, 420, W - 60, 1380], 60, fill=NAVY2 + (255,), outline=GOLD + (255,), width=6)
         ctext(dr, 500, kicker, kf, GOLD + (255,))
         dr.rounded_rectangle([W / 2 - 180, 660, W / 2 + 180, 668], 4, fill=CYAN + (255,))
         bb = dr.multiline_textbbox((0, 0), hook, font=hf, spacing=12, align="center")
@@ -732,14 +776,90 @@ def cover(spec, bg):
         pf = F("Bold", 56); pw = pf.getlength(pill) + 100
         dr.rounded_rectangle([(W - pw) / 2, 1230, (W + pw) / 2, 1330], 50, fill=GOLD + (255,))
         dr.text((W / 2, 1280), pill, font=pf, fill=NAVY + (255,), anchor="mm")
-        ctext(dr, 1560, "Révise comme dans un jeu", F("Bold", 64), WHITE + (255,))
-        ctext(dr, 1660, "de la 6e à la Terminale", F("Medium", 48), GREY + (255,))
+        ctext(dr, 1560, "Révise comme dans un jeu", F("Bold", 64), NAVY2 + (255,))
+        ctext(dr, 1660, "de la 6e à la Terminale", F("Medium", 48), (90, 96, 120, 255))
     im.alpha_composite(layer(c, 1))
     return im.convert("RGB")
+
+# ---------------------------------------------------------------- CARROUSEL PHOTO « Le savais-tu ? » (5 images 4:5)
+# Post photo (pas une vidéo) : 1 couverture, 3 infos, 1 « Abonne-toi ! ». Même look cahier que les vidéos.
+CW, CH = 1080, 1350
+
+def carrousel(spec, out):
+    """Écrit <out sans extension>-1.jpg … -5.jpg et renvoie la liste des fichiers."""
+    infos = spec["infos"]
+    if len(infos) != 3: sys.exit("Le carrousel attend exactement 3 infos.")
+    base = os.path.splitext(out)[0]; files = []
+    def page(draw_fn, badge, k):
+        im = paper_bg().crop((0, 0, CW, CH)).convert("RGBA")
+        L = Image.new("RGBA", (CW, CH), (0, 0, 0, 0)); dr = ImageDraw.Draw(L)
+        dr.rounded_rectangle([60, 60, 520, 150], 45, fill=NAVY2 + (255,))
+        dr.text((95, 78), "Révi", font=F("Bold", 50), fill=WHITE)
+        dr.text((95 + F("Bold", 50).getlength("Révi"), 78), "League", font=F("Bold", 50), fill=GOLD)
+        f = F("Bold", 38); bw = f.getlength(badge) + 60
+        dr.rounded_rectangle([CW - 60 - bw, 72, CW - 60, 138], 33, fill=CYAN + (255,))
+        dr.text((CW - 60 - bw + 30, 80), badge, font=f, fill=NAVY)
+        x0 = CW / 2 - 5 * 18  # points de pagination
+        for j in range(5):
+            dr.ellipse([x0 + j * 36, CH - 70, x0 + j * 36 + 16, CH - 54], fill=(NAVY2 if j == k else (200, 206, 222)) + (255,))
+        draw_fn(dr); im.alpha_composite(L)
+        fn = f"{base}-{k + 1}.jpg"; im.convert("RGB").save(fn, quality=92); files.append(fn)
+    def ct(dr, y, txt, font, fill, sp=10):
+        bb = dr.multiline_textbbox((0, 0), txt, font=font, spacing=sp, align="center")
+        dr.multiline_text(((CW - (bb[2] - bb[0])) / 2, y), txt, font=font, fill=fill, spacing=sp, align="center")
+    def navy_card(dr, y0, y1):
+        dr.rounded_rectangle([60, y0 + 10, CW - 60, y1 + 10], 50, fill=(10, 14, 26, 255))
+        dr.rounded_rectangle([60, y0, CW - 60, y1], 50, fill=NAVY2 + (255,), outline=GOLD + (255,), width=6)
+    hook = spec.get("hook", "3 infos que\npersonne ne connaît")
+    def p1(dr):
+        navy_card(dr, 230, 1130)
+        ct(dr, 320, "LE SAVAIS-TU ?", fit("LE SAVAIS-TU ?", "Bold", 110, CW - 200), GOLD + (255,))
+        dr.rounded_rectangle([CW / 2 - 160, 470, CW / 2 + 160, 478], 4, fill=CYAN + (255,))
+        hf = fit(hook, "Bold", 88, CW - 240); bb = dr.multiline_textbbox((0, 0), hook, font=hf, spacing=12, align="center")
+        ct(dr, 720 - (bb[3] - bb[1]) / 2 - bb[1], hook, hf, WHITE + (255,), 12)
+        pill = "3 infos  •  glisse  >"; pf = F("Bold", 52); pw = pf.getlength(pill) + 90
+        dr.rounded_rectangle([(CW - pw) / 2, 960, (CW + pw) / 2, 1055], 48, fill=GOLD + (255,))
+        dr.text((CW / 2, 1007), pill, font=pf, fill=NAVY + (255,), anchor="mm")
+        ct(dr, 1170, "Enregistre ce post pour tes révisions", F("Medium", 44), NAVY2 + (255,))
+    page(p1, spec.get("badge", "LE SAVAIS-TU ?"), 0)
+    for k, info in enumerate(infos):
+        def pk(dr, info=info, k=k):
+            dr.rounded_rectangle([60, 190, CW - 60, 310], 36, fill=NAVY2 + (255,))
+            dr.text((CW / 2, 250), f"Info {k + 1}/3", font=F("Bold", 64), fill=GOLD + (255,), anchor="mm")
+            nl = len(info["lines"]); y_ex = 640 + nl * 120
+            dr.rounded_rectangle([60, 350 + 8, CW - 60, y_ex + 250 + 8], 40, fill=NAVY2 + (255,))
+            dr.rounded_rectangle([60, 350, CW - 60, y_ex + 250], 40, fill=(255, 255, 255, 255), outline=NAVY2 + (255,), width=5)
+            tf = fit(info["title"], "Bold", 84, CW - 220); bb = dr.multiline_textbbox((0, 0), info["title"], font=tf, spacing=8, align="center")
+            ct(dr, 470 - (bb[3] - bb[1]) / 2 - bb[1], info["title"], tf, INK_BLUE + (255,), 8)
+            dr.line([(120, 590), (CW - 120, 590)], fill=(225, 228, 238, 255), width=3)
+            for i, l in enumerate(info["lines"]):
+                y = 630 + i * 120
+                dr.ellipse([110, y + 6, 160, y + 56], fill=GOLD + (255,))
+                dr.text((135, y + 31), str(i + 1), font=F("Bold", 32), fill=NAVY + (255,), anchor="mm")
+                dr.multiline_text((190, y), l, font=fit(l, "Medium", 50, CW - 300), fill=INK + (255,), spacing=6)
+            dr.rounded_rectangle([100, y_ex, CW - 100, y_ex + 210], 30, fill=GREEN + (50,), outline=GREEN + (255,), width=4)
+            ct(dr, y_ex + 22, "Exemple", F("Medium", 38), (30, 120, 70, 255))
+            ef = fit(info["example"], "Bold", 52, CW - 260); bb = dr.multiline_textbbox((0, 0), info["example"], font=ef, spacing=8, align="center")
+            ct(dr, y_ex + 130 - (bb[3] - bb[1]) / 2 - bb[1], info["example"], ef, INK + (255,), 8)
+        page(pk, info.get("badge", spec.get("badge", "")), k + 1)
+    def p5(dr):
+        navy_card(dr, 230, 1130)
+        ct(dr, 330, "Abonne-toi !", fit("Abonne-toi !", "Bold", 120, CW - 200), GOLD + (255,))
+        ct(dr, 500, "@revileague", F("Bold", 70), WHITE + (255,))
+        ct(dr, 620, "Chaque jour : un quiz, des infos\nbrevet / bac et un défi", F("Medium", 48), (200, 206, 222, 255), 12)
+        bw = 700; x0 = (CW - bw) / 2
+        dr.rounded_rectangle([x0, 860, x0 + bw, 990], 65, fill=GOLD + (255,))
+        dr.text((CW / 2, 925), "Rejoins la Ligue", font=F("Bold", 60), fill=NAVY + (255,), anchor="mm")
+        ct(dr, 1020, "Lien en bio", F("Medium", 46), CYAN + (255,))
+        ct(dr, 1170, "Révise comme dans un jeu, de la 6e à la Terminale", F("Medium", 40), NAVY2 + (255,))
+    page(p5, spec.get("badge", "LE SAVAIS-TU ?"), 4)
+    print("OK", " ".join(files)); return files
 
 # ---------------------------------------------------------------- RENDU
 def render(spec, out):
     check_glyphs(spec)
+    if spec["type"] == "carrousel":
+        return carrousel(spec, out)
     frame, sounds, T_END, *voices = {"quiz": quiz, "serie": serie, "astuce": astuce, "info": info}[spec["type"]](spec)
     N = int(SR * T_END); buf = [0.0] * N
     duck = 0.45 if voices and voices[0] else 1.0  # bips plus discrets sous la voix
@@ -772,4 +892,5 @@ def render(spec, out):
     print("OK", out, f"{T_END:.1f}s")
 
 if __name__ == "__main__":
+    _test_say()
     render(json.load(open(sys.argv[1], encoding="utf-8")), sys.argv[2])
