@@ -4068,7 +4068,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T09:15+01:00",
@@ -4095,7 +4109,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T09:15+01:00",
@@ -4122,7 +4150,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T09:15+01:00",
@@ -4149,7 +4191,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T09:15+01:00",
@@ -4176,7 +4232,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T09:15+01:00",
@@ -4203,7 +4273,21 @@
     "heure_publication": "11",
     "publie_a": "2026-11-22T11:24:00+01:00",
     "posty_post_id": "p0mwrkhhnw5wp58vndo",
-    "posty_media_id": "med0mwrkgz87ezqzemznt"
+    "posty_media_id": "med0mwrkgz87ezqzemznt",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "permalink": "https://www.instagram.com/reel/DgCkSOfjDm7/"
+      },
+      "tiktok": {
+        "statut": "delivered"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "permalink": "https://www.youtube.com/watch?v=tb73y13Jj2Y",
+        "public": true
+      }
+    }
   },
   {
     "date": "2026-11-22T13:15+01:00",
@@ -4217,7 +4301,19 @@
     "info_n": 1,
     "niveau": "5e",
     "matiere": "maths",
-    "sujet": "multiplier par 11 un nombre à 2 chiffres (somme < 10) : 23 × 11 = 253"
+    "sujet": "multiplier par 11 un nombre à 2 chiffres (somme < 10) : 23 × 11 = 253",
+    "posty_post_id": "p0mwrsz6n2t0qi72f88",
+    "posty_media_ids": [
+      "med0mwrsxn2o1g7c87ajv",
+      "med0mwrsxr4o8b7y26scc",
+      "med0mwrsxu6p3sz91nztu",
+      "med0mwrsxwftkymk56mfq",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   },
   {
     "date": "2026-11-22T13:15+01:00",
@@ -4231,7 +4327,19 @@
     "info_n": 2,
     "niveau": "4e",
     "matiere": "français",
-    "sujet": "participe passé avec avoir : accord avec le COD placé avant (les fleurs que j'ai cueillies)"
+    "sujet": "participe passé avec avoir : accord avec le COD placé avant (les fleurs que j'ai cueillies)",
+    "posty_post_id": "p0mwrsz6n2t0qi72f88",
+    "posty_media_ids": [
+      "med0mwrsxn2o1g7c87ajv",
+      "med0mwrsxr4o8b7y26scc",
+      "med0mwrsxu6p3sz91nztu",
+      "med0mwrsxwftkymk56mfq",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   },
   {
     "date": "2026-11-22T13:15+01:00",
@@ -4245,6 +4353,18 @@
     "info_n": 3,
     "niveau": "3e",
     "matiere": "SVT",
-    "sujet": "46 chromosomes = 23 paires ; gamètes : 23 (ovule 23 + spermatozoïde 23 = 46)"
+    "sujet": "46 chromosomes = 23 paires ; gamètes : 23 (ovule 23 + spermatozoïde 23 = 46)",
+    "posty_post_id": "p0mwrsz6n2t0qi72f88",
+    "posty_media_ids": [
+      "med0mwrsxn2o1g7c87ajv",
+      "med0mwrsxr4o8b7y26scc",
+      "med0mwrsxu6p3sz91nztu",
+      "med0mwrsxwftkymk56mfq",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   }
 ]
