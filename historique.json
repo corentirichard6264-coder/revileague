@@ -3611,19 +3611,23 @@
     "publie_a": "2026-11-21T20:38:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgA-2ZTFVbU/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=Ja8Kt0E1W7Q",
+        "visibilite": "public"
       }
     },
     "question_n": 1,
     "niveau": "3e",
     "matiere": "géographie",
-    "sujet": "plus haut sommet de France (mont Blanc, environ 4 805 m)"
+    "sujet": "plus haut sommet de France (mont Blanc, environ 4 805 m)",
+    "controle": "2026-11-22T06:16+01:00"
   },
   {
     "date": "2026-11-21T17:15+01:00",
@@ -3641,19 +3645,23 @@
     "publie_a": "2026-11-21T20:38:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgA-2ZTFVbU/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=Ja8Kt0E1W7Q",
+        "visibilite": "public"
       }
     },
     "question_n": 2,
     "niveau": "2nde",
     "matiere": "physique-chimie",
-    "sujet": "nombre d'électrons d'un atome de carbone Z = 6 (6, atome neutre)"
+    "sujet": "nombre d'électrons d'un atome de carbone Z = 6 (6, atome neutre)",
+    "controle": "2026-11-22T06:16+01:00"
   },
   {
     "date": "2026-11-21T17:15+01:00",
@@ -3671,19 +3679,23 @@
     "publie_a": "2026-11-21T20:38:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgA-2ZTFVbU/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=Ja8Kt0E1W7Q",
+        "visibilite": "public"
       }
     },
     "question_n": 3,
     "niveau": "1re",
     "matiere": "français",
-    "sujet": "auteur des Fleurs du mal (Baudelaire, 1857)"
+    "sujet": "auteur des Fleurs du mal (Baudelaire, 1857)",
+    "controle": "2026-11-22T06:16+01:00"
   },
   {
     "date": "2026-11-21T17:15+01:00",
@@ -3701,18 +3713,158 @@
     "publie_a": "2026-11-21T20:38:00+01:00",
     "reseaux": {
       "instagram": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgA-2ZTFVbU/"
       },
       "tiktok": {
-        "statut": "scheduled"
+        "statut": "delivered"
       },
       "youtube": {
-        "statut": "scheduled"
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=Ja8Kt0E1W7Q",
+        "visibilite": "public"
       }
     },
     "question_n": 4,
     "niveau": "Terminale",
     "matiere": "maths",
-    "sujet": "limite de (1 + 1/n) puissance n en +∞ (e)"
+    "sujet": "limite de (1 + 1/n) puissance n en +∞ (e)",
+    "controle": "2026-11-22T06:16+01:00"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 1,
+    "niveau": "6e",
+    "matiere": "géographie",
+    "sujet": "capitale de l'Espagne (Madrid)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 2,
+    "niveau": "6e",
+    "matiere": "SVT",
+    "sujet": "nombre de pattes d'un insecte (6)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 3,
+    "niveau": "6e",
+    "matiere": "maths",
+    "sujet": "mesure d'un angle droit (90°)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 4,
+    "niveau": "5e",
+    "matiere": "anglais",
+    "sujet": "« hier » en anglais (yesterday)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 5,
+    "niveau": "5e",
+    "matiere": "français",
+    "sujet": "pluriel de cheval (chevaux, -al donne -aux)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 6,
+    "niveau": "5e",
+    "matiere": "physique-chimie",
+    "sujet": "planète la plus proche du Soleil (Mercure)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 7,
+    "niveau": "4e",
+    "matiere": "histoire",
+    "sujet": "roi de France en 1789 (Louis XVI, règne 1774-1792)"
+  },
+  {
+    "date": "2026-11-22T06:00+01:00",
+    "creneau": "7h-9h59",
+    "type": "serie",
+    "format": "Quiz du jour",
+    "hook": "Personne ne trouve\nla dernière",
+    "fichier": "reels/2026-11-22-quiz.mp4",
+    "couverture": "reels/2026-11-22-quiz-cover.jpg",
+    "duree_s": 120.8,
+    "voix_off": true,
+    "heure_publication": "7",
+    "publie_a": "2026-11-22T07:24:00+01:00",
+    "question_n": 8,
+    "niveau": "3e",
+    "matiere": "maths",
+    "sujet": "plus petit nombre premier (2 ; 1 n'est pas premier)"
   }
 ]
