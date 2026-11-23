@@ -17,6 +17,15 @@
 - Carrousel « La n°2, même les adultes se trompent » (16h06) : 0 commentaire pour l'instant.
 - Heures : les posts du matin/midi (11h57 Bac) ont fait mieux que 19h-20h pour les quiz ; échantillon trop petit pour conclure.
 
+## Analyse du 23/11/2026 à 20h (7 derniers jours, Instagram)
+- Compte : 23 abonnés (20 hier, 4 le 15/11), 7 863 impressions, 6 361 comptes touchés, 312 interactions, 63 enregistrements, 0 clic, 36 posts.
+- « Bac 2027 dates » reste le seul gros succès : 3 909 impressions, 105 likes, 81 partages, 52 enregistrements, 5 commentaires.
+- « Parcoursup 2027 » : 440 impressions, 11 likes, 5 partages, 6 enregistrements. Mieux que prévu, mais 9x moins que le Bac.
+- « Vacances de Noël » (11h40) : 229 impressions, 0 commentaire à 20h malgré la question zone A/B/C. Le carrousel « 3 astuces » (15h52) : 0 commentaire.
+- Quiz 4 questions du soir (19h-22h) : ~220-250 impressions, 0 commentaire. Aucun nouveau commentaire depuis le 21/11.
+- Les abonnés ont triplé depuis le 21/11 (11 → 23), portés par le post Bac ; les posts suivants ne prolongent pas l'effet.
+- Hypothèse : le public réagit aux infos officielles qui touchent sa classe (bac 1re/Tle) ; garder 1 post « dates officielles » par jour.
+
 ## Commentaires fréquents
 - 3 commentaires d'élèves au total, tous sous « Bac 2027 » : une élève en Première (« Moi prémiére »), un élève qui passe les anticipées, un emoji ❤️.
   Les gens répondent à la question « Tu passes quoi en 2027 ? » : les questions ouvertes sur la classe fonctionnent mieux que les CTA de score.
