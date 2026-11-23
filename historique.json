@@ -4588,12 +4588,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 1,
   "niveau": "6e",
   "matiere": "géographie",
   "sujet": "capitale du Royaume-Uni (Londres)",
-  "banque": "london-bigben"
+  "banque": "london-bigben",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4610,12 +4627,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 2,
   "niveau": "6e",
   "matiere": "SVT",
   "sujet": "nombre de dents chez un adulte (32, dents de sagesse comprises)",
-  "banque": "tooth"
+  "banque": "tooth",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4632,12 +4666,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 3,
   "niveau": "6e",
   "matiere": "maths",
   "sujet": "nombre de côtés d'un octogone (8)",
-  "banque": "shapes"
+  "banque": "shapes",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4654,12 +4705,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 4,
   "niveau": "5e",
   "matiere": "anglais",
   "sujet": "prétérit de to buy (bought)",
-  "banque": "eyeglasses-book"
+  "banque": "eyeglasses-book",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4676,12 +4744,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 5,
   "niveau": "5e",
   "matiere": "français",
   "sujet": "figure de style « fort comme un lion » (comparaison, outil « comme »)",
-  "banque": "lion"
+  "banque": "lion",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4698,12 +4783,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 6,
   "niveau": "5e",
   "matiere": "histoire",
   "sujet": "roi de France en 987 (Hugues Capet, Capétiens)",
-  "banque": "medieval-castle"
+  "banque": "medieval-castle",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4720,12 +4822,29 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 7,
   "niveau": "4e",
   "matiere": "physique-chimie",
   "sujet": "unité de la résistance électrique (l'ohm)",
-  "banque": "circuit"
+  "banque": "circuit",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
  },
  {
   "date": "2026-11-23T06:00+01:00",
@@ -4742,11 +4861,220 @@
   "publie_a": "2026-11-23T09:00:00+01:00",
   "posty_post_id": "p0mwstp78h9andcob5q",
   "posty_media_id": "med0mwston9nv4omycnzx",
-  "statut": "scheduled",
+  "statut": "delivered",
   "question_n": 8,
   "niveau": "3e",
   "matiere": "maths",
   "sujet": "équation 3x - 7 = 2x + 5 (x = 12)",
-  "banque": "blank-chalkboard"
+  "banque": "blank-chalkboard",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "permalink": "https://www.instagram.com/reel/DgE4j6rlC7A/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711273711349008386",
+    "allowComment": true
+   },
+   "youtube": {
+    "statut": "delivered",
+    "permalink": "https://www.youtube.com/watch?v=1mmXhOHfrAM",
+    "public": true
+   }
+  },
+  "controle": "2026-11-23 09:20 : 3 réseaux delivered, YouTube public (oEmbed OK)"
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 1,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : départ = sam. 19 déc. 2026",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 2,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : reprise = lun. 4 janv. 2027",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 3,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : zones = même date A, B, C",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 4,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : hiver zone C = 6 fév. au 22 fév.",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 5,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : hiver zone A = 13 fév. au 1er mars",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-23T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "6e-Tle",
+  "matiere": "vacances",
+  "sujet": "Vacances scolaires 2026-2027 (Noël + hiver par zone) : hiver zone B = 20 fév. au 8 mars",
+  "hook": "Vacances de Noël :\nplus que 26 jours\nà tenir",
+  "stamp": "À VENIR",
+  "source": "service-public.gouv.fr (arrêté du 22/10/2025, page mise à jour le 16/07/2026) + L'Étudiant + franceinfo",
+  "sources": [
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18563",
+   "https://www.letudiant.fr/lifestyle/vacances-scolaires-2026-2027-et-jours-feries-le-calendrier-devoile-avec-toutes-les-dates.html",
+   "https://www.franceinfo.fr/societe/education/scolarite/calendrier-des-vacances-scolaires/calendrier-2026-2027-en-france-metropolitaine/"
+  ],
+  "fichier": "reels/2026-11-23-actu.mp4",
+  "couverture": "reels/2026-11-23-actu-cover.jpg",
+  "duree_s": 79.2,
+  "voix_off": true,
+  "heure_publication": "10",
+  "publie_a": "2026-11-23T10:40:00+01:00",
+  "statut": "scheduled",
+  "posty_post_id": "p0mwt03ud9su0knc38z",
+  "posty_media_id": "med0mwt03bq8mli87wpzk",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
  }
 ]
