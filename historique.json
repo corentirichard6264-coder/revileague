@@ -4419,7 +4419,27 @@
   "question_n": 1,
   "niveau": "3e",
   "matiere": "histoire",
-  "sujet": "début de la Seconde Guerre mondiale (1er septembre 1939, invasion de la Pologne)"
+  "sujet": "début de la Seconde Guerre mondiale (1er septembre 1939, invasion de la Pologne)",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgDrhNNDwmN/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711099865727584278"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=bzG-z9NVzc8"
+   }
+  },
+  "controle": {
+   "date": "2026-11-23T06:26+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered"
+  }
  },
  {
   "date": "2026-11-22T17:15+01:00",
@@ -4443,7 +4463,27 @@
   "question_n": 2,
   "niveau": "2de",
   "matiere": "SVT",
-  "sujet": "lieu de la photosynthèse dans la cellule végétale (chloroplaste, chlorophylle)"
+  "sujet": "lieu de la photosynthèse dans la cellule végétale (chloroplaste, chlorophylle)",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgDrhNNDwmN/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711099865727584278"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=bzG-z9NVzc8"
+   }
+  },
+  "controle": {
+   "date": "2026-11-23T06:26+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered"
+  }
  },
  {
   "date": "2026-11-22T17:15+01:00",
@@ -4467,7 +4507,27 @@
   "question_n": 3,
   "niveau": "1re",
   "matiere": "anglais",
-  "sujet": "souhait irréel au présent : I wish + prétérit (I wish I were rich)"
+  "sujet": "souhait irréel au présent : I wish + prétérit (I wish I were rich)",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgDrhNNDwmN/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711099865727584278"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=bzG-z9NVzc8"
+   }
+  },
+  "controle": {
+   "date": "2026-11-23T06:26+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered"
+  }
  },
  {
   "date": "2026-11-22T17:15+01:00",
@@ -4491,6 +4551,202 @@
   "question_n": 4,
   "niveau": "Terminale",
   "matiere": "maths",
-  "sujet": "primitive de 1/x sur ]0 ; +∞[ (ln x)"
+  "sujet": "primitive de 1/x sur ]0 ; +∞[ (ln x)",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgDrhNNDwmN/"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7711099865727584278"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=bzG-z9NVzc8"
+   }
+  },
+  "controle": {
+   "date": "2026-11-23T06:26+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered"
+  }
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 1,
+  "niveau": "6e",
+  "matiere": "géographie",
+  "sujet": "capitale du Royaume-Uni (Londres)",
+  "banque": "london-bigben"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 2,
+  "niveau": "6e",
+  "matiere": "SVT",
+  "sujet": "nombre de dents chez un adulte (32, dents de sagesse comprises)",
+  "banque": "tooth"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 3,
+  "niveau": "6e",
+  "matiere": "maths",
+  "sujet": "nombre de côtés d'un octogone (8)",
+  "banque": "shapes"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 4,
+  "niveau": "5e",
+  "matiere": "anglais",
+  "sujet": "prétérit de to buy (bought)",
+  "banque": "eyeglasses-book"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 5,
+  "niveau": "5e",
+  "matiere": "français",
+  "sujet": "figure de style « fort comme un lion » (comparaison, outil « comme »)",
+  "banque": "lion"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 6,
+  "niveau": "5e",
+  "matiere": "histoire",
+  "sujet": "roi de France en 987 (Hugues Capet, Capétiens)",
+  "banque": "medieval-castle"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 7,
+  "niveau": "4e",
+  "matiere": "physique-chimie",
+  "sujet": "unité de la résistance électrique (l'ohm)",
+  "banque": "circuit"
+ },
+ {
+  "date": "2026-11-23T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "Si tu as 8/8,\ntu as le niveau brevet",
+  "fichier": "reels/2026-11-23-quiz.mp4",
+  "couverture": "reels/2026-11-23-quiz-cover.jpg",
+  "cover_banque": "classroom",
+  "duree_s": 134.6,
+  "voix_off": true,
+  "heure_publication": "9",
+  "publie_a": "2026-11-23T09:00:00+01:00",
+  "posty_post_id": "p0mwstp78h9andcob5q",
+  "posty_media_id": "med0mwston9nv4omycnzx",
+  "statut": "scheduled",
+  "question_n": 8,
+  "niveau": "3e",
+  "matiere": "maths",
+  "sujet": "équation 3x - 7 = 2x + 5 (x = 12)",
+  "banque": "blank-chalkboard"
  }
 ]
