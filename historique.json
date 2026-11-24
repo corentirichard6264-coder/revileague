@@ -5430,7 +5430,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5440,7 +5440,22 @@
   "niveau": "6e",
   "matiere": "géographie",
   "sujet": "capitale de l'Allemagne (Berlin)",
-  "banque": "berlin-brandenburg"
+  "banque": "berlin-brandenburg",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5457,7 +5472,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5467,7 +5482,22 @@
   "niveau": "6e",
   "matiere": "SVT",
   "sujet": "organe de la respiration (les poumons)",
-  "banque": "lungs"
+  "banque": "lungs",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5484,7 +5514,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5494,7 +5524,22 @@
   "niveau": "6e",
   "matiere": "maths",
   "sujet": "degrés dans un tour complet (360°)",
-  "banque": "geometry-tools"
+  "banque": "geometry-tools",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5511,7 +5556,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5521,7 +5566,22 @@
   "niveau": "5e",
   "matiere": "physique-chimie",
   "sujet": "état de l'eau pure à -10 °C (solide)",
-  "banque": "ice-melting"
+  "banque": "ice-melting",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5538,7 +5598,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5548,7 +5608,22 @@
   "niveau": "5e",
   "matiere": "anglais",
   "sujet": "prétérit de to see (saw)",
-  "banque": "headphones-globe"
+  "banque": "headphones-globe",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5565,7 +5640,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5575,7 +5650,22 @@
   "niveau": "5e",
   "matiere": "histoire",
   "sujet": "peintre de la Joconde (Léonard de Vinci)",
-  "banque": "renaissance-studio"
+  "banque": "renaissance-studio",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5592,7 +5682,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5602,7 +5692,22 @@
   "niveau": "4e",
   "matiere": "français",
   "sujet": "nature de « mais » (conjonction de coordination)",
-  "banque": "open-book"
+  "banque": "open-book",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
  },
  {
   "date": "2026-11-24T06:00+01:00",
@@ -5619,7 +5724,7 @@
   "posty_media_id": "med0mwu8xpghqyb9ffys0",
   "heure_publication": "7",
   "publie_a": "2026-11-24T07:02:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5629,6 +5734,225 @@
   "niveau": "3e",
   "matiere": "maths",
   "sujet": "développer (x - 2)(x + 2) = x² - 4",
-  "banque": "blank-chalkboard"
+  "banque": "blank-chalkboard",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgHP2jvk0y_/"
+   },
+   "tiktok": {
+    "statut": "delivered"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=q_JZePJupKI",
+    "visibilite": "public (oEmbed OK)"
+   }
+  },
+  "controle": "2026-11-24T09:24+01:00"
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : français 1 = 24 juin • 8h-9h30",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : rédaction = 24 juin • 9h45-11h15",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : histoire-géo = 25 juin • 8h-10h",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : sciences = 28 juin • 8h-9h",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : maths = 28 juin • 10h-12h",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-24T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "brevet",
+  "sujet": "Brevet 2027, calendrier des écrits : rattrapage = 9 et 10 sept. 2027",
+  "hook": "Brevet 2027 :\nnote ces 3 dates\ndans ton agenda",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO spécial n°2 du 25/08/2026, annexes I et II)",
+  "sources": [
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-i-session-normale-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet-519820.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-ii-session-de-remplacement-2027-calendrier-des-epreuves-ecrites-du-diplome-national-du-brevet.pdf",
+   "https://www.education.gouv.fr/bo/2026/Special2/MENE2622686N",
+   "https://www.letudiant.fr/bac/brevet/diplome-national-du-brevet-le-calendrier-des-epreuves-16946.html"
+  ],
+  "fichier": "reels/2026-11-24-actu.mp4",
+  "couverture": "reels/2026-11-24-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.2,
+  "voix_off": true,
+  "posty_post_id": "p0mwufhhz7dq4zfc3tt",
+  "posty_media_id": "med0mwufgv7yjdc50hurn",
+  "heure_publication": "12",
+  "publie_a": "2026-11-24T12:31:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
  }
 ]
