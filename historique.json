@@ -6084,7 +6084,7 @@
   "fichier": "reels/2026-11-24-savais-1.jpg … -5.jpg",
   "heure_publication": "17",
   "publie_a": "2026-11-24T17:35:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "posty_post_id": "p0mwunve3265weuc9o5",
   "posty_media_ids": [
    "med0mwuntvaikz6uisk8k",
@@ -6100,7 +6100,11 @@
   "info_n": 1,
   "niveau": "5e",
   "matiere": "français",
-  "sujet": "c'est (= cela est) / s'est (verbe pronominal) : c'est facile / il s'est levé"
+  "sujet": "c'est (= cela est) / s'est (verbe pronominal) : c'est facile / il s'est levé",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered"
+  }
  },
  {
   "date": "2026-11-24T13:15+01:00",
@@ -6111,7 +6115,7 @@
   "fichier": "reels/2026-11-24-savais-1.jpg … -5.jpg",
   "heure_publication": "17",
   "publie_a": "2026-11-24T17:35:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "posty_post_id": "p0mwunve3265weuc9o5",
   "posty_media_ids": [
    "med0mwuntvaikz6uisk8k",
@@ -6127,7 +6131,11 @@
   "info_n": 2,
   "niveau": "4e",
   "matiere": "maths",
-  "sujet": "diviser par une fraction = multiplier par son inverse (3/4 ÷ 1/2 = 3/4 × 2 = 3/2)"
+  "sujet": "diviser par une fraction = multiplier par son inverse (3/4 ÷ 1/2 = 3/4 × 2 = 3/2)",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered"
+  }
  },
  {
   "date": "2026-11-24T13:15+01:00",
@@ -6138,7 +6146,7 @@
   "fichier": "reels/2026-11-24-savais-1.jpg … -5.jpg",
   "heure_publication": "17",
   "publie_a": "2026-11-24T17:35:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "posty_post_id": "p0mwunve3265weuc9o5",
   "posty_media_ids": [
    "med0mwuntvaikz6uisk8k",
@@ -6154,6 +6162,117 @@
   "info_n": 3,
   "niveau": "3e",
   "matiere": "physique-chimie",
-  "sujet": "masse (kg) / poids (N) : P = m × g, g ≈ 9,8 N/kg (50 kg donne P ≈ 490 N)"
+  "sujet": "masse (kg) / poids (N) : P = m × g, g ≈ 9,8 N/kg (50 kg donne P ≈ 490 N)",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered"
+  }
+ },
+ {
+  "date": "2026-11-24T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Si tu fais 4/4,\ntu as le niveau bac",
+  "fichier": "reels/2026-11-24-defi.mp4",
+  "couverture": "reels/2026-11-24-defi-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 113.7,
+  "voix_off": true,
+  "posty_post_id": "p0mwuwxs37e28qxkz4j",
+  "posty_media_id": "med0mwuwx8bozilu14rfn",
+  "heure_publication": "19",
+  "publie_a": "2026-11-24T19:07:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 1,
+  "niveau": "3e",
+  "matiere": "SVT",
+  "sujet": "lieu de la fécondation chez la femme : la trompe (pas l'utérus ni l'ovaire)",
+  "banque": "microscope"
+ },
+ {
+  "date": "2026-11-24T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Si tu fais 4/4,\ntu as le niveau bac",
+  "fichier": "reels/2026-11-24-defi.mp4",
+  "couverture": "reels/2026-11-24-defi-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 113.7,
+  "voix_off": true,
+  "posty_post_id": "p0mwuwxs37e28qxkz4j",
+  "posty_media_id": "med0mwuwx8bozilu14rfn",
+  "heure_publication": "19",
+  "publie_a": "2026-11-24T19:07:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 2,
+  "niveau": "2nde",
+  "matiere": "anglais",
+  "sujet": "participe passé de to bring : brought (bring, brought, brought)",
+  "banque": "eyeglasses-book"
+ },
+ {
+  "date": "2026-11-24T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Si tu fais 4/4,\ntu as le niveau bac",
+  "fichier": "reels/2026-11-24-defi.mp4",
+  "couverture": "reels/2026-11-24-defi-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 113.7,
+  "voix_off": true,
+  "posty_post_id": "p0mwuwxs37e28qxkz4j",
+  "posty_media_id": "med0mwuwx8bozilu14rfn",
+  "heure_publication": "19",
+  "publie_a": "2026-11-24T19:07:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 3,
+  "niveau": "1re",
+  "matiere": "maths",
+  "sujet": "1 + 2 + ... + 100 = 5 050 (n(n+1)/2, suite arithmétique)",
+  "banque": "abacus"
+ },
+ {
+  "date": "2026-11-24T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Si tu fais 4/4,\ntu as le niveau bac",
+  "fichier": "reels/2026-11-24-defi.mp4",
+  "couverture": "reels/2026-11-24-defi-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 113.7,
+  "voix_off": true,
+  "posty_post_id": "p0mwuwxs37e28qxkz4j",
+  "posty_media_id": "med0mwuwx8bozilu14rfn",
+  "heure_publication": "19",
+  "publie_a": "2026-11-24T19:07:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 4,
+  "niveau": "Terminale",
+  "matiere": "histoire",
+  "sujet": "traité de Maastricht : signé le 7 février 1992 (en vigueur le 1er novembre 1993)"
  }
 ]
