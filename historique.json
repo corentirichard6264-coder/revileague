@@ -5302,7 +5302,7 @@
   "posty_media_id": "med0mwth3ud69ak3p3nki",
   "heure_publication": "22",
   "publie_a": "2026-11-23T22:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5312,7 +5312,12 @@
   "niveau": "3e",
   "matiere": "français",
   "sujet": "mode après « il faut que » : subjonctif (il faut que tu viennes)",
-  "banque": "quill-ink"
+  "banque": "quill-ink",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered (public, H7wVGXgdC84)"
+  }
  },
  {
   "date": "2026-11-23T17:15+01:00",
@@ -5329,7 +5334,7 @@
   "posty_media_id": "med0mwth3ud69ak3p3nki",
   "heure_publication": "22",
   "publie_a": "2026-11-23T22:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5339,7 +5344,12 @@
   "niveau": "2nde",
   "matiere": "maths",
   "sujet": "antécédent de 11 par f(x) = 2x + 3 (x = 4)",
-  "banque": "graph-paper"
+  "banque": "graph-paper",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered (public, H7wVGXgdC84)"
+  }
  },
  {
   "date": "2026-11-23T17:15+01:00",
@@ -5356,7 +5366,7 @@
   "posty_media_id": "med0mwth3ud69ak3p3nki",
   "heure_publication": "22",
   "publie_a": "2026-11-23T22:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5366,7 +5376,12 @@
   "niveau": "2nde",
   "matiere": "histoire",
   "sujet": "séparation des pouvoirs : Montesquieu, De l'esprit des lois (1748)",
-  "banque": "quill-parchment"
+  "banque": "quill-parchment",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered (public, H7wVGXgdC84)"
+  }
  },
  {
   "date": "2026-11-23T17:15+01:00",
@@ -5383,7 +5398,7 @@
   "posty_media_id": "med0mwth3ud69ak3p3nki",
   "heure_publication": "22",
   "publie_a": "2026-11-23T22:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -5393,6 +5408,227 @@
   "niveau": "Terminale",
   "matiere": "physique-chimie",
   "sujet": "décroissance radioactive : après 3 demi-vies il reste 1/8 des noyaux",
-  "banque": "atom"
+  "banque": "atom",
+  "controle": {
+   "instagram": "delivered",
+   "tiktok": "delivered",
+   "youtube": "delivered (public, H7wVGXgdC84)"
+  }
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 1,
+  "niveau": "6e",
+  "matiere": "géographie",
+  "sujet": "capitale de l'Allemagne (Berlin)",
+  "banque": "berlin-brandenburg"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 2,
+  "niveau": "6e",
+  "matiere": "SVT",
+  "sujet": "organe de la respiration (les poumons)",
+  "banque": "lungs"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 3,
+  "niveau": "6e",
+  "matiere": "maths",
+  "sujet": "degrés dans un tour complet (360°)",
+  "banque": "geometry-tools"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 4,
+  "niveau": "5e",
+  "matiere": "physique-chimie",
+  "sujet": "état de l'eau pure à -10 °C (solide)",
+  "banque": "ice-melting"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 5,
+  "niveau": "5e",
+  "matiere": "anglais",
+  "sujet": "prétérit de to see (saw)",
+  "banque": "headphones-globe"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 6,
+  "niveau": "5e",
+  "matiere": "histoire",
+  "sujet": "peintre de la Joconde (Léonard de Vinci)",
+  "banque": "renaissance-studio"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 7,
+  "niveau": "4e",
+  "matiere": "français",
+  "sujet": "nature de « mais » (conjonction de coordination)",
+  "banque": "open-book"
+ },
+ {
+  "date": "2026-11-24T06:00+01:00",
+  "creneau": "7h-9h59",
+  "type": "serie",
+  "format": "Quiz du jour",
+  "hook": "90 % des élèves calent\nà la question 8",
+  "fichier": "reels/2026-11-24-quiz.mp4",
+  "couverture": "reels/2026-11-24-quiz-cover.jpg",
+  "cover_banque": "alarm-clock",
+  "duree_s": 137.0,
+  "voix_off": true,
+  "posty_post_id": "p0mwu8y8r6iwgrl8n3a",
+  "posty_media_id": "med0mwu8xpghqyb9ffys0",
+  "heure_publication": "7",
+  "publie_a": "2026-11-24T07:02:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "question_n": 8,
+  "niveau": "3e",
+  "matiere": "maths",
+  "sujet": "développer (x - 2)(x + 2) = x² - 4",
+  "banque": "blank-chalkboard"
  }
 ]
