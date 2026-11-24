@@ -5,19 +5,20 @@
     "18126195929318247"
   ],
   "story_en_attente": {
-    "date": "2026-11-23",
-    "badge": "6e • Géo",
-    "question": "Quel est le plus\ngrand océan\ndu monde ?",
+    "date": "2026-11-24",
+    "badge": "6e • Maths",
+    "question": "Combien de côtés\na un hexagone ?",
     "options": [
-      "Atlantique",
-      "Pacifique",
-      "Indien"
+      "5",
+      "6",
+      "8"
     ],
-    "reponse": "Pacifique",
-    "explication": "Il couvre environ\n165 millions de km²,\nplus que toutes les terres réunies"
+    "reponse": "6",
+    "explication": "Hexa = six en grec :\nun hexagone a 6 côtés\net 6 sommets"
   },
   "stories_faites": [
     "planète la plus proche du Soleil (Mercure)",
-    "plus grand océan du monde (Pacifique)"
+    "plus grand océan du monde (Pacifique)",
+    "nombre de côtés d'un hexagone (6)"
   ]
 }
