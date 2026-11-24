@@ -26,6 +26,12 @@
 - Les abonnés ont triplé depuis le 21/11 (11 → 23), portés par le post Bac ; les posts suivants ne prolongent pas l'effet.
 - Hypothèse : le public réagit aux infos officielles qui touchent sa classe (bac 1re/Tle) ; garder 1 post « dates officielles » par jour.
 
+## Analyse du 24/11/2026 à 20h (7 derniers jours, Instagram)
+- Compte : 26 abonnés (23 hier, 5 la semaine précédente), 7 861 impressions, 6 365 comptes touchés, 322 interactions, 65 enregistrements, 0 clic, 34 posts.
+- Le pic reste les 21-22/11 (Bac 2027 : 3 940 impressions, 107 likes, 83 partages, 54 enregistrements). Depuis le 23/11 : 669 puis 440 impressions par jour, 0 commentaire.
+- Aucun nouveau commentaire depuis le 21/11 sur tous les posts récents (Brevet 2027 dates, Vacances de Noël, quiz 8 questions, carrousels). Les CTA « écris BAC / CERVEAU / 1-2-3 » n'engagent pas.
+- Les abonnés continuent de monter (+3/jour) malgré la baisse de portée, probablement via les stories quotidiennes et l'effet Bac.
+
 ## Commentaires fréquents
 - 3 commentaires d'élèves au total, tous sous « Bac 2027 » : une élève en Première (« Moi prémiére »), un élève qui passe les anticipées, un emoji ❤️.
   Les gens répondent à la question « Tu passes quoi en 2027 ? » : les questions ouvertes sur la classe fonctionnent mieux que les CTA de score.
