@@ -18,3 +18,4 @@
 - 24/11/2026 11h (Paris) : 0 nouveau commentaire, 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. 2 stories : réponse « Pacifique » + question du jour « nombre de côtés d'un hexagone » (6). Pas d'analyse (pas 20h). PIL réinstallé (cassé dans l'env).
 - 24/11/2026 14h (Paris) : 0 nouveau commentaire, 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
 - 24/11/2026 17h (Paris) : 0 nouveau commentaire, 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
+- 24/11/2026 20h (Paris) : ÉCHEC, connecteur Posty indisponible (authentification requise) : commentaires non lus, aucune publication, analyse quotidienne non faite.
