@@ -5,20 +5,21 @@
     "18126195929318247"
   ],
   "story_en_attente": {
-    "date": "2026-11-24",
-    "badge": "6e • Maths",
-    "question": "Combien de côtés\na un hexagone ?",
+    "date": "2026-11-25",
+    "badge": "6e • SVT",
+    "question": "Combien de pattes\na une araignée ?",
     "options": [
-      "5",
       "6",
-      "8"
+      "8",
+      "10"
     ],
-    "reponse": "6",
-    "explication": "Hexa = six en grec :\nun hexagone a 6 côtés\net 6 sommets"
+    "reponse": "8",
+    "explication": "Les araignées sont des arachnides :\n8 pattes, alors que les insectes\nen ont 6"
   },
   "stories_faites": [
     "planète la plus proche du Soleil (Mercure)",
     "plus grand océan du monde (Pacifique)",
-    "nombre de côtés d'un hexagone (6)"
+    "nombre de côtés d'un hexagone (6)",
+    "nombre de pattes d'une araignée (8)"
   ]
 }
