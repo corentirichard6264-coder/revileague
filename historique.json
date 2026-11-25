@@ -6348,7 +6348,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6360,7 +6360,28 @@
   "sujet": "capitale du Portugal (Lisbonne)",
   "banque": "lisbon",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6375,7 +6396,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6387,7 +6408,28 @@
   "sujet": "plus grand mammifère du monde (la baleine bleue)",
   "banque": "whale",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6402,7 +6444,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6414,7 +6456,28 @@
   "sujet": "15 × 4 = 60",
   "banque": "calculator",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6429,7 +6492,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6441,7 +6504,28 @@
   "sujet": "mercredi en anglais (Wednesday)",
   "banque": "london-bus",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6456,7 +6540,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6468,7 +6552,28 @@
   "sujet": "roi des Francs baptisé à Reims (Clovis, vers 500)",
   "banque": "gothic-cathedral",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6483,7 +6588,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6495,7 +6600,28 @@
   "sujet": "unité de l'intensité électrique (l'ampère)",
   "banque": "circuit",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6510,7 +6636,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6522,7 +6648,28 @@
   "sujet": "passé simple de faire à la 3e pers. du sing. (il fit)",
   "banque": "notebook-poetry",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
  },
  {
   "date": "2026-11-25T06:00+01:00",
@@ -6537,7 +6684,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-25T08:28:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -6549,6 +6696,231 @@
   "sujet": "probabilité de tirer un as dans un jeu de 32 cartes (4/32 = 1/8)",
   "banque": "playing-cards",
   "posty_post_id": "p0mwvokkiagbbjn5z35",
-  "posty_media_id": "med0mwvok0r0w3nxadoyw"
+  "posty_media_id": "med0mwvok0r0w3nxadoyw",
+  "reseaux": {
+   "instagram": {
+    "statut": "delivered",
+    "lien": "https://www.instagram.com/reel/DgJ-fQ8O2hl/",
+    "id": "17981735955141249"
+   },
+   "tiktok": {
+    "statut": "delivered",
+    "id": "v_pub_url~v2-1.7712006938678134806"
+   },
+   "youtube": {
+    "statut": "delivered",
+    "lien": "https://www.youtube.com/watch?v=0kQLLt59ljI"
+   }
+  },
+  "controle": {
+   "date": "2026-11-25T09:40+01:00",
+   "instagram": "delivered",
+   "tiktok": "delivered (commentaires ouverts)",
+   "youtube": "delivered (public, 0kQLLt59ljI)"
+  }
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 1,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : épreuve = mardi 2 février 2027",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 2,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : horaire = 13h30 • 2h30",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 3,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : pour qui ? = élèves de 3e",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 4,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : places = 10 % max par collège",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 5,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : matières = 5 au choix, 1 seule",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "3e",
+  "matiere": "concours",
+  "sujet": "Concours général du collège 2027 (1re édition) : résultats = prix en mars 2027",
+  "hook": "Nouveau en 3e :\nun concours national\npour les meilleurs",
+  "stamp": "NOUVEAU",
+  "source": "education.gouv.fr (BO n°36 du 24/09/2026), notes de service MENE2624207N et MENE2623396N",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2624207N",
+   "https://www.education.gouv.fr/bo/2026/Hebdo36/MENE2623396N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-36-du-24-septembre-2026-521365.pdf",
+   "https://www.service-public.gouv.fr/particuliers/actualites/A18870",
+   "https://lexpress-education.com/articles/concours-general-colleges/",
+   "https://www.clubic.com/actualite-607585-un-concours-general-des-colleges-lance-a-la-rentree-les-petits-genies-du-code-et-de-l-informatique-vont-enfin-briller.html"
+  ],
+  "fichier": "reels/2026-11-25-actu.mp4",
+  "couverture": "reels/2026-11-25-actu-cover.jpg",
+  "cover_banque": "trophy",
+  "duree_s": 83.9,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-25T13:31:00+01:00",
+  "statut": "a_programmer",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
  }
 ]
