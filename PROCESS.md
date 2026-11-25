@@ -149,6 +149,8 @@ les dates par zone ») ;
   pour une info). Pas de personne reconnaissable, ni marque, ni logo : vérifie la 1re image de la vidéo et change la
   requête si la photo est hors sujet.
 
+**Voix off fixe (25/11/2026, plainte de l'utilisateur : « la voix chante dans l'intro »)** : le générateur impose une seule voix Fish Audio (« Projet », jeune homme clair, `reference_id` cfbea78849c445c2b75942d4a848f619) et le modèle **s1** (température 0,5), au lieu du modèle expressif s2.1 sans voix de référence qui changeait de voix à chaque phrase et se mettait parfois à chanter. Une prise anormalement lente ou rapide est refaite automatiquement. Ne pas remettre `FISH_MODEL` s2.1 ni retirer la voix de référence. Après le rendu, **écoute-contrôle** : extraire les 4 premières secondes (`ffmpeg -t 4`) et vérifier que la durée de l'intro correspond à une phrase parlée ; si le script affiche plusieurs « prise anormale » pour l'accroche, reformule-la (phrase simple, ponctuée).
+
 **Voix off (22/11/2026)** : le générateur adapte le texte avant de le faire lire (« 8/8 » → « 8 sur 8 », « 3e » →
 « troisième », « 1re » → « première », « Tle » → « terminale », dates « 14/06/2027 » → « 14 juin 2027 », « 8h30 » →
 « 8 heures 30 », « % », « n° », sigles BO/DNB/AB/TB, mots EN CAPITALES lus normalement, retour à la ligne = pause si

@@ -296,25 +296,47 @@ def _test_say():
     assert say("12 AB • 14 B • 16 TB") == "12 assez bien, 14 B, 16 très bien"
     assert say("élève de 1re et de Tle, OFFICIEL") == "élève de première et de terminale, officiel"
 
-def tts(text):
-    """Voix off Fish Audio -> échantillons mono 16 bits à 44,1 kHz. None si FISH_API_KEY est absente."""
-    key = os.environ.get("FISH_API_KEY")
-    if not key: return None
-    import array, urllib.request
-    voice = os.environ.get("FISH_VOICE_ID")
-    text = say(text)  # toujours normalisé, même pour les « dit » écrits à la main
-    body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.15}}
-    if voice: body["reference_id"] = voice
+# Voix off fixe (25/11/2026) : sans voix de référence, Fish Audio prenait une voix différente à chaque phrase et
+# le modèle expressif s2.1 se mettait parfois à chanter (intro du quiz 25/11 et du défi 24/11). On impose donc une
+# seule voix (« Projet » : jeune homme, claire, énergique) et le modèle s1, plus stable, avec une température basse.
+FISH_VOICE_DEFAULT = "cfbea78849c445c2b75942d4a848f619"
+FISH_MODEL_DEFAULT = "s1"
+
+def _fish(text, key, model):
+    import urllib.request
+    body = {"text": text, "format": "mp3", "mp3_bitrate": 128, "language": "fr", "prosody": {"speed": 1.15},
+            "temperature": 0.5, "top_p": 0.7, "normalize": True,
+            "reference_id": os.environ.get("REVI_VOICE_ID") or FISH_VOICE_DEFAULT}
     req = urllib.request.Request("https://api.fish.audio/v1/tts", data=json.dumps(body).encode(), method="POST",
-                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json",
-                                          "model": os.environ.get("FISH_MODEL", "s2.1-pro")})
-    try:
-        mp3 = urllib.request.urlopen(req, timeout=90).read()
-    except Exception as e:
-        sys.exit(f"Voix off Fish Audio en échec : {e}")
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "model": model})
+    mp3 = urllib.request.urlopen(req, timeout=90).read()
     pcm = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", "pipe:0", "-f", "s16le", "-ac", "1", "-ar", str(SR), "pipe:1"],
                          input=mp3, capture_output=True, check=True).stdout
+    import array
     return array.array("h", pcm[: len(pcm) // 2 * 2])
+
+def tts(text):
+    """Voix off Fish Audio -> échantillons mono 16 bits à 44,1 kHz. None si FISH_API_KEY est absente.
+    Toujours la même voix ; une prise anormalement lente (voix qui chante ou traîne) est refaite (2 essais de plus)."""
+    key = os.environ.get("FISH_API_KEY")
+    if not key: return None
+    text = say(text)  # toujours normalisé, même pour les « dit » écrits à la main
+    models = [os.environ.get("REVI_FISH_MODEL") or FISH_MODEL_DEFAULT]
+    if os.environ.get("FISH_MODEL") and os.environ["FISH_MODEL"] not in models: models.append(os.environ["FISH_MODEL"])
+    best, err = None, None
+    for model in models:
+        for essai in range(3):
+            try:
+                clip = _fish(text, key, model)
+            except Exception as e:
+                err = e; break  # modèle refusé / quota : on passe au modèle suivant
+            sec = len(clip) / SR; cps = len(text) / max(sec, 0.1)  # parole normale à 1,15 : 15-28 caractères/s
+            if best is None or abs(cps - 15) < abs(best[1] - 15): best = (clip, cps)
+            if 9 <= cps <= 32: return clip
+            print(f"Voix off : prise anormale ({cps:.1f} car./s, {model}), nouvel essai : {text[:40]!r}")
+        if best: break
+    if best: return best[0]
+    sys.exit(f"Voix off Fish Audio en échec : {err}")
 
 def dur(clip): return len(clip) / SR if clip else 0.0
 
