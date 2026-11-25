@@ -6746,12 +6746,14 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  },
  {
   "date": "2026-11-25T09:15+01:00",
@@ -6780,12 +6782,14 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  },
  {
   "date": "2026-11-25T09:15+01:00",
@@ -6814,12 +6818,14 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  },
  {
   "date": "2026-11-25T09:15+01:00",
@@ -6848,12 +6854,14 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  },
  {
   "date": "2026-11-25T09:15+01:00",
@@ -6882,12 +6890,14 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  },
  {
   "date": "2026-11-25T09:15+01:00",
@@ -6916,11 +6926,13 @@
   "voix_off": true,
   "heure_publication": "13",
   "publie_a": "2026-11-25T13:31:00+01:00",
-  "statut": "a_programmer",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
    "youtube"
-  ]
+  ],
+  "posty_post_id": "p0mwvv3ibklju58gfcw",
+  "posty_media_id": "med0mwvv30xc8h9c7eubs"
  }
 ]
