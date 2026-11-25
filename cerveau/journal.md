@@ -20,3 +20,4 @@
 - 24/11/2026 17h (Paris) : 0 nouveau commentaire, 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
 - 24/11/2026 20h (Paris) : 0 nouveau commentaire (fils des 3 derniers jours relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h). Analyse quotidienne faite (STRATEGIE.md).
 - 24/11/2026 23h (Paris) : 0 nouveau commentaire, 0 proposition, 0 réponse publiée, 0 signalement, 0 story (pas 11h).
+- 25/11/2026 8h (Paris) : 0 nouveau commentaire (fils des 3 derniers jours + Bac relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
