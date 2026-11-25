@@ -6980,7 +6980,7 @@
   "fichier": "reels/2026-11-25-savais-1.jpg … -5.jpg",
   "heure_publication": "15",
   "publie_a": "2026-11-25T15:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "info_n": 1,
   "niveau": "6e",
   "matiere": "maths",
@@ -6996,7 +6996,12 @@
   "reseaux_programmes": [
    "instagram",
    "tiktok"
-  ]
+  ],
+  "controle": {
+   "instagram": "delivered (https://www.instagram.com/p/DgKvh7gINhL/)",
+   "tiktok": "delivered",
+   "controle_le": "2026-11-25T17:21+01:00"
+  }
  },
  {
   "date": "2026-11-25T13:15+01:00",
@@ -7007,7 +7012,7 @@
   "fichier": "reels/2026-11-25-savais-1.jpg … -5.jpg",
   "heure_publication": "15",
   "publie_a": "2026-11-25T15:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "info_n": 2,
   "niveau": "4e",
   "matiere": "EMC",
@@ -7023,7 +7028,12 @@
   "reseaux_programmes": [
    "instagram",
    "tiktok"
-  ]
+  ],
+  "controle": {
+   "instagram": "delivered (https://www.instagram.com/p/DgKvh7gINhL/)",
+   "tiktok": "delivered",
+   "controle_le": "2026-11-25T17:21+01:00"
+  }
  },
  {
   "date": "2026-11-25T13:15+01:00",
@@ -7034,7 +7044,7 @@
   "fichier": "reels/2026-11-25-savais-1.jpg … -5.jpg",
   "heure_publication": "15",
   "publie_a": "2026-11-25T15:36:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "info_n": 3,
   "niveau": "2nde",
   "matiere": "français",
@@ -7050,6 +7060,115 @@
   "reseaux_programmes": [
    "instagram",
    "tiktok"
+  ],
+  "controle": {
+   "instagram": "delivered (https://www.instagram.com/p/DgKvh7gINhL/)",
+   "tiktok": "delivered",
+   "controle_le": "2026-11-25T17:21+01:00"
+  }
+ },
+ {
+  "date": "2026-11-25T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Personne ne trouve\nle défi n°4",
+  "fichier": "reels/2026-11-25-defi.mp4",
+  "heure_publication": "21",
+  "publie_a": "2026-11-25T21:45:00+01:00",
+  "statut": "scheduled",
+  "question_n": 1,
+  "niveau": "3e",
+  "matiere": "physique-chimie",
+  "sujet": "plus grosse planète du système solaire (Jupiter, diamètre ≈ 11 fois celui de la Terre)",
+  "banque": "solar-system",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.5,
+  "voix_off": true,
+  "posty_post_id": "p0mwwbz48lecg676810",
+  "posty_media_id": "med0mwwbylywgn7y45pec",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Personne ne trouve\nle défi n°4",
+  "fichier": "reels/2026-11-25-defi.mp4",
+  "heure_publication": "21",
+  "publie_a": "2026-11-25T21:45:00+01:00",
+  "statut": "scheduled",
+  "question_n": 2,
+  "niveau": "1re",
+  "matiere": "français",
+  "sujet": "Zola, chef de file du naturalisme (Les Rougon-Macquart, Germinal 1885)",
+  "banque": "factory",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.5,
+  "voix_off": true,
+  "posty_post_id": "p0mwwbz48lecg676810",
+  "posty_media_id": "med0mwwbylywgn7y45pec",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Personne ne trouve\nle défi n°4",
+  "fichier": "reels/2026-11-25-defi.mp4",
+  "heure_publication": "21",
+  "publie_a": "2026-11-25T21:45:00+01:00",
+  "statut": "scheduled",
+  "question_n": 3,
+  "niveau": "Terminale",
+  "matiere": "philosophie",
+  "sujet": "Du contrat social (1762) : Jean-Jacques Rousseau, souveraineté du peuple",
+  "banque": "quill-parchment",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.5,
+  "voix_off": true,
+  "posty_post_id": "p0mwwbz48lecg676810",
+  "posty_media_id": "med0mwwbylywgn7y45pec",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ]
+ },
+ {
+  "date": "2026-11-25T17:15+01:00",
+  "creneau": "18h-22h59",
+  "type": "serie",
+  "format": "Défi de la Ligue",
+  "hook": "Personne ne trouve\nle défi n°4",
+  "fichier": "reels/2026-11-25-defi.mp4",
+  "heure_publication": "21",
+  "publie_a": "2026-11-25T21:45:00+01:00",
+  "statut": "scheduled",
+  "question_n": 4,
+  "niveau": "Terminale",
+  "matiere": "maths",
+  "sujet": "limite de sin(x)/x en 0 = 1 (nombre dérivé de sin en 0 = cos 0)",
+  "banque": "graph-paper",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.5,
+  "voix_off": true,
+  "posty_post_id": "p0mwwbz48lecg676810",
+  "posty_media_id": "med0mwwbylywgn7y45pec",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
   ]
  }
 ]
