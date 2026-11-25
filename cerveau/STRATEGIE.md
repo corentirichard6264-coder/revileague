@@ -32,6 +32,13 @@
 - Aucun nouveau commentaire depuis le 21/11 sur tous les posts récents (Brevet 2027 dates, Vacances de Noël, quiz 8 questions, carrousels). Les CTA « écris BAC / CERVEAU / 1-2-3 » n'engagent pas.
 - Les abonnés continuent de monter (+3/jour) malgré la baisse de portée, probablement via les stories quotidiennes et l'effet Bac.
 
+## Analyse du 25/11/2026 à 20h (7 derniers jours, Instagram)
+- Compte : 26 abonnés (stable depuis hier, 8 il y a une semaine), 8 070 impressions, 6 568 comptes touchés, 339 interactions, 69 enregistrements, 0 clic, 36 posts.
+- Bac 2027 dates : 3 952 impressions, 108 likes, 83 partages, 55 enregistrements, 5 commentaires. Tout le reste fait 250 à 450 impressions.
+- Depuis le 23/11 : 669, 588 puis 496 impressions par jour (baisse continue), 0 commentaire, abonnés plateau à 26.
+- « Concours général du collège » (publié 14h31) : 314 impressions et 7 likes à 20h, meilleur départ que Vacances de Noël (302, 2 likes) pour un post « actu 3e ». Aucun commentaire malgré « Écris MOI ».
+- Aucun nouveau commentaire à traiter depuis le 21/11 (tous les fils des 14 derniers jours relus).
+
 ## Commentaires fréquents
 - 3 commentaires d'élèves au total, tous sous « Bac 2027 » : une élève en Première (« Moi prémiére »), un élève qui passe les anticipées, un emoji ❤️.
   Les gens répondent à la question « Tu passes quoi en 2027 ? » : les questions ouvertes sur la classe fonctionnent mieux que les CTA de score.
