@@ -7904,7 +7904,9 @@
   "niveau": "3e",
   "matiere": "géographie",
   "sujet": "nombre de départements en France (101 : 96 en métropole + 5 en outre-mer)",
-  "banque": "farm-fields"
+  "banque": "farm-fields",
+  "posty_post_id": "p0mwxrf427ifnpcdyr9",
+  "posty_media_id": "med0mwxremuho97i9gz0u"
  },
  {
   "date": "2026-11-26T17:15+01:00",
@@ -7928,7 +7930,9 @@
   "niveau": "2nde",
   "matiere": "français",
   "sujet": "auteur de Candide (Voltaire, 1759, conte philosophique des Lumières)",
-  "banque": "quill-ink"
+  "banque": "quill-ink",
+  "posty_post_id": "p0mwxrf427ifnpcdyr9",
+  "posty_media_id": "med0mwxremuho97i9gz0u"
  },
  {
   "date": "2026-11-26T17:15+01:00",
@@ -7952,7 +7956,9 @@
   "niveau": "1re",
   "matiere": "SVT",
   "sujet": "lieu de la transcription ADN en ARNm : le noyau (traduction au ribosome)",
-  "banque": "dna"
+  "banque": "dna",
+  "posty_post_id": "p0mwxrf427ifnpcdyr9",
+  "posty_media_id": "med0mwxremuho97i9gz0u"
  },
  {
   "date": "2026-11-26T17:15+01:00",
@@ -7976,6 +7982,8 @@
   "niveau": "Terminale",
   "matiere": "maths",
   "sujet": "dérivée de ln(x² + 1) = 2x / (x² + 1), (ln u)' = u'/u",
-  "banque": "calculator"
+  "banque": "calculator",
+  "posty_post_id": "p0mwxrf427ifnpcdyr9",
+  "posty_media_id": "med0mwxremuho97i9gz0u"
  }
 ]
