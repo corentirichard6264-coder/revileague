@@ -5,21 +5,22 @@
     "18126195929318247"
   ],
   "story_en_attente": {
-    "date": "2026-11-25",
-    "badge": "6e • SVT",
-    "question": "Combien de pattes\na une araignée ?",
+    "date": "2026-11-26",
+    "badge": "6e • Géographie",
+    "question": "Quelle est la capitale\nde l'Italie ?",
     "options": [
-      "6",
-      "8",
-      "10"
+      "Milan",
+      "Rome",
+      "Venise"
     ],
-    "reponse": "8",
-    "explication": "Les araignées sont des arachnides :\n8 pattes, alors que les insectes\nen ont 6"
+    "reponse": "Rome",
+    "explication": "Rome est la capitale de l'Italie\ndepuis 1871, et abrite\nle Colisée"
   },
   "stories_faites": [
     "planète la plus proche du Soleil (Mercure)",
     "plus grand océan du monde (Pacifique)",
     "nombre de côtés d'un hexagone (6)",
-    "nombre de pattes d'une araignée (8)"
+    "nombre de pattes d'une araignée (8)",
+    "capitale de l'Italie (Rome)"
   ]
 }
