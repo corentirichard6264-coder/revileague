@@ -7268,7 +7268,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7278,7 +7278,9 @@
   "niveau": "6e",
   "matiere": "maths",
   "sujet": "table de 7 : 7 × 8 = 56",
-  "banque": "blank-chalkboard"
+  "banque": "blank-chalkboard",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7293,7 +7295,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7303,7 +7305,9 @@
   "niveau": "6e",
   "matiere": "SVT",
   "sujet": "lequel est un mammifère : le dauphin (pas le requin ni le thon)",
-  "banque": "fish"
+  "banque": "fish",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7318,7 +7322,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7328,7 +7332,9 @@
   "niveau": "6e",
   "matiere": "géographie",
   "sujet": "capitale du Canada (Ottawa)",
-  "banque": "world-globe-desk"
+  "banque": "world-globe-desk",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7343,7 +7349,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7353,7 +7359,9 @@
   "niveau": "5e",
   "matiere": "anglais",
   "sujet": "prétérit de to write (wrote ; written = participe passé)",
-  "banque": "pencil-writing"
+  "banque": "pencil-writing",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7368,7 +7376,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7378,7 +7386,9 @@
   "niveau": "4e",
   "matiere": "histoire",
   "sujet": "sacre de Napoléon empereur (2 décembre 1804, Notre-Dame)",
-  "banque": "napoleon-cannon"
+  "banque": "napoleon-cannon",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7393,7 +7403,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7403,7 +7413,9 @@
   "niveau": "4e",
   "matiere": "physique-chimie",
   "sujet": "unité de la fréquence (le hertz)",
-  "banque": "speaker-sound"
+  "banque": "speaker-sound",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7418,7 +7430,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7428,7 +7440,9 @@
   "niveau": "4e",
   "matiere": "français",
   "sujet": "COD dans « Léa mange une pomme » (une pomme)",
-  "banque": "open-book"
+  "banque": "open-book",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  },
  {
   "date": "2026-11-26T06:00+01:00",
@@ -7443,7 +7457,7 @@
   "voix_off": true,
   "heure_publication": "9",
   "publie_a": "2026-11-26T09:41:00+01:00",
-  "statut": "en préparation",
+  "statut": "scheduled",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -7453,6 +7467,8 @@
   "niveau": "3e",
   "matiere": "maths",
   "sujet": "factoriser x² - 9 = (x - 3)(x + 3), identité a² - b²",
-  "banque": "balance-equation"
+  "banque": "balance-equation",
+  "posty_post_id": "p0mwx3xrii0na8prdrd",
+  "posty_media_id": "med0mwx3x6gcepe4g3v2j"
  }
 ]
