@@ -7543,14 +7543,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T09:15+01:00",
@@ -7576,14 +7582,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T09:15+01:00",
@@ -7609,14 +7621,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T09:15+01:00",
@@ -7642,14 +7660,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T09:15+01:00",
@@ -7675,14 +7699,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T09:15+01:00",
@@ -7708,14 +7738,20 @@
     "voix_off": true,
     "heure_publication": "10",
     "publie_a": "2026-11-26T10:47:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwxaacet417d0rf7k",
-    "posty_media_id": "med0mwxa9t8bcguo41u99"
+    "posty_media_id": "med0mwxa9t8bcguo41u99",
+    "controle": {
+      "controle_le": "2026-11-26T13:19+01:00",
+      "instagram": "delivered (https://www.instagram.com/reel/DgMzO9XqBof/)",
+      "tiktok": "delivered",
+      "youtube": "delivered public (https://www.youtube.com/watch?v=khDGtqNxTms)"
+    }
   },
   {
     "date": "2026-11-26T13:15+01:00",
@@ -7726,11 +7762,23 @@
     "fichier": "reels/2026-11-26-savais-1.jpg … -5.jpg",
     "heure_publication": "14",
     "publie_a": "2026-11-26T14:35:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "info_n": 1,
     "niveau": "6e",
     "matiere": "français",
-    "sujet": "quelle / qu'elle : remplacer par « qu'il » (je crois qu'elle ment / quelle chance !)"
+    "sujet": "quelle / qu'elle : remplacer par « qu'il » (je crois qu'elle ment / quelle chance !)",
+    "posty_post_id": "p0mwxiqmpb1yjbq0d2b",
+    "posty_media_ids": [
+      "med0mwxip13qzt4zczb25",
+      "med0mwxip3o73t0ve2l2z",
+      "med0mwxip68aw2i0a82w3",
+      "med0mwxip96c7z4y1phdt",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   },
   {
     "date": "2026-11-26T13:15+01:00",
@@ -7741,11 +7789,23 @@
     "fichier": "reels/2026-11-26-savais-1.jpg … -5.jpg",
     "heure_publication": "14",
     "publie_a": "2026-11-26T14:35:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "info_n": 2,
     "niveau": "5e",
     "matiere": "anglais",
-    "sujet": "a / an selon le son et non la lettre : an hour (h muet) / a university"
+    "sujet": "a / an selon le son et non la lettre : an hour (h muet) / a university",
+    "posty_post_id": "p0mwxiqmpb1yjbq0d2b",
+    "posty_media_ids": [
+      "med0mwxip13qzt4zczb25",
+      "med0mwxip3o73t0ve2l2z",
+      "med0mwxip68aw2i0a82w3",
+      "med0mwxip96c7z4y1phdt",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   },
   {
     "date": "2026-11-26T13:15+01:00",
@@ -7756,10 +7816,22 @@
     "fichier": "reels/2026-11-26-savais-1.jpg … -5.jpg",
     "heure_publication": "14",
     "publie_a": "2026-11-26T14:35:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "info_n": 3,
     "niveau": "2nde",
     "matiere": "physique-chimie",
-    "sujet": "la lumière du Soleil met environ 8 min 20 s pour nous parvenir : t = d ÷ v = 150 millions de km ÷ 300 000 km/s = 500 s"
+    "sujet": "la lumière du Soleil met environ 8 min 20 s pour nous parvenir : t = d ÷ v = 150 millions de km ÷ 300 000 km/s = 500 s",
+    "posty_post_id": "p0mwxiqmpb1yjbq0d2b",
+    "posty_media_ids": [
+      "med0mwxip13qzt4zczb25",
+      "med0mwxip3o73t0ve2l2z",
+      "med0mwxip68aw2i0a82w3",
+      "med0mwxip96c7z4y1phdt",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ]
   }
 ]
