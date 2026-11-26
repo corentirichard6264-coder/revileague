@@ -39,6 +39,13 @@
 - « Concours général du collège » (publié 14h31) : 314 impressions et 7 likes à 20h, meilleur départ que Vacances de Noël (302, 2 likes) pour un post « actu 3e ». Aucun commentaire malgré « Écris MOI ».
 - Aucun nouveau commentaire à traiter depuis le 21/11 (tous les fils des 14 derniers jours relus).
 
+## Analyse du 26/11/2026 à 20h (7 derniers jours, Instagram)
+- Compte : 28 abonnés (+2 depuis hier, 8 il y a une semaine), 8 571 impressions, 7 043 comptes touchés, 352 interactions, 74 enregistrements, 0 clic, 40 posts.
+- Bac 2027 dates reste seul en tête (3 955 impressions, 108 likes, 83 partages, 55 enregistrements). Ensuite : Concours général du collège 544 (11 likes, 7 enregistrements), Parcoursup 441, Vacances de Noël 302. Les quiz du soir font ~250.
+- Depuis le 23/11 : 669, 588, 700 puis 472 impressions par jour (en cours), 0 commentaire, abonnés qui remontent doucement (+2).
+- Aucun nouveau commentaire à traiter (19 fils du 21 au 26/11 relus, dont le post « harcèlement / 3018 » du jour : 0 commentaire malgré « Réponds OUI ou PAS ENCORE »).
+- Les « actus qui touchent ma classe » restent le seul format qui est enregistré/partagé ; les CTA par mot-clé (TERMINALE, PRO, BOSS, CHAMPION) n'engagent toujours pas.
+
 ## Commentaires fréquents
 - 3 commentaires d'élèves au total, tous sous « Bac 2027 » : une élève en Première (« Moi prémiére »), un élève qui passe les anticipées, un emoji ❤️.
   Les gens répondent à la question « Tu passes quoi en 2027 ? » : les questions ouvertes sur la classe fonctionnent mieux que les CTA de score.
