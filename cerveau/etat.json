@@ -5,22 +5,23 @@
     "18126195929318247"
   ],
   "story_en_attente": {
-    "date": "2026-11-26",
-    "badge": "6e • Géographie",
-    "question": "Quelle est la capitale\nde l'Italie ?",
+    "date": "2026-11-27",
+    "badge": "6e • Maths",
+    "question": "Combien font\n9 x 7 ?",
     "options": [
-      "Milan",
-      "Rome",
-      "Venise"
+      "56",
+      "63",
+      "72"
     ],
-    "reponse": "Rome",
-    "explication": "Rome est la capitale de l'Italie\ndepuis 1871, et abrite\nle Colisée"
+    "reponse": "63",
+    "explication": "9 x 7 = 63\n(la table de 9 : 9, 18, 27,\n36, 45, 54, 63...)"
   },
   "stories_faites": [
     "planète la plus proche du Soleil (Mercure)",
     "plus grand océan du monde (Pacifique)",
     "nombre de côtés d'un hexagone (6)",
     "nombre de pattes d'une araignée (8)",
-    "capitale de l'Italie (Rome)"
+    "capitale de l'Italie (Rome)",
+    "9 x 7 (63)"
   ]
 }
