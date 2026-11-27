@@ -46,6 +46,12 @@
 - Aucun nouveau commentaire à traiter (19 fils du 21 au 26/11 relus, dont le post « harcèlement / 3018 » du jour : 0 commentaire malgré « Réponds OUI ou PAS ENCORE »).
 - Les « actus qui touchent ma classe » restent le seul format qui est enregistré/partagé ; les CTA par mot-clé (TERMINALE, PRO, BOSS, CHAMPION) n'engagent toujours pas.
 
+## Analyse du 27/11/2026 à 20h (7 derniers jours, Instagram)
+- Compte : 28 abonnés (stable depuis hier, 8 il y a une semaine), 8 726 impressions, 7 244 comptes touchés, 355 interactions, 73 enregistrements, 0 clic, 42 posts.
+- Bac 2027 dates toujours seul en tête (3 957 impressions, 108 likes, 83 partages, 55 enregistrements). Ensuite Concours général du collège 544, Parcoursup 441, Vacances de Noël 302.
+- Impressions par jour : 669, 588, 700, 614 puis 339 aujourd'hui (journée en cours). 0 commentaire depuis le 21/11, malgré les CTA (CERVEAU, TERMINALE, PRO, 1-2-3, matière du concours général).
+- Aucun nouveau commentaire à traiter (7 fils du 26-27/11 + Bac relus). Les stories quotidiennes n'ont pas généré de commentaire.
+
 ## Commentaires fréquents
 - 3 commentaires d'élèves au total, tous sous « Bac 2027 » : une élève en Première (« Moi prémiére »), un élève qui passe les anticipées, un emoji ❤️.
   Les gens répondent à la question « Tu passes quoi en 2027 ? » : les questions ouvertes sur la classe fonctionnent mieux que les CTA de score.
