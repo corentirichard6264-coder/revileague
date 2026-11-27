@@ -8023,7 +8023,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8035,7 +8035,13 @@
   "niveau": "6e",
   "matiere": "SVT",
   "sujet": "amphibien parmi lézard, grenouille, tortue (la grenouille)",
-  "banque": "frog"
+  "banque": "frog",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8050,7 +8056,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8062,7 +8068,13 @@
   "niveau": "6e",
   "matiere": "maths",
   "sujet": "nombre de jours d'une année bissextile (366, 29 février)",
-  "banque": "calendar-desk"
+  "banque": "calendar-desk",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8077,7 +8089,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8089,7 +8101,13 @@
   "niveau": "6e",
   "matiere": "géographie",
   "sujet": "capitale de la Grèce (Athènes)",
-  "banque": "athens-acropolis"
+  "banque": "athens-acropolis",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8104,7 +8122,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8116,7 +8134,13 @@
   "niveau": "5e",
   "matiere": "anglais",
   "sujet": "prétérit de to take (took ; taken = participe passé)",
-  "banque": "uk-flag"
+  "banque": "uk-flag",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8131,7 +8155,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8143,7 +8167,13 @@
   "niveau": "4e",
   "matiere": "physique-chimie",
   "sujet": "symbole chimique de l'or (Au, aurum ; Ag = argent)",
-  "banque": "chemistry-lab"
+  "banque": "chemistry-lab",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8158,7 +8188,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8170,7 +8200,13 @@
   "niveau": "5e",
   "matiere": "histoire",
   "sujet": "imprimerie à caractères mobiles vers 1450 (Gutenberg, Mayence)",
-  "banque": "printing-press"
+  "banque": "printing-press",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8185,7 +8221,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8197,7 +8233,13 @@
   "niveau": "4e",
   "matiere": "français",
   "sujet": "sujet inversé dans « Au loin chantent les oiseaux » (les oiseaux)",
-  "banque": "dictionary"
+  "banque": "dictionary",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
  },
  {
   "date": "2026-11-27T06:00+01:00",
@@ -8212,7 +8254,7 @@
   "voix_off": true,
   "heure_publication": "8",
   "publie_a": "2026-11-27T08:13:00+01:00",
-  "statut": "scheduled",
+  "statut": "delivered",
   "reseaux_programmes": [
    "instagram",
    "tiktok",
@@ -8224,6 +8266,222 @@
   "niveau": "3e",
   "matiere": "maths",
   "sujet": "f(x) = 3x - 2, f(-2) = -8",
-  "banque": "graph-paper"
+  "banque": "graph-paper",
+  "controle": {
+   "verifie_a": "2026-11-27T09:24+01:00",
+   "instagram": "delivered https://www.instagram.com/reel/DgPGbgDOgOZ/",
+   "tiktok": "delivered",
+   "youtube": "delivered public https://www.youtube.com/watch?v=yYnF9Bxsftw"
+  }
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 1,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : inscriptions = 24 nov. au 14 déc.",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 2,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : pour qui ? = élèves de 1re et Tle",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 3,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : candidature = ton prof te propose",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 4,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : places = 10 % par matière",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 5,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : matières = 30 disciplines",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
+ },
+ {
+  "date": "2026-11-27T09:15+01:00",
+  "creneau": "10h-13h59",
+  "type": "info",
+  "format": "Info actu",
+  "question_n": 6,
+  "niveau": "1re-Tle",
+  "matiere": "concours",
+  "sujet": "Concours général des lycées 2027 (inscriptions 24 nov.-14 déc. 2026) : 1re épreuve = lundi 8 mars 2027",
+  "hook": "Concours général 2027 :\nplus que 17 jours\npour être candidat",
+  "stamp": "DATES",
+  "source": "education.gouv.fr (BO n°41 du 29/10/2026), note de service MENE2624777N du 5-10-2026",
+  "sources": [
+   "https://www.education.gouv.fr/bo/2026/Hebdo41/MENE2624777N",
+   "https://www.education.gouv.fr/sites/default/files/document/bulletin-officiel-ndeg-41-du-29-octobre-2026-522114.pdf",
+   "https://www.education.gouv.fr/sites/default/files/document/annexe-2-calendrier-du-concours-general-des-lycees-session-2027-522087.pdf",
+   "https://eduscol.education.gouv.fr/6549/organisation-du-concours-general-des-lycees",
+   "https://www.cafepedagogique.net/2026/11/05/concours-general-les-notes-de-service-sont-en-ligne/"
+  ],
+  "fichier": "reels/2026-11-27-actu.mp4",
+  "couverture": "reels/2026-11-27-actu-cover.jpg",
+  "cover_banque": "exam-hall",
+  "duree_s": 67.7,
+  "voix_off": true,
+  "heure_publication": "13",
+  "publie_a": "2026-11-27T13:12:00+01:00",
+  "statut": "scheduled",
+  "reseaux_programmes": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "posty_post_id": "p0mwypuaypvmujwxicq",
+  "posty_media_id": "med0mwyptr9012lwm17wh"
  }
 ]
