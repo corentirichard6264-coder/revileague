@@ -8300,14 +8300,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T09:15+01:00",
@@ -8335,14 +8356,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T09:15+01:00",
@@ -8370,14 +8412,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T09:15+01:00",
@@ -8405,14 +8468,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T09:15+01:00",
@@ -8440,14 +8524,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T09:15+01:00",
@@ -8475,14 +8580,35 @@
     "voix_off": true,
     "heure_publication": "13",
     "publie_a": "2026-11-27T13:12:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mwypuaypvmujwxicq",
-    "posty_media_id": "med0mwyptr9012lwm17wh"
+    "posty_media_id": "med0mwyptr9012lwm17wh",
+    "reseaux": {
+      "instagram": {
+        "statut": "delivered",
+        "lien": "https://www.instagram.com/reel/DgPolEJuMMr/",
+        "id": "18080709134740672"
+      },
+      "tiktok": {
+        "statut": "delivered",
+        "id": "v_pub_url~v2-1.7712822746887424022"
+      },
+      "youtube": {
+        "statut": "delivered",
+        "lien": "https://www.youtube.com/watch?v=6N_m91Uelu8"
+      }
+    },
+    "controle": {
+      "date": "2026-11-27T13:18+01:00",
+      "instagram": "delivered",
+      "tiktok": "delivered (commentaires ouverts)",
+      "youtube": "delivered (public)"
+    }
   },
   {
     "date": "2026-11-27T13:15+01:00",
@@ -8496,7 +8622,20 @@
     "info_n": 1,
     "niveau": "6e",
     "matiere": "maths",
-    "sujet": "divisibilité par 9 : somme des chiffres multiple de 9 (729 : 7+2+9 = 18, 729 = 81 × 9)"
+    "sujet": "divisibilité par 9 : somme des chiffres multiple de 9 (729 : 7+2+9 = 18, 729 = 81 × 9)",
+    "posty_post_id": "p0mwyy6b5uygek15v5s",
+    "posty_media_ids": [
+      "med0mwyy4vv220aehgzbg",
+      "med0mwyy4yd3k60jkm792",
+      "med0mwyy5161ixke73q7t",
+      "med0mwyy53jeyug54o9y6",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
   },
   {
     "date": "2026-11-27T13:15+01:00",
@@ -8510,7 +8649,20 @@
     "info_n": 2,
     "niveau": "5e",
     "matiere": "SVT",
-    "sujet": "photosynthèse : à la lumière, la plante absorbe CO2 + eau et rejette du dioxygène (produit des sucres)"
+    "sujet": "photosynthèse : à la lumière, la plante absorbe CO2 + eau et rejette du dioxygène (produit des sucres)",
+    "posty_post_id": "p0mwyy6b5uygek15v5s",
+    "posty_media_ids": [
+      "med0mwyy4vv220aehgzbg",
+      "med0mwyy4yd3k60jkm792",
+      "med0mwyy5161ixke73q7t",
+      "med0mwyy53jeyug54o9y6",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
   },
   {
     "date": "2026-11-27T13:15+01:00",
@@ -8524,6 +8676,19 @@
     "info_n": 3,
     "niveau": "Terminale",
     "matiere": "philosophie",
-    "sujet": "« L'homme est né libre, et partout il est dans les fers » : Rousseau, Du contrat social (1762)"
+    "sujet": "« L'homme est né libre, et partout il est dans les fers » : Rousseau, Du contrat social (1762)",
+    "posty_post_id": "p0mwyy6b5uygek15v5s",
+    "posty_media_ids": [
+      "med0mwyy4vv220aehgzbg",
+      "med0mwyy4yd3k60jkm792",
+      "med0mwyy5161ixke73q7t",
+      "med0mwyy53jeyug54o9y6",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
   }
 ]
