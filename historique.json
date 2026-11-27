@@ -8715,7 +8715,7 @@
     "fichier": "reels/2026-11-27-defi.mp4",
     "heure_publication": "22",
     "publie_a": "2026-11-27T22:59:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "cover_banque": "chalkboard",
     "duree_s": 78.6,
     "voix_off": true,
@@ -8728,7 +8728,9 @@
     "niveau": "3e",
     "matiere": "histoire",
     "sujet": "début de la Première Guerre mondiale (été 1914, armistice 11 novembre 1918)",
-    "banque": "ww1-trench"
+    "banque": "ww1-trench",
+    "posty_post_id": "p0mwz6ugbziojj9q1e1",
+    "posty_media_id": "med0mwz6tzgk6qc5fqhoe"
   },
   {
     "date": "2026-11-27T17:15+01:00",
@@ -8739,7 +8741,7 @@
     "fichier": "reels/2026-11-27-defi.mp4",
     "heure_publication": "22",
     "publie_a": "2026-11-27T22:59:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "cover_banque": "chalkboard",
     "duree_s": 78.6,
     "voix_off": true,
@@ -8752,7 +8754,9 @@
     "niveau": "2nde",
     "matiere": "physique-chimie",
     "sujet": "composition de l'air : environ 78 % de diazote, 21 % de dioxygène",
-    "banque": "clouds"
+    "banque": "clouds",
+    "posty_post_id": "p0mwz6ugbziojj9q1e1",
+    "posty_media_id": "med0mwz6tzgk6qc5fqhoe"
   },
   {
     "date": "2026-11-27T17:15+01:00",
@@ -8763,7 +8767,7 @@
     "fichier": "reels/2026-11-27-defi.mp4",
     "heure_publication": "22",
     "publie_a": "2026-11-27T22:59:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "cover_banque": "chalkboard",
     "duree_s": 78.6,
     "voix_off": true,
@@ -8776,7 +8780,9 @@
     "niveau": "1re",
     "matiere": "français",
     "sujet": "auteur du Rouge et le Noir (Stendhal, 1830)",
-    "banque": "library"
+    "banque": "library",
+    "posty_post_id": "p0mwz6ugbziojj9q1e1",
+    "posty_media_id": "med0mwz6tzgk6qc5fqhoe"
   },
   {
     "date": "2026-11-27T17:15+01:00",
@@ -8787,7 +8793,7 @@
     "fichier": "reels/2026-11-27-defi.mp4",
     "heure_publication": "22",
     "publie_a": "2026-11-27T22:59:00+01:00",
-    "statut": "a_programmer",
+    "statut": "scheduled",
     "cover_banque": "chalkboard",
     "duree_s": 78.6,
     "voix_off": true,
@@ -8800,6 +8806,8 @@
     "niveau": "Terminale",
     "matiere": "maths",
     "sujet": "dérivée de x ln(x) = ln(x) + 1 (dérivée d'un produit)",
-    "banque": "graph-paper"
+    "banque": "graph-paper",
+    "posty_post_id": "p0mwz6ugbziojj9q1e1",
+    "posty_media_id": "med0mwz6tzgk6qc5fqhoe"
   }
 ]
