@@ -8635,7 +8635,12 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "controle": {
+      "verifie_a": "2026-11-27T17:25+01:00",
+      "instagram": "delivered https://www.instagram.com/p/DgQCar3iLsZ/",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-27T13:15+01:00",
@@ -8662,7 +8667,12 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "controle": {
+      "verifie_a": "2026-11-27T17:25+01:00",
+      "instagram": "delivered https://www.instagram.com/p/DgQCar3iLsZ/",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-27T13:15+01:00",
@@ -8689,6 +8699,107 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "controle": {
+      "verifie_a": "2026-11-27T17:25+01:00",
+      "instagram": "delivered https://www.instagram.com/p/DgQCar3iLsZ/",
+      "tiktok": "delivered"
+    }
+  },
+  {
+    "date": "2026-11-27T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu tiens jusqu'au\ndéfi n°4 ?",
+    "fichier": "reels/2026-11-27-defi.mp4",
+    "heure_publication": "22",
+    "publie_a": "2026-11-27T22:59:00+01:00",
+    "statut": "a_programmer",
+    "cover_banque": "chalkboard",
+    "duree_s": 78.6,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "question_n": 1,
+    "niveau": "3e",
+    "matiere": "histoire",
+    "sujet": "début de la Première Guerre mondiale (été 1914, armistice 11 novembre 1918)",
+    "banque": "ww1-trench"
+  },
+  {
+    "date": "2026-11-27T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu tiens jusqu'au\ndéfi n°4 ?",
+    "fichier": "reels/2026-11-27-defi.mp4",
+    "heure_publication": "22",
+    "publie_a": "2026-11-27T22:59:00+01:00",
+    "statut": "a_programmer",
+    "cover_banque": "chalkboard",
+    "duree_s": 78.6,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "question_n": 2,
+    "niveau": "2nde",
+    "matiere": "physique-chimie",
+    "sujet": "composition de l'air : environ 78 % de diazote, 21 % de dioxygène",
+    "banque": "clouds"
+  },
+  {
+    "date": "2026-11-27T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu tiens jusqu'au\ndéfi n°4 ?",
+    "fichier": "reels/2026-11-27-defi.mp4",
+    "heure_publication": "22",
+    "publie_a": "2026-11-27T22:59:00+01:00",
+    "statut": "a_programmer",
+    "cover_banque": "chalkboard",
+    "duree_s": 78.6,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "question_n": 3,
+    "niveau": "1re",
+    "matiere": "français",
+    "sujet": "auteur du Rouge et le Noir (Stendhal, 1830)",
+    "banque": "library"
+  },
+  {
+    "date": "2026-11-27T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Tu tiens jusqu'au\ndéfi n°4 ?",
+    "fichier": "reels/2026-11-27-defi.mp4",
+    "heure_publication": "22",
+    "publie_a": "2026-11-27T22:59:00+01:00",
+    "statut": "a_programmer",
+    "cover_banque": "chalkboard",
+    "duree_s": 78.6,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "question_n": 4,
+    "niveau": "Terminale",
+    "matiere": "maths",
+    "sujet": "dérivée de x ln(x) = ln(x) + 1 (dérivée d'un produit)",
+    "banque": "graph-paper"
   }
 ]
