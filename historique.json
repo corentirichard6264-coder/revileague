@@ -9465,7 +9465,11 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "statut_reseaux": {
+      "instagram": "delivered (https://www.instagram.com/p/DgSeQYvj9Sv/)",
+      "tiktok": "delivered (p_pub_url~v2.7713231521318766614)"
+    }
   },
   {
     "date": "2026-11-28T13:15+01:00",
@@ -9492,7 +9496,11 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "statut_reseaux": {
+      "instagram": "delivered (https://www.instagram.com/p/DgSeQYvj9Sv/)",
+      "tiktok": "delivered (p_pub_url~v2.7713231521318766614)"
+    }
   },
   {
     "date": "2026-11-28T13:15+01:00",
@@ -9519,6 +9527,114 @@
       "instagram",
       "tiktok"
     ],
-    "statut": "scheduled"
+    "statut": "delivered",
+    "statut_reseaux": {
+      "instagram": "delivered (https://www.instagram.com/p/DgSeQYvj9Sv/)",
+      "tiktok": "delivered (p_pub_url~v2.7713231521318766614)"
+    }
+  },
+  {
+    "date": "2026-11-28T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Le défi n°3 fait\ntomber tout le monde",
+    "fichier": "reels/2026-11-28-defi.mp4",
+    "heure_publication": "20",
+    "publie_a": "2026-11-28T20:21:00+01:00",
+    "statut": "scheduled",
+    "cover_banque": "trophy",
+    "duree_s": 65.2,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "posty_post_id": "p0mx0m9lesmpgealkm9",
+    "posty_media_id": "med0mx0m93v8hqqvxn1py",
+    "question_n": 1,
+    "niveau": "3e",
+    "matiere": "SVT",
+    "sujet": "rôle des globules blancs : défendre l'organisme (immunité)",
+    "banque": "bacteria"
+  },
+  {
+    "date": "2026-11-28T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Le défi n°3 fait\ntomber tout le monde",
+    "fichier": "reels/2026-11-28-defi.mp4",
+    "heure_publication": "20",
+    "publie_a": "2026-11-28T20:21:00+01:00",
+    "statut": "scheduled",
+    "cover_banque": "trophy",
+    "duree_s": 65.2,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "posty_post_id": "p0mx0m9lesmpgealkm9",
+    "posty_media_id": "med0mx0m93v8hqqvxn1py",
+    "question_n": 2,
+    "niveau": "2de",
+    "matiere": "physique-chimie",
+    "sujet": "unité de la quantité de matière : la mole (mol)",
+    "banque": "chemistry-lab"
+  },
+  {
+    "date": "2026-11-28T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Le défi n°3 fait\ntomber tout le monde",
+    "fichier": "reels/2026-11-28-defi.mp4",
+    "heure_publication": "20",
+    "publie_a": "2026-11-28T20:21:00+01:00",
+    "statut": "scheduled",
+    "cover_banque": "trophy",
+    "duree_s": 65.2,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "posty_post_id": "p0mx0m9lesmpgealkm9",
+    "posty_media_id": "med0mx0m93v8hqqvxn1py",
+    "question_n": 3,
+    "niveau": "1re",
+    "matiere": "histoire",
+    "sujet": "suffrage universel masculin en France : mars 1848 (IIe République)",
+    "banque": "ballot-box"
+  },
+  {
+    "date": "2026-11-28T17:15+01:00",
+    "creneau": "18h-22h59",
+    "type": "serie",
+    "format": "Défi de la Ligue",
+    "hook": "Le défi n°3 fait\ntomber tout le monde",
+    "fichier": "reels/2026-11-28-defi.mp4",
+    "heure_publication": "20",
+    "publie_a": "2026-11-28T20:21:00+01:00",
+    "statut": "scheduled",
+    "cover_banque": "trophy",
+    "duree_s": 65.2,
+    "voix_off": true,
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok",
+      "youtube"
+    ],
+    "posty_post_id": "p0mx0m9lesmpgealkm9",
+    "posty_media_id": "med0mx0m93v8hqqvxn1py",
+    "question_n": 4,
+    "niveau": "Terminale",
+    "matiere": "maths",
+    "sujet": "combinaisons : nombre de façons de choisir 2 élèves parmi 5 = 10",
+    "banque": "playing-cards"
   }
 ]
