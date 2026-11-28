@@ -41,3 +41,4 @@
 - 28/11/2026 8h (Paris) : 0 nouveau commentaire (fils du 24-28/11 + Bac relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
 - 28/11/2026 11h (Paris) : 0 nouveau commentaire (fils du 23-28/11 + Bac relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. 2 stories : réponse « 9 x 7 = 63 » + question du jour « début de la Révolution française » (1789, histoire 4e). Pas d'analyse (pas 20h). PIL réinstallé (cassé dans l'env).
 - 28/11/2026 14h (Paris) : 0 nouveau commentaire (fils du 26-28/11 + Bac relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
+- 28/11/2026 17h (Paris) : 0 nouveau commentaire (fils du 23-28/11 + Bac relus), 0 nouvelle proposition, 0 publiée (aucun brouillon ✅/✏️ en attente), 0 signalement. Pas de story (pas 11h), pas d'analyse (pas 20h).
