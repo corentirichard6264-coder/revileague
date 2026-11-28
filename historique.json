@@ -9230,14 +9230,20 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-28T09:15+01:00",
@@ -9263,14 +9269,20 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-28T09:15+01:00",
@@ -9296,14 +9308,20 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-28T09:15+01:00",
@@ -9329,14 +9347,20 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-28T09:15+01:00",
@@ -9362,14 +9386,20 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
   },
   {
     "date": "2026-11-28T09:15+01:00",
@@ -9395,13 +9425,100 @@
     "voix_off": true,
     "heure_publication": "12",
     "publie_a": "2026-11-28T12:56:00+01:00",
-    "statut": "scheduled",
+    "statut": "delivered",
     "reseaux_programmes": [
       "instagram",
       "tiktok",
       "youtube"
     ],
     "posty_post_id": "p0mx05bbnqbun1x0a4w",
-    "posty_media_id": "med0mx05asjl8uk0t56vw"
+    "posty_media_id": "med0mx05asjl8uk0t56vw",
+    "controle": {
+      "verifie_a": "2026-11-28T13:18+01:00",
+      "instagram": "delivered https://www.instagram.com/reel/DgSLirFyNNi/",
+      "youtube": "delivered public https://www.youtube.com/watch?v=98lbsm1wPAE",
+      "tiktok": "delivered"
+    }
+  },
+  {
+    "date": "2026-11-28T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "carrousel",
+    "format": "Le savais-tu ?",
+    "hook": "La n°2 piège même\nles adultes",
+    "fichier": "reels/2026-11-28-savais-1.jpg … -5.jpg",
+    "heure_publication": "15",
+    "publie_a": "2026-11-28T15:39:00+01:00",
+    "info_n": 1,
+    "niveau": "3e",
+    "matiere": "maths",
+    "sujet": "(a + b)² = a² + 2ab + b² pour calculer de tête : 51² = 2500 + 100 + 1 = 2601",
+    "posty_post_id": "p0mx0dlxb3nxufea8ta",
+    "posty_media_ids": [
+      "med0mx0dkfyxy9wdtea2s",
+      "med0mx0dki8x0xm51xszy",
+      "med0mx0dkksk6g5jotq00",
+      "med0mx0dkn63ol7uksv76",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
+  },
+  {
+    "date": "2026-11-28T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "carrousel",
+    "format": "Le savais-tu ?",
+    "hook": "La n°2 piège même\nles adultes",
+    "fichier": "reels/2026-11-28-savais-1.jpg … -5.jpg",
+    "heure_publication": "15",
+    "publie_a": "2026-11-28T15:39:00+01:00",
+    "info_n": 2,
+    "niveau": "5e",
+    "matiere": "français",
+    "sujet": "leur (pronom devant un verbe, invariable) / leurs (déterminant devant un nom pluriel) : je leur rends leurs cahiers",
+    "posty_post_id": "p0mx0dlxb3nxufea8ta",
+    "posty_media_ids": [
+      "med0mx0dkfyxy9wdtea2s",
+      "med0mx0dki8x0xm51xszy",
+      "med0mx0dkksk6g5jotq00",
+      "med0mx0dkn63ol7uksv76",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
+  },
+  {
+    "date": "2026-11-28T13:15+01:00",
+    "creneau": "14h-17h59",
+    "type": "carrousel",
+    "format": "Le savais-tu ?",
+    "hook": "La n°2 piège même\nles adultes",
+    "fichier": "reels/2026-11-28-savais-1.jpg … -5.jpg",
+    "heure_publication": "15",
+    "publie_a": "2026-11-28T15:39:00+01:00",
+    "info_n": 3,
+    "niveau": "5e",
+    "matiere": "SVT",
+    "sujet": "artères = partent du cœur / veines = y reviennent (astuce : Artère = Aller) ; l'aorte est une artère",
+    "posty_post_id": "p0mx0dlxb3nxufea8ta",
+    "posty_media_ids": [
+      "med0mx0dkfyxy9wdtea2s",
+      "med0mx0dki8x0xm51xszy",
+      "med0mx0dkksk6g5jotq00",
+      "med0mx0dkn63ol7uksv76",
+      "med0mwrsxyrpm6nalq1px"
+    ],
+    "reseaux_programmes": [
+      "instagram",
+      "tiktok"
+    ],
+    "statut": "scheduled"
   }
 ]
