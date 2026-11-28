@@ -5,16 +5,16 @@
     "18126195929318247"
   ],
   "story_en_attente": {
-    "date": "2026-11-27",
-    "badge": "6e • Maths",
-    "question": "Combien font\n9 x 7 ?",
+    "date": "2026-11-28",
+    "badge": "4e • Histoire",
+    "question": "En quelle année\ncommence la\nRévolution française ?",
     "options": [
-      "56",
-      "63",
-      "72"
+      "1789",
+      "1815",
+      "1914"
     ],
-    "reponse": "63",
-    "explication": "9 x 7 = 63\n(la table de 9 : 9, 18, 27,\n36, 45, 54, 63...)"
+    "reponse": "1789",
+    "explication": "La Révolution française commence\nen 1789 (prise de la Bastille\nle 14 juillet 1789)."
   },
   "stories_faites": [
     "planète la plus proche du Soleil (Mercure)",
@@ -22,6 +22,7 @@
     "nombre de côtés d'un hexagone (6)",
     "nombre de pattes d'une araignée (8)",
     "capitale de l'Italie (Rome)",
-    "9 x 7 (63)"
+    "9 x 7 (63)",
+    "début de la Révolution française (1789)"
   ]
 }
